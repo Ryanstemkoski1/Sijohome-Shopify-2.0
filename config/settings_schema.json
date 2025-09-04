@@ -820,6 +820,268 @@
     ]
   },
   {
+    "name": "Sijohome Bundle Settings",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "active_bundle_discount",
+        "label": "Enable bundle discounts",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "active_french_bedding_discount",
+        "label": "French Bedding bundle discount",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "active_eucalyptus_bedding_discount",
+        "label": "AiryWeight Eucalyptus Bedding Bundle discount",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "active_clima_bedding_discount",
+        "label": "TempTune Cotton Bedding Bundle discount",
+        "default": true
+      }
+    ]
+  },
+  {
+    "name": "Sijohome Sales Badges",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_special_sales_badges",
+        "label": "Enable special sales badges",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "discount_percentage",
+        "label": "Sale percentage",
+        "default": "20"
+      },
+      {
+        "type": "range",
+        "id": "dollar_off_threshold",
+        "label": "Dollar off threshold",
+        "min": 10,
+        "max": 400,
+        "step": 10,
+        "default": 200
+      },
+      {
+        "type": "color",
+        "id": "sale_badge_background",
+        "label": "Sale badge background color",
+        "default": "#e32c2b"
+      }
+    ]
+  },
+  {
+    "name": "Sijohome Cart Promotions",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_cart_promotion_bar",
+        "label": "Show cart promotion bar",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "promotion_threshold_1",
+        "label": "First promotion threshold",
+        "default": "100"
+      },
+      {
+        "type": "richtext",
+        "id": "promotion_offer_1",
+        "label": "First promotion offer",
+        "default": "<p>Free Shipping</p>"
+      }
+    ]
+  },
+  {
+    "name": "Sijohome Press Icons",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_press_icons",
+        "label": "Show press and certification icons",
+        "default": true
+      },
+      {
+        "type": "image_picker",
+        "id": "bcorp_logo",
+        "label": "B-Corp logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "press_icon_1",
+        "label": "Press icon 1"
+      },
+      {
+        "type": "image_picker",
+        "id": "press_icon_2",
+        "label": "Press icon 2"
+      }
+    ]
+  },
+  {
+    "name": "Beam Impact Integration",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_beam_impact",
+        "label": "Enable Beam Impact integration",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "beam_store_id",
+        "label": "Beam Store ID"
+      },
+      {
+        "type": "text",
+        "id": "beam_api_key",
+        "label": "Beam API Key"
+      },
+      {
+        "type": "text",
+        "id": "beam_sdk_version",
+        "label": "Beam SDK Version",
+        "default": "latest"
+      }
+    ]
+  },
+  {
+    "name": "SIJO Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Analytics & Tracking"
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_google_analytics",
+        "label": "Enable Google Analytics",
+        "info": "Include SIJO's Google Tag Manager tracking",
+        "default": true
+      },
+      {
+        "type": "header",
+        "content": "Bundle Discounts"
+      },
+      {
+        "type": "checkbox",
+        "id": "sijo_active_bundle_discount",
+        "label": "Enable Bundle Discounts",
+        "info": "Activate automatic bundle pricing",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "sijo_active_eucalyptus_discount",
+        "label": "Eucalyptus Bundle Discount",
+        "info": "10% off eucalyptus bedding bundles",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "sijo_active_linen_discount",
+        "label": "Linen Bundle Discount",
+        "info": "10% off linen bedding bundles",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "sijo_active_cotton_discount",
+        "label": "Cotton Bundle Discount",
+        "info": "10% off cotton bedding bundles",
+        "default": true
+      },
+      {
+        "type": "number",
+        "id": "sijo_bundle_threshold",
+        "label": "Minimum Bundle Value",
+        "info": "Minimum cart value in cents for bundle discounts",
+        "default": 15000
+      },
+      {
+        "type": "header",
+        "content": "Product Features"
+      },
+      {
+        "type": "text",
+        "id": "default_size_guide_url",
+        "label": "Size Guide Page URL",
+        "info": "Link to comprehensive size guide page",
+        "default": "/pages/size-guide"
+      },
+      {
+        "type": "text",
+        "id": "care_instructions_url",
+        "label": "Care Instructions URL",
+        "info": "Link to care instructions page",
+        "default": "/pages/care-instructions"
+      },
+      {
+        "type": "text",
+        "id": "sustainability_page_url",
+        "label": "Sustainability Page URL",
+        "info": "Link to sustainability information",
+        "default": "/pages/sustainability"
+      },
+      {
+        "type": "header",
+        "content": "Service Highlights"
+      },
+      {
+        "type": "text",
+        "id": "service_highlight_1",
+        "label": "Service Highlight 1",
+        "default": "Free shipping on orders $75+"
+      },
+      {
+        "type": "text",
+        "id": "service_highlight_2",
+        "label": "Service Highlight 2",
+        "default": "30-day risk-free trial"
+      },
+      {
+        "type": "text",
+        "id": "service_highlight_3",
+        "label": "Service Highlight 3",
+        "default": "Expert sleep specialists ready to help"
+      },
+      {
+        "type": "header",
+        "content": "Brand Messaging"
+      },
+      {
+        "type": "text",
+        "id": "brand_tagline_primary",
+        "label": "Primary Brand Tagline",
+        "default": "Better Sleep. Better World."
+      },
+      {
+        "type": "text",
+        "id": "brand_tagline_secondary",
+        "label": "Secondary Brand Tagline",
+        "default": "Temperature regulating bedding for optimal comfort"
+      },
+      {
+        "type": "textarea",
+        "id": "brand_description",
+        "label": "Brand Description",
+        "info": "Used in footer and about sections",
+        "default": "SIJO creates premium bedding and loungewear using innovative, sustainable materials designed for optimal sleep comfort. Our products are temperature regulating, hypoallergenic, and made with care for both you and the environment."
+      }
+    ]
+  },
+  {
     "name": "t:theme_settings.favicon.name",
     "settings": [
       {

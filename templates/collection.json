@@ -1,1 +1,114 @@
-{"sections":{"collection-banner":{"type":"collection-banner","settings":{}},"main":{"type":"main-collection","settings":{}}},"order":["collection-banner","main"]}
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "allow_transparent_header": false,
+        "show_image": true,
+        "content_width": "md",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40,
+        "reveal": true
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_filters": true,
+        "filter_layout": "sidebar",
+        "enable_sorting": true,
+        "show_sort_by": true,
+        "show_filters_count": true,
+        "show_grid_mode_selector": true,
+        "products_size_desktop": "medium",
+        "products_per_row_mobile": "2",
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1
+      }
+    },
+    "collection-benefits": {
+      "type": "text-with-icons",
+      "blocks": {
+        "benefit-1": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-thermostat",
+            "title": "Temperature Regulating",
+            "content": "<p>Cooling comfort for better sleep</p>"
+          }
+        },
+        "benefit-2": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-leaf",
+            "title": "Sustainable Materials",
+            "content": "<p>Eco-friendly and ethically sourced</p>"
+          }
+        },
+        "benefit-3": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-box",
+            "title": "Free Shipping",
+            "content": "<p>Complimentary shipping on orders $75+</p>"
+          }
+        },
+        "benefit-4": {
+          "type": "item",
+          "settings": {
+            "icon": "picto-return",
+            "title": "30-Day Returns",
+            "content": "<p>Risk-free trial period</p>"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_position": "top",
+        "text_alignment": "center",
+        "spacing": "md"
+      }
+    },
+    "featured-collections": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "best-sellers",
+            "products_count": 4,
+            "title": "Customer Favorites",
+            "link_url": "shopify://collections/best-sellers",
+            "link_text": "Shop Best Sellers"
+          }
+        }
+      },
+      "block_order": ["collection-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "Popular Choices"
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "main",
+    "collection-benefits",
+    "featured-collections"
+  ]
+}

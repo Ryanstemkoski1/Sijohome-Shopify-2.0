@@ -1,0 +1,556 @@
+{%- comment -%}
+Marketing Automation Section - Integrates Gorgias tracking and Beam impact
+{%- endcomment -%}
+
+{%- if section.settings.enable_section -%}
+  <div class="marketing-automation-wrapper">
+    {%- comment -%} Gorgias Tracking Integration {%- endcomment -%}
+    {%- if section.settings.enable_gorgias and section.settings.gorgias_chat_id != blank -%}
+      <div id="gorgias-chat" data-chat-id="{{ section.settings.gorgias_chat_id }}">
+        {%- if section.settings.show_chat_widget -%}
+          <div class="gorgias-chat-trigger" id="gorgias-trigger">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            <span>{{ section.settings.chat_trigger_text | default: 'Chat with us' }}</span>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Beam Impact Widget {%- endcomment -%}
+    {%- if section.settings.enable_beam and section.settings.beam_api_key != blank -%}
+      <div id="beam-impact-widget" 
+           data-beam-api-key="{{ section.settings.beam_api_key }}"
+           data-beam-store-id="{{ section.settings.beam_store_id }}"
+           class="beam-widget-container">
+        
+        {%- if section.settings.show_impact_counter -%}
+          <div class="beam-impact-counter">
+            <div class="beam-impact-content">
+              <div class="beam-impact-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="beam-impact-text">
+                <span class="beam-impact-label">{{ section.settings.impact_label | default: 'Impact Created' }}</span>
+                <span class="beam-impact-value" id="beam-impact-value">Loading...</span>
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_donation_selector and template.name == 'product' -%}
+          <div class="beam-donation-selector">
+            <label for="beam-cause-select">{{ section.settings.donation_label | default: 'Choose a cause to support:' }}</label>
+            <select id="beam-cause-select" name="beam_cause">
+              <option value="">{{ section.settings.default_option | default: 'Select a cause' }}</option>
+              {%- for block in section.blocks -%}
+                {%- if block.type == 'cause' -%}
+                  <option value="{{ block.settings.cause_id }}" 
+                          data-description="{{ block.settings.description | escape }}">
+                    {{ block.settings.name }}
+                  </option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+            <div class="beam-cause-description" id="beam-cause-description"></div>
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Newsletter Signup Integration {%- endcomment -%}
+    {%- if section.settings.enable_newsletter -%}
+      <div class="newsletter-automation" data-automation-id="{{ section.settings.automation_id }}">
+        {%- unless customer -%}
+          <div class="newsletter-popup-trigger" id="newsletter-trigger">
+            <!-- Automatically triggered based on user behavior -->
+          </div>
+        {%- endunless -%}
+      </div>
+    {%- endif -%}
+
+    {%- comment -%} Exit Intent & Abandonment Tracking {%- endcomment -%}
+    {%- if section.settings.enable_exit_intent -%}
+      <div class="exit-intent-tracker" 
+           data-delay="{{ section.settings.exit_delay | default: 30 }}"
+           data-offer-code="{{ section.settings.exit_offer_code }}">
+        <!-- Exit intent popup content handled by JavaScript -->
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- comment -%} Marketing Automation Scripts {%- endcomment -%}
+  <script>
+    // Gorgias Chat Integration
+    {%- if section.settings.enable_gorgias and section.settings.gorgias_chat_id != blank -%}
+      (function() {
+        const gorgiasConfig = {
+          chatId: '{{ section.settings.gorgias_chat_id }}',
+          apiKey: '{{ section.settings.gorgias_api_key }}',
+          domain: '{{ section.settings.gorgias_domain | default: shop.permanent_domain }}'
+        };
+
+        // Initialize Gorgias chat
+        function initGorgias() {
+          if (window.GorgiasChat) {
+            window.GorgiasChat.init(gorgiasConfig);
+          } else {
+            setTimeout(initGorgias, 100);
+          }
+        }
+
+        // Load Gorgias script
+        const gorgiasScript = document.createElement('script');
+        gorgiasScript.src = 'https://config.gorgias.chat/applications/{{ section.settings.gorgias_chat_id }}/chat.js';
+        gorgiasScript.async = true;
+        gorgiasScript.onload = initGorgias;
+        document.head.appendChild(gorgiasScript);
+
+        // Chat trigger event
+        const chatTrigger = document.getElementById('gorgias-trigger');
+        if (chatTrigger) {
+          chatTrigger.addEventListener('click', function() {
+            if (window.GorgiasChat) {
+              window.GorgiasChat.open();
+            }
+          });
+        }
+      })();
+    {%- endif -%}
+
+    // Beam Impact Integration
+    {%- if section.settings.enable_beam and section.settings.beam_api_key != blank -%}
+      (function() {
+        const beamConfig = {
+          apiKey: '{{ section.settings.beam_api_key }}',
+          storeId: '{{ section.settings.beam_store_id }}',
+          environment: '{{ section.settings.beam_environment | default: "production" }}'
+        };
+
+        // Load Beam widget
+        function loadBeamWidget() {
+          const beamScript = document.createElement('script');
+          beamScript.src = 'https://sdk.beamimpact.com/widget.js';
+          beamScript.async = true;
+          beamScript.onload = function() {
+            if (window.BeamWidget) {
+              window.BeamWidget.init(beamConfig);
+              updateImpactCounter();
+            }
+          };
+          document.head.appendChild(beamScript);
+        }
+
+        // Update impact counter
+        function updateImpactCounter() {
+          const impactValue = document.getElementById('beam-impact-value');
+          if (impactValue && window.BeamWidget) {
+            window.BeamWidget.getImpact().then(function(impact) {
+              impactValue.textContent = impact.totalImpact || '0';
+            }).catch(function() {
+              impactValue.textContent = '{{ section.settings.fallback_impact | default: "1000+" }}';
+            });
+          }
+        }
+
+        // Cause selector handling
+        const causeSelect = document.getElementById('beam-cause-select');
+        if (causeSelect) {
+          causeSelect.addEventListener('change', function() {
+            const selectedOption = this.options[this.selectedIndex];
+            const description = selectedOption.dataset.description;
+            const descriptionElement = document.getElementById('beam-cause-description');
+            
+            if (descriptionElement) {
+              descriptionElement.textContent = description || '';
+              descriptionElement.style.display = description ? 'block' : 'none';
+            }
+          });
+        }
+
+        loadBeamWidget();
+      })();
+    {%- endif -%}
+
+    // Exit Intent Tracking
+    {%- if section.settings.enable_exit_intent -%}
+      (function() {
+        let exitTriggered = false;
+        const exitDelay = {{ section.settings.exit_delay | default: 30 }} * 1000;
+        const offerCode = '{{ section.settings.exit_offer_code }}';
+
+        function handleExitIntent(e) {
+          if (exitTriggered) return;
+          
+          const shouldShow = e.clientY <= 0 || 
+                           (e.clientY <= 10 && e.clientX >= 0 && e.clientX <= window.innerWidth);
+          
+          if (shouldShow) {
+            exitTriggered = true;
+            showExitOffer();
+          }
+        }
+
+        function showExitOffer() {
+          // Trigger exit intent offer
+          if (window.CustomEvents) {
+            window.CustomEvents.trigger('exit-intent', {
+              offerCode: offerCode,
+              timestamp: Date.now()
+            });
+          }
+        }
+
+        // Attach exit intent listener after delay
+        setTimeout(function() {
+          document.addEventListener('mouseout', handleExitIntent);
+        }, exitDelay);
+      })();
+    {%- endif -%}
+
+    // Newsletter automation tracking
+    {%- if section.settings.enable_newsletter -%}
+      (function() {
+        const automationId = '{{ section.settings.automation_id }}';
+        const isCustomer = {{ customer | json }};
+        
+        if (!isCustomer && automationId) {
+          // Track page views for newsletter targeting
+          const pageViewData = {
+            url: window.location.href,
+            timestamp: Date.now(),
+            referrer: document.referrer,
+            automationId: automationId
+          };
+
+          // Store in localStorage for tracking
+          const views = JSON.parse(localStorage.getItem('newsletter_tracking') || '[]');
+          views.push(pageViewData);
+          
+          // Keep only last 10 views
+          if (views.length > 10) {
+            views.splice(0, views.length - 10);
+          }
+          
+          localStorage.setItem('newsletter_tracking', JSON.stringify(views));
+        }
+      })();
+    {%- endif -%}
+  </script>
+
+  <style>
+    .marketing-automation-wrapper {
+      position: relative;
+    }
+
+    /* Gorgias Chat Styles */
+    .gorgias-chat-trigger {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgb(var(--color-foreground));
+      color: rgb(var(--color-background));
+      padding: 12px 16px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      z-index: 1000;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .gorgias-chat-trigger:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Beam Impact Styles */
+    .beam-impact-counter {
+      background: rgb(var(--color-background));
+      border: 1px solid rgb(var(--color-border));
+      border-radius: 8px;
+      padding: 12px;
+      margin: 16px 0;
+    }
+
+    .beam-impact-content {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .beam-impact-icon {
+      color: #16a34a;
+    }
+
+    .beam-impact-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .beam-impact-label {
+      font-size: 12px;
+      color: rgb(var(--color-foreground) / 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .beam-impact-value {
+      font-size: 16px;
+      font-weight: 600;
+      color: rgb(var(--color-foreground));
+    }
+
+    .beam-donation-selector {
+      margin: 16px 0;
+    }
+
+    .beam-donation-selector label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: rgb(var(--color-foreground));
+    }
+
+    .beam-donation-selector select {
+      width: 100%;
+      padding: 8px 12px;
+      border: 1px solid rgb(var(--color-border));
+      border-radius: 4px;
+      background: rgb(var(--color-background));
+      color: rgb(var(--color-foreground));
+    }
+
+    .beam-cause-description {
+      margin-top: 8px;
+      padding: 8px;
+      background: rgb(var(--color-background-secondary));
+      border-radius: 4px;
+      font-size: 14px;
+      color: rgb(var(--color-foreground) / 0.8);
+      display: none;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .gorgias-chat-trigger {
+        bottom: 16px;
+        right: 16px;
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .gorgias-chat-trigger span {
+        display: none;
+      }
+    }
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Marketing Automation",
+  "class": "shopify-section--marketing-automation",
+  "tag": "div",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_section",
+      "label": "Enable Marketing Automation",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Gorgias Chat Integration"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_gorgias",
+      "label": "Enable Gorgias Chat",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "gorgias_chat_id",
+      "label": "Gorgias Chat ID",
+      "info": "Your Gorgias application ID"
+    },
+    {
+      "type": "text",
+      "id": "gorgias_api_key",
+      "label": "Gorgias API Key",
+      "info": "Your Gorgias API key"
+    },
+    {
+      "type": "text",
+      "id": "gorgias_domain",
+      "label": "Gorgias Domain",
+      "info": "Your Gorgias domain (optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_chat_widget",
+      "label": "Show Chat Widget",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "chat_trigger_text",
+      "label": "Chat Trigger Text",
+      "default": "Chat with us"
+    },
+    {
+      "type": "header",
+      "content": "Beam Impact Integration"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_beam",
+      "label": "Enable Beam Impact",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "beam_api_key",
+      "label": "Beam API Key",
+      "info": "Your Beam API key"
+    },
+    {
+      "type": "text",
+      "id": "beam_store_id",
+      "label": "Beam Store ID",
+      "info": "Your Beam store identifier"
+    },
+    {
+      "type": "select",
+      "id": "beam_environment",
+      "label": "Beam Environment",
+      "options": [
+        {
+          "value": "production",
+          "label": "Production"
+        },
+        {
+          "value": "staging",
+          "label": "Staging"
+        }
+      ],
+      "default": "production"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_impact_counter",
+      "label": "Show Impact Counter",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "impact_label",
+      "label": "Impact Label",
+      "default": "Impact Created"
+    },
+    {
+      "type": "text",
+      "id": "fallback_impact",
+      "label": "Fallback Impact Text",
+      "default": "1000+",
+      "info": "Shown if API fails to load"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_donation_selector",
+      "label": "Show Donation Selector",
+      "default": false,
+      "info": "Only shows on product pages"
+    },
+    {
+      "type": "text",
+      "id": "donation_label",
+      "label": "Donation Label",
+      "default": "Choose a cause to support:"
+    },
+    {
+      "type": "text",
+      "id": "default_option",
+      "label": "Default Option Text",
+      "default": "Select a cause"
+    },
+    {
+      "type": "header",
+      "content": "Newsletter Automation"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_newsletter",
+      "label": "Enable Newsletter Tracking",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "automation_id",
+      "label": "Automation ID",
+      "info": "Your email automation identifier"
+    },
+    {
+      "type": "header",
+      "content": "Exit Intent"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_exit_intent",
+      "label": "Enable Exit Intent",
+      "default": false
+    },
+    {
+      "type": "number",
+      "id": "exit_delay",
+      "label": "Exit Intent Delay (seconds)",
+      "default": 30,
+      "info": "Delay before exit intent becomes active"
+    },
+    {
+      "type": "text",
+      "id": "exit_offer_code",
+      "label": "Exit Offer Code",
+      "info": "Discount code for exit intent offer"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "cause",
+      "name": "Beam Cause",
+      "settings": [
+        {
+          "type": "text",
+          "id": "cause_id",
+          "label": "Cause ID",
+          "info": "Beam cause identifier"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Cause Name"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Cause Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marketing Automation"
+    }
+  ]
+}
+{% endschema %}

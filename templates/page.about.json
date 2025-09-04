@@ -1,0 +1,283 @@
+{
+  "sections": {
+    "about-hero": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Our Story" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Better Sleep. Better World.",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>SIJO was founded on the belief that great sleep shouldn't come at the cost of the environment. We create premium bedding using innovative, sustainable materials that deliver unmatched comfort while caring for our planet.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Discover Our Materials",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": false,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "remove_vertical_spacing": false
+      }
+    },
+    "our-mission": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Our Mission" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Sleep Innovation Meets Sustainability",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>At SIJO, we're pioneering the future of sleep. Our mission is to create bedding that doesn't just help you rest better—it helps the world rest easier too. Every product we make combines cutting-edge sleep science with sustainable practices, proving that luxury and responsibility can coexist beautifully.</p><p>From our temperature-regulating eucalyptus fibers to our closed-loop manufacturing processes, we're committed to innovation that serves both our customers and our planet.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "values": {
+      "type": "multi-column",
+      "blocks": {
+        "value-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Temperature Regulation",
+            "heading_tag": "h4",
+            "content": "<p>Our proprietary materials naturally regulate your body temperature for optimal sleep comfort throughout the night.</p>"
+          }
+        },
+        "value-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Sustainable Innovation",
+            "heading_tag": "h4",
+            "content": "<p>We use renewable resources and closed-loop processes to minimize environmental impact without compromising quality.</p>"
+          }
+        },
+        "value-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Scientific Approach",
+            "heading_tag": "h4",
+            "content": "<p>Every product is backed by sleep science research and tested for durability, comfort, and performance.</p>"
+          }
+        },
+        "value-4": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Customer Wellbeing",
+            "heading_tag": "h4",
+            "content": "<p>We're dedicated to improving sleep quality and overall health through thoughtfully designed products.</p>"
+          }
+        }
+      },
+      "block_order": ["value-1", "value-2", "value-3", "value-4"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Our Values",
+        "title": "What Drives Us"
+      }
+    },
+    "sustainability-story": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Sustainability at Every Step",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Sustainability isn't an afterthought—it's woven into every fiber of what we do. Our eucalyptus comes from responsibly managed forests, our manufacturing uses 99% less water than traditional processes, and our packaging is designed to minimize waste.</p><p>We believe that taking care of the planet is essential to taking care of ourselves. When you choose SIJO, you're not just investing in better sleep; you're supporting a future where comfort and consciousness go hand in hand.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Learn About Our Materials",
+            "url": "",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_position": "right",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "team-message": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "From Our Team" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Dedicated to Your Rest", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We're a team of sleep enthusiasts, sustainability advocates, and comfort perfectionists. Every day, we work to create products that we're proud to use in our own homes and share with our families.</p><p>Our customer support team includes certified sleep specialists who are passionate about helping you find the perfect sleep setup. Because at SIJO, we believe everyone deserves to wake up refreshed and ready to take on the world.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "customer-testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"SIJO isn't just about great bedding—it's about a company that truly cares. From their sustainable practices to their incredible customer service, they've exceeded every expectation.\"</p>",
+            "author": "Sarah M.",
+            "title": "Verified Customer"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"I love knowing that my purchase supports both my sleep and the environment. The quality is outstanding and the company's values align perfectly with mine.\"</p>",
+            "author": "Michael R.",
+            "title": "Verified Customer"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"The team at SIJO helped me find the perfect bedding for my sensitive skin. Their expertise and care made all the difference.\"</p>",
+            "author": "Jennifer L.",
+            "title": "Verified Customer"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "auto_rotate_between_testimonials": true,
+        "cycle_speed": 6,
+        "font_size_factor": 1,
+        "subheading": "What Customers Say",
+        "title": "Real Stories from Real Sleepers"
+      }
+    },
+    "cta-section": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Ready to Experience Better Sleep?",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Join thousands of satisfied customers who've discovered the SIJO difference. Experience temperature-regulating comfort with our 30-day risk-free trial.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Shop All Products",
+            "url": "shopify://collections/all",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "about-hero",
+    "main",
+    "our-mission",
+    "values",
+    "sustainability-story",
+    "team-message",
+    "customer-testimonials",
+    "cta-section"
+  ]
+}

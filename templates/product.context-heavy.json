@@ -16,6 +16,13 @@
           "type": "description",
           "settings": { "collapse_content": false }
         },
+        "material_info": {
+          "type": "text",
+          "settings": {
+            "text": "<div class=\"material-highlight\"><strong>Material Benefits:</strong> Temperature regulating, hypoallergenic, and sustainably sourced</div>",
+            "text_style": "body"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -36,21 +43,30 @@
           "type": "pickup_availability",
           "settings": {}
         },
+        "accordion_materials": {
+          "type": "accordion",
+          "settings": {
+            "icon": "none",
+            "title": "Materials & Sustainability",
+            "content": "<p>Learn about the premium materials used in this product and our commitment to sustainable practices.</p>",
+            "show_below_gallery": false
+          }
+        },
+        "accordion_care": {
+          "type": "accordion",
+          "settings": {
+            "icon": "none",
+            "title": "Care Instructions",
+            "content": "<p>Detailed care instructions to help your bedding last longer and maintain its quality.</p>",
+            "show_below_gallery": false
+          }
+        },
         "accordion_size_guide": {
           "type": "accordion",
           "settings": {
             "icon": "none",
             "title": "Size Guide",
-            "content": "<p>Not sure about sizing? Check our comprehensive bedding size guide to find the perfect fit for your mattress.</p>",
-            "show_below_gallery": false
-          }
-        },
-        "accordion_materials": {
-          "type": "accordion",
-          "settings": {
-            "icon": "none",
-            "title": "Materials & Care",
-            "content": "<p>Premium quality materials with detailed care instructions to help your bedding last longer.</p>",
+            "content": "<p>Find the perfect fit with our comprehensive bedding size guide.</p>",
             "show_below_gallery": false
           }
         },
@@ -80,19 +96,21 @@
         "payment_terms",
         "separator",
         "description",
+        "material_info",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "pickup_availability",
-        "accordion_size_guide",
         "accordion_materials",
+        "accordion_care",
+        "accordion_size_guide",
         "accordion_shipping",
         "complementary_products"
       ],
       "settings": {
         "color_scheme": "scheme-1",
         "container_size": "lg",
-        "product_info_size": 40,
+        "product_info_size": 45,
         "center_basic_info": false,
         "desktop_media_layout": "carousel_dots",
         "desktop_media_grid_gap": 30,
@@ -103,39 +121,39 @@
         "max_image_zoom_level": 2
       }
     },
-    "product-benefits": {
+    "material-education": {
       "type": "multi-column",
       "blocks": {
         "benefit-1": {
           "type": "image_with_text",
           "settings": {
-            "title": "Temperature Regulating",
+            "title": "Temperature Regulation",
             "heading_tag": "h4",
-            "content": "<p>Naturally breathable materials keep you comfortable all night long.</p>"
+            "content": "<p>Natural fibers that adapt to your body temperature for year-round comfort.</p>"
           }
         },
         "benefit-2": {
           "type": "image_with_text",
           "settings": {
-            "title": "Hypoallergenic",
+            "title": "Hypoallergenic Properties",
             "heading_tag": "h4",
-            "content": "<p>Resistant to dust mites and allergens for healthier sleep.</p>"
+            "content": "<p>Naturally resistant to dust mites, bacteria, and allergens.</p>"
           }
         },
         "benefit-3": {
           "type": "image_with_text",
           "settings": {
-            "title": "Easy Care",
+            "title": "Sustainable Sourcing",
             "heading_tag": "h4",
-            "content": "<p>Machine washable and designed to get softer with every wash.</p>"
+            "content": "<p>Ethically sourced materials with minimal environmental impact.</p>"
           }
         },
         "benefit-4": {
           "type": "image_with_text",
           "settings": {
-            "title": "Sustainable",
+            "title": "Durability & Longevity",
             "heading_tag": "h4",
-            "content": "<p>Ethically sourced materials with eco-friendly production.</p>"
+            "content": "<p>Premium quality construction designed to last for years.</p>"
           }
         }
       },
@@ -149,7 +167,49 @@
         "content_alignment": "center",
         "text_alignment": "center",
         "spacing": "lg",
-        "title": "Why Choose This Product"
+        "subheading": "Why This Material",
+        "title": "Product Benefits"
+      }
+    },
+    "sustainability-story": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Sustainability" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Responsibly Made", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>From farm to bedroom, every step of our process is designed with sustainability in mind.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Learn Our Story",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": false,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40
       }
     },
     "related-products": {
@@ -191,5 +251,11 @@
       }
     }
   },
-  "order": ["main", "product-benefits", "related-products", "bundle-upsell"]
+  "order": [
+    "main",
+    "material-education",
+    "sustainability-story",
+    "related-products",
+    "bundle-upsell"
+  ]
 }

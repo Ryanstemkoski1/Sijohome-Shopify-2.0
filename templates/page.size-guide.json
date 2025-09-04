@@ -1,0 +1,279 @@
+{
+  "sections": {
+    "size-guide-header": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Sizing Help" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Complete Size Guide", "heading_tag": "h1" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Find the perfect fit for your bed with our comprehensive size guide. From measuring tips to care instructions, we'll help you choose the right size for maximum comfort.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "remove_vertical_spacing": false
+      }
+    },
+    "sheet-sizes": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Sheet Set Dimensions" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Standard Sheet Sizes", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<div class=\"size-chart-table\"><table><thead><tr><th>Size</th><th>Fitted Sheet</th><th>Flat Sheet</th><th>Pillowcase(s)</th></tr></thead><tbody><tr><td><strong>Twin</strong></td><td>39\" × 75\" × 15\"</td><td>66\" × 96\"</td><td>1 Standard (20\" × 30\")</td></tr><tr><td><strong>Twin XL</strong></td><td>39\" × 80\" × 15\"</td><td>66\" × 102\"</td><td>1 Standard (20\" × 30\")</td></tr><tr><td><strong>Full</strong></td><td>54\" × 75\" × 15\"</td><td>81\" × 96\"</td><td>2 Standard (20\" × 30\")</td></tr><tr><td><strong>Queen</strong></td><td>60\" × 80\" × 15\"</td><td>90\" × 102\"</td><td>2 Queen (20\" × 32\")</td></tr><tr><td><strong>King</strong></td><td>76\" × 80\" × 15\"</td><td>108\" × 102\"</td><td>2 King (20\" × 36\")</td></tr><tr><td><strong>Cal King</strong></td><td>72\" × 84\" × 15\"</td><td>104\" × 106\"</td><td>2 King (20\" × 36\")</td></tr></tbody></table></div>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "measuring-tips": {
+      "type": "multi-column",
+      "blocks": {
+        "tip-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Measure Your Mattress",
+            "heading_tag": "h4",
+            "content": "<p>Measure length, width, and depth (including any mattress topper) for the best fit.</p>"
+          }
+        },
+        "tip-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Check Mattress Depth",
+            "heading_tag": "h4",
+            "content": "<p>Our fitted sheets accommodate mattresses up to 15\" deep with secure pocket fit.</p>"
+          }
+        },
+        "tip-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Consider Your Setup",
+            "heading_tag": "h4",
+            "content": "<p>Factor in platform beds, adjustable bases, or thick mattress pads when sizing.</p>"
+          }
+        },
+        "tip-4": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "When in Doubt, Size Up",
+            "heading_tag": "h4",
+            "content": "<p>A slightly larger fitted sheet is better than one that's too tight.</p>"
+          }
+        }
+      },
+      "block_order": ["tip-1", "tip-2", "tip-3", "tip-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Measuring Tips",
+        "title": "How to Measure for the Perfect Fit"
+      }
+    },
+    "comforter-sizes": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Comforter Dimensions" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Comforter & Duvet Sizes", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<div class=\"size-chart-table\"><table><thead><tr><th>Size</th><th>Comforter Dimensions</th><th>Coverage</th><th>Best For</th></tr></thead><tbody><tr><td><strong>Twin</strong></td><td>68\" × 88\"</td><td>Single bed with overhang</td><td>Kids' rooms, dorms</td></tr><tr><td><strong>Twin XL</strong></td><td>68\" × 90\"</td><td>Extended length coverage</td><td>College dorms, tall singles</td></tr><tr><td><strong>Full</strong></td><td>76\" × 88\"</td><td>Full bed with side drop</td><td>Guest rooms, smaller spaces</td></tr><tr><td><strong>Queen</strong></td><td>88\" × 88\"</td><td>Queen bed with generous overhang</td><td>Master bedrooms, couples</td></tr><tr><td><strong>King</strong></td><td>104\" × 88\"</td><td>King bed with full coverage</td><td>Large bedrooms, sharing</td></tr><tr><td><strong>Cal King</strong></td><td>104\" × 92\"</td><td>California King with length</td><td>Tall individuals, spacious rooms</td></tr></tbody></table></div>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "pillow-sizes": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Pillow Dimensions" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Pillow & Pillowcase Sizes",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<div class=\"size-chart-table\"><table><thead><tr><th>Pillow Size</th><th>Dimensions</th><th>Pillowcase Size</th><th>Best For</th></tr></thead><tbody><tr><td><strong>Standard</strong></td><td>20\" × 26\"</td><td>20\" × 30\"</td><td>Twin, Twin XL, Full beds</td></tr><tr><td><strong>Queen</strong></td><td>20\" × 30\"</td><td>20\" × 32\"</td><td>Queen beds, extra room</td></tr><tr><td><strong>King</strong></td><td>20\" × 36\"</td><td>20\" × 36\"</td><td>King, Cal King beds</td></tr><tr><td><strong>Euro</strong></td><td>26\" × 26\"</td><td>26\" × 26\"</td><td>Decorative, behind standard pillows</td></tr></tbody></table></div><p><strong>Sleep Position Guide:</strong><br>• <strong>Back sleepers:</strong> Medium support, standard or queen size<br>• <strong>Side sleepers:</strong> Firm support, queen or king size for shoulder alignment<br>• <strong>Stomach sleepers:</strong> Soft, low-profile, standard size</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "fit-tips": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Getting the Perfect Fit", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>For Fitted Sheets:</strong></p><ul><li>Measure your mattress depth including any toppers</li><li>Our deep pocket design fits mattresses up to 15\"</li><li>Elastic edges ensure a secure, wrinkle-free fit</li><li>Pre-shrunk fabric maintains fit after washing</li></ul><p><strong>For Comforters:</strong></p><ul><li>Choose based on your bed frame and desired overhang</li><li>Consider room temperature and personal warmth preferences</li><li>Our temperature-regulating fill adapts to your needs</li><li>Duvet covers should match comforter dimensions</li></ul>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Still Need Help?",
+            "url": "/pages/contact",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "image_position": "right",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "care-sizing": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Care & Maintenance" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Maintaining the Perfect Fit",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Shrinkage:</strong> Our products are pre-shrunk, but natural fibers may experience 1-3% shrinkage after first wash. This is normal and factored into our sizing.</p><p><strong>Care Instructions:</strong></p><ul><li>Machine wash cold with like colors</li><li>Tumble dry low to maintain size and softness</li><li>Avoid high heat which can cause excessive shrinkage</li><li>Remove promptly from dryer to prevent wrinkles</li></ul><p><strong>Longevity Tips:</strong></p><ul><li>Rotate between multiple sets to extend lifespan</li><li>Follow care instructions for best results</li><li>Store in cool, dry place when not in use</li><li>Address stains promptly to maintain quality</li></ul>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "help-cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Questions About Sizing?", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our sleep specialists are here to help you find the perfect fit. Get personalized sizing recommendations based on your specific bed setup and preferences.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Contact Our Experts",
+            "url": "/pages/contact",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "size-guide-header",
+    "main",
+    "sheet-sizes",
+    "measuring-tips",
+    "comforter-sizes",
+    "pillow-sizes",
+    "fit-tips",
+    "care-sizing",
+    "help-cta"
+  ]
+}

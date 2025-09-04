@@ -1,1 +1,232 @@
-{"sections":{"main":{"type":"main-page","disabled":true,"settings":{}},"contact-form":{"type":"contact","settings":{}}},"order":["main","contact-form"]}
+{
+  "sections": {
+    "contact-header": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Get in Touch" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Contact Us", "heading_tag": "h1" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Have questions about our products, need sizing help, or want to share feedback? Our sleep specialists are here to help you create the perfect sleep environment.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "contact-methods": {
+      "type": "multi-column",
+      "blocks": {
+        "email": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Email Support",
+            "heading_tag": "h4",
+            "content": "<p><strong>hello@mysijo.com</strong></p><p>General inquiries, product questions, and feedback</p><p><em>Response within 24 hours</em></p>"
+          }
+        },
+        "wholesale": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Wholesale Inquiries",
+            "heading_tag": "h4",
+            "content": "<p><strong>wholesale@mysijo.com</strong></p><p>B2B partnerships, bulk orders, and trade accounts</p><p><em>Response within 2 business days</em></p>"
+          }
+        },
+        "press": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Press & Media",
+            "heading_tag": "h4",
+            "content": "<p><strong>press@mysijo.com</strong></p><p>Media kits, product samples, and brand partnerships</p><p><em>Response within 3 business days</em></p>"
+          }
+        },
+        "support": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Customer Care",
+            "heading_tag": "h4",
+            "content": "<p><strong>Available 7 Days a Week</strong></p><p>Order support, returns, and account assistance</p><p><em>Chat available during business hours</em></p>"
+          }
+        }
+      },
+      "block_order": ["email", "wholesale", "press", "support"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "",
+        "title": "How to Reach Us"
+      }
+    },
+    "main": { "type": "main-page", "disabled": true, "settings": {} },
+    "contact-form": {
+      "type": "contact",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "show_vendor": false,
+        "show_type": false
+      }
+    },
+    "business-hours": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Business Hours", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Customer Support:</strong><br>Monday - Friday: 9:00 AM - 6:00 PM PST<br>Saturday - Sunday: 10:00 AM - 4:00 PM PST</p><p><strong>Live Chat:</strong><br>Available during business hours for immediate assistance</p><p><strong>Email Support:</strong><br>Monitored daily - responses within 24 hours</p><p><strong>Holiday Hours:</strong><br>Reduced hours during major holidays. Check our website for current availability.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Check Our FAQ",
+            "url": "/pages/faq",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_position": "left",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "help-resources": {
+      "type": "multi-column",
+      "blocks": {
+        "size-guide": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Size Guide",
+            "heading_tag": "h4",
+            "content": "<p>Comprehensive sizing charts for all products with measuring tips.</p>",
+            "button_text": "View Size Guide",
+            "button_url": "/pages/size-guide"
+          }
+        },
+        "care-guide": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Care Instructions",
+            "heading_tag": "h4",
+            "content": "<p>Learn how to properly care for your bedding to maintain quality.</p>",
+            "button_text": "Care Guide",
+            "button_url": "/pages/care-instructions"
+          }
+        },
+        "material-guide": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Material Guide",
+            "heading_tag": "h4",
+            "content": "<p>Discover the benefits of eucalyptus and other premium materials.</p>",
+            "button_text": "Learn More",
+            "button_url": "/pages/materials"
+          }
+        },
+        "sustainability": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Sustainability",
+            "heading_tag": "h4",
+            "content": "<p>Learn about our commitment to environmental responsibility.</p>",
+            "button_text": "Our Impact",
+            "button_url": "/pages/sustainability"
+          }
+        }
+      },
+      "block_order": [
+        "size-guide",
+        "care-guide",
+        "material-guide",
+        "sustainability"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Helpful Resources",
+        "title": "Additional Information"
+      }
+    },
+    "contact-cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Ready to Transform Your Sleep?",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Whether you have questions or you're ready to experience the comfort of SIJO, we're here to help every step of the way.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Shop Now",
+            "url": "/collections/all",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "contact-header",
+    "contact-methods",
+    "main",
+    "contact-form",
+    "business-hours",
+    "help-resources",
+    "contact-cta"
+  ]
+}

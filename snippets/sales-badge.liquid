@@ -1,0 +1,42 @@
+{%- comment -%}
+  Sijohome Sales Badge Component
+  
+  This snippet displays special sales badges for products.
+  Integrates with bundle discount logic and special sales settings.
+  
+  Usage:
+  {% render 'sales-badge', product: product %}
+{%- endcomment -%}
+
+{%- if settings.enable_special_sales_badges -%}
+  {%- render 'bundle-discount', product: product -%}
+  
+  {%- liquid
+    assign show_badge = false
+    assign badge_text = ''
+    assign badge_icon = settings.special_sale_icon
+    
+    # Check if bundle discount applies
+    if bundle_discount_active and display_badge
+      assign show_badge = true
+      assign saved_amount = discount_amount | divided_by: 100 | floor
+      assign badge_text = 'Up to $' | append: saved_amount | append: ' off'
+    elsif product.compare_at_price > product.price
+      # Regular sale product
+      assign discount_percentage = product.compare_at_price | minus: product.price | times: 100 | divided_by: product.compare_at_price
+      if discount_percentage >= settings.discount_percentage
+        assign show_badge = true
+        assign badge_text = settings.discount_percentage | append: '% off'
+      endif
+    endif
+  -%}
+  
+  {%- if show_badge -%}
+    <span class="product-badge sales-badge" style="background-color: {{ settings.sale_badge_background | default: '#e32c2b' }};">
+      {%- if badge_icon != blank -%}
+        <img class="sales-badge__icon" src="{{ badge_icon | image_url: width: 20 }}" alt="{{ badge_icon.alt | escape }}" width="15" height="15" loading="lazy">
+      {%- endif -%}
+      {{ badge_text }}
+    </span>
+  {%- endif -%}
+{%- endif -%}

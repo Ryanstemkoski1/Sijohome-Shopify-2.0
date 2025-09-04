@@ -10,11 +10,25 @@
           "type": "price",
           "settings": { "show_taxes_notice": false }
         },
+        "refresh_notice": {
+          "type": "text",
+          "settings": {
+            "text": "<div class=\"refresh-notice\"><strong>SIJO Refresh:</strong> Pre-loved products restored to like-new condition at a great value</div>",
+            "text_style": "body"
+          }
+        },
         "payment_terms": { "type": "payment_terms", "settings": {} },
         "separator": { "type": "separator", "settings": {} },
         "description": {
           "type": "description",
           "settings": { "collapse_content": false }
+        },
+        "condition_info": {
+          "type": "text",
+          "settings": {
+            "text": "<div class=\"condition-info\"><strong>Condition:</strong> Thoroughly inspected, cleaned, and restored to excellent condition</div>",
+            "text_style": "body"
+          }
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -36,37 +50,37 @@
           "type": "pickup_availability",
           "settings": {}
         },
-        "accordion_size_guide": {
+        "accordion_refresh_process": {
           "type": "accordion",
           "settings": {
             "icon": "none",
-            "title": "Size Guide",
-            "content": "<p>Not sure about sizing? Check our comprehensive bedding size guide to find the perfect fit for your mattress.</p>",
+            "title": "Our Refresh Process",
+            "content": "<p>Every Refresh product goes through rigorous inspection, cleaning, and quality assurance to ensure it meets our high standards.</p>",
             "show_below_gallery": false
           }
         },
-        "accordion_materials": {
+        "accordion_warranty": {
           "type": "accordion",
           "settings": {
             "icon": "none",
-            "title": "Materials & Care",
-            "content": "<p>Premium quality materials with detailed care instructions to help your bedding last longer.</p>",
+            "title": "Warranty & Returns",
+            "content": "<p>All Refresh products come with the same return policy and quality guarantee as our new products.</p>",
             "show_below_gallery": false
           }
         },
-        "accordion_shipping": {
+        "accordion_sustainability": {
           "type": "accordion",
           "settings": {
             "icon": "none",
-            "title": "Shipping & Returns",
-            "content": "<p>Free shipping on orders over $100. Easy 30-day returns for peace of mind.</p>",
+            "title": "Environmental Impact",
+            "content": "<p>By choosing Refresh, you're helping reduce waste and extending the life of quality products.</p>",
             "show_below_gallery": false
           }
         },
         "complementary_products": {
           "type": "complementary_products",
           "settings": {
-            "title": "Complete The Set",
+            "title": "Complete Your Set",
             "products_count": 4,
             "show_below_gallery": true
           }
@@ -77,16 +91,18 @@
         "vendor",
         "title",
         "price",
+        "refresh_notice",
         "payment_terms",
         "separator",
         "description",
+        "condition_info",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
         "pickup_availability",
-        "accordion_size_guide",
-        "accordion_materials",
-        "accordion_shipping",
+        "accordion_refresh_process",
+        "accordion_warranty",
+        "accordion_sustainability",
         "complementary_products"
       ],
       "settings": {
@@ -103,39 +119,39 @@
         "max_image_zoom_level": 2
       }
     },
-    "product-benefits": {
+    "refresh-benefits": {
       "type": "multi-column",
       "blocks": {
         "benefit-1": {
           "type": "image_with_text",
           "settings": {
-            "title": "Temperature Regulating",
+            "title": "Great Value",
             "heading_tag": "h4",
-            "content": "<p>Naturally breathable materials keep you comfortable all night long.</p>"
+            "content": "<p>Get premium SIJO quality at a fraction of the original price.</p>"
           }
         },
         "benefit-2": {
           "type": "image_with_text",
           "settings": {
-            "title": "Hypoallergenic",
+            "title": "Quality Assured",
             "heading_tag": "h4",
-            "content": "<p>Resistant to dust mites and allergens for healthier sleep.</p>"
+            "content": "<p>Rigorous 15-point inspection ensures every product meets our standards.</p>"
           }
         },
         "benefit-3": {
           "type": "image_with_text",
           "settings": {
-            "title": "Easy Care",
+            "title": "Eco-Friendly",
             "heading_tag": "h4",
-            "content": "<p>Machine washable and designed to get softer with every wash.</p>"
+            "content": "<p>Reduce waste by giving quality products a second life.</p>"
           }
         },
         "benefit-4": {
           "type": "image_with_text",
           "settings": {
-            "title": "Sustainable",
+            "title": "Same Warranty",
             "heading_tag": "h4",
-            "content": "<p>Ethically sourced materials with eco-friendly production.</p>"
+            "content": "<p>Full return policy and customer support, just like new products.</p>"
           }
         }
       },
@@ -149,37 +165,79 @@
         "content_alignment": "center",
         "text_alignment": "center",
         "spacing": "lg",
-        "title": "Why Choose This Product"
+        "subheading": "SIJO Refresh",
+        "title": "Smart Shopping, Sustainable Choice"
+      }
+    },
+    "refresh-process": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Our Process" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Like New, Better Price", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Every Refresh product is carefully inspected, professionally cleaned, and restored to excellent condition before finding its new home.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Learn About Refresh",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": false,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": false,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40
       }
     },
     "related-products": {
       "type": "related-products",
       "settings": {
         "color_scheme": "scheme-1",
-        "title": "You may also like",
+        "title": "More Refresh Products",
         "products_count": 4,
         "stack_products": false,
         "show_quick_buy": true,
         "desktop_products_per_row": 4
       }
     },
-    "bundle-upsell": {
+    "new-products-upsell": {
       "type": "featured-collections",
       "blocks": {
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "bundles",
+            "collection": "new-products",
             "products_count": 3,
-            "title": "Save More with Bundles",
-            "link_url": "shopify://collections/bundles",
-            "link_text": "Shop All Bundles"
+            "title": "Or Shop New Products",
+            "link_url": "shopify://collections/all",
+            "link_text": "Shop New Items"
           }
         }
       },
       "block_order": ["collection-1"],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-1",
         "separate_section_with_border": true,
         "hide_product_information": false,
         "stack_products": false,
@@ -187,9 +245,15 @@
         "products_per_row_desktop": 3,
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
-        "subheading": "Complete Your Set & Save"
+        "subheading": "Prefer New?"
       }
     }
   },
-  "order": ["main", "product-benefits", "related-products", "bundle-upsell"]
+  "order": [
+    "main",
+    "refresh-benefits",
+    "refresh-process",
+    "related-products",
+    "new-products-upsell"
+  ]
 }

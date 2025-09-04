@@ -1,0 +1,443 @@
+{
+  "sections": {
+    "sustainability-header": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Environmental Responsibility" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Our Sustainability Commitment",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>At SIJO, sustainability isn't just a buzzword—it's woven into every fiber of what we do. From responsibly sourced materials to circular design principles, we're committed to creating products that are good for you and good for the planet.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "remove_vertical_spacing": false
+      }
+    },
+    "our-impact": {
+      "type": "multi-column",
+      "blocks": {
+        "water-savings": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Water Conservation",
+            "heading_tag": "h4",
+            "content": "<p><strong>95% less water</strong> used compared to conventional cotton production. Our eucalyptus requires minimal irrigation.</p>"
+          }
+        },
+        "carbon-footprint": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Reduced Carbon Footprint",
+            "heading_tag": "h4",
+            "content": "<p><strong>50% lower CO2 emissions</strong> through efficient production processes and sustainable forestry practices.</p>"
+          }
+        },
+        "forest-protection": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Forest Stewardship",
+            "heading_tag": "h4",
+            "content": "<p><strong>100% FSC-certified</strong> eucalyptus from responsibly managed forests that regenerate naturally.</p>"
+          }
+        },
+        "waste-reduction": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Circular Production",
+            "heading_tag": "h4",
+            "content": "<p><strong>99% solvent recovery</strong> in our closed-loop production process, minimizing waste and environmental impact.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "water-savings",
+        "carbon-footprint",
+        "forest-protection",
+        "waste-reduction"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Measurable Impact",
+        "title": "Our Environmental Footprint"
+      }
+    },
+    "eucalyptus-sustainability": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Why Eucalyptus is Sustainable",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Fast-Growing Renewable Resource:</strong> Eucalyptus trees grow 3-4 times faster than hardwood trees, reaching harvest maturity in 10-15 years compared to 25-50 years for other trees.</p><p><strong>Efficient Land Use:</strong></p><ul><li>Higher yield per acre than cotton or bamboo</li><li>Grows on marginal land not suitable for food crops</li><li>Requires no irrigation in most climates</li><li>Natural pest resistance eliminates need for pesticides</li></ul><p><strong>Regenerative Harvesting:</strong> Trees regrow from their root systems after harvest, preventing soil erosion and maintaining forest ecosystems without replanting.</p><p><strong>Biodiversity Support:</strong> Eucalyptus forests provide habitat for wildlife while producing sustainable fiber for textiles.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Learn About Materials",
+            "url": "/pages/materials",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_position": "right",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "production-process": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Manufacturing" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Closed-Loop Production", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our eucalyptus lyocell is produced using an environmentally responsible closed-loop process that sets the gold standard for sustainable textile manufacturing.</p><h3>The Process:</h3><ol><li><strong>Sustainable Sourcing:</strong> FSC-certified eucalyptus from responsibly managed forests</li><li><strong>Eco-Friendly Dissolution:</strong> Non-toxic, biodegradable solvent breaks down wood pulp</li><li><strong>Fiber Formation:</strong> Solution is spun into fine fibers using minimal energy</li><li><strong>Solvent Recovery:</strong> 99% of solvent is captured, purified, and reused</li><li><strong>Water Recycling:</strong> Production water is cleaned and recirculated</li><li><strong>Waste Minimization:</strong> Byproducts are composted or used for energy</li></ol><p><strong>Environmental Benefits:</strong></p><ul><li>No harmful chemicals released into environment</li><li>Minimal water consumption and pollution</li><li>Energy-efficient production methods</li><li>Reduced transportation emissions through regional sourcing</li></ul>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "left",
+        "remove_vertical_spacing": false
+      }
+    },
+    "certifications": {
+      "type": "multi-column",
+      "blocks": {
+        "fsc": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "FSC Certified",
+            "heading_tag": "h4",
+            "content": "<p>Forest Stewardship Council certification ensures our eucalyptus comes from responsibly managed forests.</p>"
+          }
+        },
+        "oeko-tex": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "OEKO-TEX Standard 100",
+            "heading_tag": "h4",
+            "content": "<p>Certified free from harmful substances, safe for human health and the environment.</p>"
+          }
+        },
+        "gots": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "GOTS Certified",
+            "heading_tag": "h4",
+            "content": "<p>Global Organic Textile Standard certification for environmental and social criteria.</p>"
+          }
+        },
+        "cradle": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Cradle to Cradle",
+            "heading_tag": "h4",
+            "content": "<p>Recognized for material health, renewable energy use, and circular design principles.</p>"
+          }
+        }
+      },
+      "block_order": ["fsc", "oeko-tex", "gots", "cradle"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Third-Party Verified",
+        "title": "Our Certifications"
+      }
+    },
+    "refresh-program": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "SIJO Refresh: Circular Economy in Action",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our Refresh program embodies circular design principles by giving returned and gently used products new life, reducing waste and extending product lifecycles.</p><p><strong>How It Works:</strong></p><ol><li><strong>Collection:</strong> We accept returns from our 100-night trial</li><li><strong>Assessment:</strong> Products are carefully inspected and graded</li><li><strong>Restoration:</strong> Professional cleaning and quality assurance</li><li><strong>Resale:</strong> Offered at reduced prices with full transparency</li><li><strong>Recycling:</strong> Items beyond reuse are properly recycled</li></ol><p><strong>Program Benefits:</strong></p><ul><li>Diverts textiles from landfills</li><li>Makes sustainable bedding more accessible</li><li>Reduces manufacturing demand for new products</li><li>Creates a transparent secondary market</li></ul>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Shop Refresh Collection",
+            "url": "/collections/refresh",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "image_position": "left",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "carbon-neutral": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Climate Action" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Our Path to Carbon Neutrality",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We're committed to minimizing our climate impact through comprehensive carbon reduction strategies and verified offset programs.</p><h3>Emission Reduction Strategies:</h3><ul><li><strong>Renewable Energy:</strong> Partnering with facilities powered by renewable energy sources</li><li><strong>Efficient Logistics:</strong> Optimized shipping routes and packaging to reduce transportation emissions</li><li><strong>Local Sourcing:</strong> Working with regional suppliers when possible to minimize transport</li><li><strong>Sustainable Materials:</strong> Choosing low-impact materials and production methods</li></ul><h3>Carbon Offset Initiatives:</h3><ul><li><strong>Reforestation Projects:</strong> Supporting verified tree-planting initiatives</li><li><strong>Renewable Energy:</strong> Investing in wind and solar projects</li><li><strong>Methane Capture:</strong> Supporting agricultural methane reduction programs</li><li><strong>Direct Air Capture:</strong> Funding emerging carbon removal technologies</li></ul><p><strong>Our Goal:</strong> Achieve carbon neutrality across our entire supply chain by 2030.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "packaging-sustainability": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Sustainable Packaging", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Plastic-Free Packaging:</strong> All our packaging materials are plastic-free, using recyclable and compostable alternatives.</p><p><strong>Minimal Design:</strong></p><ul><li>Right-sized packaging to reduce waste and shipping emissions</li><li>Recyclable cardboard from post-consumer content</li><li>Biodegradable packing materials instead of plastic foam</li><li>Water-based inks for printing</li></ul><p><strong>Reusable Elements:</strong> Our storage bags are designed for long-term use, giving customers practical storage solutions while reducing waste.</p><p><strong>End-of-Life Considerations:</strong> Clear recycling instructions included with every shipment to ensure proper disposal.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Packaging Guide",
+            "url": "/pages/packaging-recycling",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "image_position": "right",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "community-impact": {
+      "type": "multi-column",
+      "blocks": {
+        "fair-labor": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Fair Labor Practices",
+            "heading_tag": "h4",
+            "content": "<p>Ensuring fair wages, safe working conditions, and respect for workers throughout our supply chain.</p>"
+          }
+        },
+        "local-communities": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Community Support",
+            "heading_tag": "h4",
+            "content": "<p>Supporting local communities through education, economic development, and environmental programs.</p>"
+          }
+        },
+        "supplier-standards": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Supplier Accountability",
+            "heading_tag": "h4",
+            "content": "<p>Regular audits and partnerships ensure our suppliers meet our high environmental and social standards.</p>"
+          }
+        },
+        "transparency": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Supply Chain Transparency",
+            "heading_tag": "h4",
+            "content": "<p>Open reporting on our suppliers, processes, and impact measurements for full accountability.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "fair-labor",
+        "local-communities",
+        "supplier-standards",
+        "transparency"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Social Responsibility",
+        "title": "Beyond Environmental Impact"
+      }
+    },
+    "future-goals": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Looking Forward" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Our 2030 Sustainability Goals",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>We're setting ambitious but achievable goals to drive continuous improvement in our environmental and social impact.</p><h3>Environmental Targets:</h3><ul><li><strong>Carbon Neutral Operations:</strong> Achieve net-zero emissions across our entire supply chain</li><li><strong>100% Renewable Energy:</strong> Power all operations with renewable energy sources</li><li><strong>Zero Waste to Landfill:</strong> Eliminate landfill waste through circular design and recycling</li><li><strong>Water Positive:</strong> Give back more clean water than we use through conservation projects</li></ul><h3>Social Impact Goals:</h3><ul><li><strong>Supply Chain Transparency:</strong> Full traceability and public reporting on all suppliers</li><li><strong>Fair Trade Certification:</strong> Achieve fair trade certification for all material suppliers</li><li><strong>Community Investment:</strong> Invest 2% of profits in community development programs</li><li><strong>Employee Ownership:</strong> Expand employee ownership and profit-sharing programs</li></ul><p><strong>Progress Tracking:</strong> We publish annual sustainability reports with third-party verification of our progress toward these goals.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "sustainability-cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Join Our Sustainability Journey",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Every purchase supports our mission to create beautiful, comfortable products while protecting the planet for future generations. Experience the difference sustainable luxury makes.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Shop Sustainable Bedding",
+            "url": "/collections/all",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "sustainability-header",
+    "main",
+    "our-impact",
+    "eucalyptus-sustainability",
+    "production-process",
+    "certifications",
+    "refresh-program",
+    "carbon-neutral",
+    "packaging-sustainability",
+    "community-impact",
+    "future-goals",
+    "sustainability-cta"
+  ]
+}

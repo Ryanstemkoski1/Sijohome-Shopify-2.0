@@ -1,0 +1,105 @@
+{%- comment -%}
+  SIJO Brand Utilities
+  
+  Common utilities and brand-specific functions used throughout the theme.
+{%- endcomment -%}
+
+{%- liquid
+  comment "SERVICE HIGHLIGHTS - Standardized across all product templates"
+  assign sijo_service_highlights = ''
+  assign sijo_service_highlights = sijo_service_highlights | append: 'Free shipping on orders $75+|'
+  assign sijo_service_highlights = sijo_service_highlights | append: '30-day risk-free trial|'
+  assign sijo_service_highlights = sijo_service_highlights | append: 'Temperature regulating|'
+  assign sijo_service_highlights = sijo_service_highlights | append: 'Hypoallergenic & sustainable'
+  assign sijo_service_highlights = sijo_service_highlights | split: '|'
+  
+  comment "MATERIAL BENEFITS - Key selling points for each material type"
+  assign sijo_eucalyptus_benefits = 'Cooling,Moisture-wicking,Softer than silk,Hypoallergenic,Sustainable' | split: ','
+  assign sijo_linen_benefits = 'Breathable,Luxurious feel,Gets softer over time,Naturally antimicrobial,Eco-friendly' | split: ','
+  assign sijo_cotton_benefits = 'Classic comfort,Easy care,Durable,Familiar feel,All-season' | split: ','
+  assign sijo_bamboo_benefits = 'Ultra-soft,Temperature regulating,Odor resistant,Antibacterial,Renewable' | split: ','
+  
+  comment "PRODUCT CATEGORIES - For navigation and filtering"
+  assign sijo_bedding_categories = 'sheets,comforters,pillows,mattress-protectors' | split: ','
+  assign sijo_material_categories = 'eucalyptus,linen,cotton,bamboo' | split: ','
+  assign sijo_collection_categories = 'best-sellers,bundles,refresh,loungewear' | split: ','
+  
+  comment "SIZING INFORMATION - Standardized size guide data"
+  assign sijo_sheet_sizes = 'Twin,Twin XL,Full,Queen,King,Cal King' | split: ','
+  assign sijo_pillow_sizes = 'Standard,Queen,King' | split: ','
+  
+  comment "CARE INSTRUCTIONS - Standard care for different materials"
+  assign sijo_eucalyptus_care = 'Machine wash cold,Tumble dry low,No fabric softener,Iron if needed' | split: ','
+  assign sijo_linen_care = 'Machine wash cold,Tumble dry low or air dry,Embrace natural wrinkles,Steam to refresh' | split: ','
+  assign sijo_cotton_care = 'Machine wash warm,Tumble dry medium,Use fabric softener sparingly,Iron as needed' | split: ','
+  
+  comment "SUSTAINABILITY MESSAGING"
+  assign sijo_sustainability_message = 'Every SIJO product is made with sustainably sourced materials and manufactured using eco-friendly processes. We believe in creating products that are good for you and good for the planet.'
+  
+  comment "BRAND TAGLINES"
+  assign sijo_primary_tagline = 'Better Sleep. Better World.'
+  assign sijo_secondary_tagline = 'Temperature regulating bedding for optimal comfort'
+-%}
+
+{%- comment -%}OUTPUT FUNCTIONS{%- endcomment -%}
+
+{%- if include_service_highlights -%}
+  <div class="sijo-service-highlights">
+    {%- for highlight in sijo_service_highlights -%}
+      <div class="service-highlight">
+        <span>{{ highlight }}</span>
+      </div>
+    {%- endfor -%}
+  </div>
+{%- endif -%}
+
+{%- if include_material_benefits and material_type -%}
+  {%- case material_type -%}
+    {%- when 'eucalyptus' -%}
+      {%- assign benefits = sijo_eucalyptus_benefits -%}
+    {%- when 'linen' -%}
+      {%- assign benefits = sijo_linen_benefits -%}
+    {%- when 'cotton' -%}
+      {%- assign benefits = sijo_cotton_benefits -%}
+    {%- when 'bamboo' -%}
+      {%- assign benefits = sijo_bamboo_benefits -%}
+  {%- endcase -%}
+  
+  {%- if benefits -%}
+    <div class="sijo-material-benefits">
+      {%- for benefit in benefits -%}
+        <div class="material-benefit">
+          <span>{{ benefit }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if include_care_instructions and material_type -%}
+  {%- case material_type -%}
+    {%- when 'eucalyptus' -%}
+      {%- assign care_steps = sijo_eucalyptus_care -%}
+    {%- when 'linen' -%}
+      {%- assign care_steps = sijo_linen_care -%}
+    {%- when 'cotton' -%}
+      {%- assign care_steps = sijo_cotton_care -%}
+  {%- endcase -%}
+  
+  {%- if care_steps -%}
+    <div class="sijo-care-instructions">
+      <h4>Care Instructions</h4>
+      <ul>
+        {%- for step in care_steps -%}
+          <li>{{ step }}</li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  {%- endif -%}
+{%- endif -%}
+
+{%- if include_sustainability_message -%}
+  <div class="sijo-sustainability-message">
+    <p>{{ sijo_sustainability_message }}</p>
+  </div>
+{%- endif -%}

@@ -1,0 +1,237 @@
+{
+  "sections": {
+    "material-hero": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Eucalyptus Collection" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Cool, Soft, Sustainable", "heading_tag": "h1" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Experience the perfect balance of cooling comfort and silky softness with our eucalyptus bedding collection. Naturally temperature regulating and incredibly gentle on skin.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Shop Eucalyptus",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": true,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": false,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40
+      }
+    },
+    "eucalyptus-benefits": {
+      "type": "multi-column",
+      "blocks": {
+        "benefit-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Temperature Regulating",
+            "heading_tag": "h4",
+            "content": "<p>Natural cooling properties keep you comfortable all night.</p>"
+          }
+        },
+        "benefit-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Moisture Wicking",
+            "heading_tag": "h4",
+            "content": "<p>Advanced breathability for dry, comfortable sleep.</p>"
+          }
+        },
+        "benefit-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Hypoallergenic",
+            "heading_tag": "h4",
+            "content": "<p>Safe for sensitive skin and allergy sufferers.</p>"
+          }
+        },
+        "benefit-4": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Eco-Friendly",
+            "heading_tag": "h4",
+            "content": "<p>Sustainably sourced from renewable eucalyptus trees.</p>"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Why Eucalyptus?",
+        "title": "Nature's Perfect Sleep Fiber"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_filters": true,
+        "filter_layout": "drawer",
+        "enable_sorting": true,
+        "show_sort_by": true,
+        "show_filters_count": true,
+        "show_grid_mode_selector": true,
+        "products_size_desktop": "medium",
+        "products_per_row_mobile": "2",
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1
+      }
+    },
+    "material-education": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "The Science of Eucalyptus",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our eucalyptus fiber is derived from sustainably sourced eucalyptus trees using a closed-loop process that recycles 99% of water and solvents. The result is a fabric that's:</p><ul><li><strong>50% more breathable</strong> than cotton</li><li><strong>Naturally antimicrobial</strong> and odor-resistant</li><li><strong>Softer than silk</strong> with a luxurious drape</li><li><strong>Gentle on skin</strong> and ideal for sensitive sleepers</li></ul><p>Experience the difference that sustainable innovation can make in your sleep quality.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Learn More About Our Materials",
+            "url": "",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "image_position": "left",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "complete-sets": {
+      "type": "featured-collections",
+      "blocks": {
+        "sheet-sets": {
+          "type": "collection",
+          "settings": {
+            "collection": "eucalyptus-sheets",
+            "products_count": 2,
+            "title": "Sheet Sets",
+            "link_url": "shopify://collections/eucalyptus-sheets",
+            "link_text": "Shop Sheets"
+          }
+        },
+        "comforters": {
+          "type": "collection",
+          "settings": {
+            "collection": "eucalyptus-comforters",
+            "products_count": 2,
+            "title": "Comforters",
+            "link_url": "shopify://collections/eucalyptus-comforters",
+            "link_text": "Shop Comforters"
+          }
+        },
+        "pillows": {
+          "type": "collection",
+          "settings": {
+            "collection": "eucalyptus-pillows",
+            "products_count": 2,
+            "title": "Pillows",
+            "link_url": "shopify://collections/eucalyptus-pillows",
+            "link_text": "Shop Pillows"
+          }
+        }
+      },
+      "block_order": ["sheet-sets", "comforters", "pillows"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 2,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "Complete Your Set",
+        "title": "Build Your Perfect Sleep System"
+      }
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"I was skeptical about eucalyptus sheets, but they're incredibly soft and keep me cool all night. Game changer!\"</p>",
+            "author": "Amanda K.",
+            "title": "Verified Customer"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"The quality is outstanding and I love that they're sustainable. My skin feels so much better too.\"</p>",
+            "author": "David M.",
+            "title": "Verified Customer"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"Best purchase I've made this year. The cooling effect is real and they wash beautifully.\"</p>",
+            "author": "Lisa R.",
+            "title": "Verified Customer"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2", "testimonial-3"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true
+      }
+    }
+  },
+  "order": [
+    "material-hero",
+    "eucalyptus-benefits",
+    "main",
+    "material-education",
+    "complete-sets",
+    "testimonials"
+  ]
+}

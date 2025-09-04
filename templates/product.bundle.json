@@ -10,6 +10,13 @@
           "type": "price",
           "settings": { "show_taxes_notice": false }
         },
+        "bundle_info": {
+          "type": "text",
+          "settings": {
+            "text": "<div class=\"bundle-savings\"><strong>Bundle & Save:</strong> Get everything you need for the perfect sleep setup</div>",
+            "text_style": "body"
+          }
+        },
         "payment_terms": { "type": "payment_terms", "settings": {} },
         "separator": { "type": "separator", "settings": {} },
         "description": {
@@ -36,12 +43,21 @@
           "type": "pickup_availability",
           "settings": {}
         },
-        "accordion_size_guide": {
+        "accordion_features": {
           "type": "accordion",
           "settings": {
             "icon": "none",
-            "title": "Size Guide",
-            "content": "<p>Not sure about sizing? Check our comprehensive bedding size guide to find the perfect fit for your mattress.</p>",
+            "title": "What's Included",
+            "content": "<ul><li>Duvet Cover</li><li>Fitted Sheet</li><li>Flat Sheet</li><li>Pillowcases (2)</li></ul>",
+            "show_below_gallery": false
+          }
+        },
+        "accordion_care": {
+          "type": "accordion",
+          "settings": {
+            "icon": "none",
+            "title": "Care Instructions",
+            "content": "<p>Machine wash cold with like colors. Tumble dry low. Do not bleach. Iron on low heat if needed.</p>",
             "show_below_gallery": false
           }
         },
@@ -49,24 +65,15 @@
           "type": "accordion",
           "settings": {
             "icon": "none",
-            "title": "Materials & Care",
-            "content": "<p>Premium quality materials with detailed care instructions to help your bedding last longer.</p>",
-            "show_below_gallery": false
-          }
-        },
-        "accordion_shipping": {
-          "type": "accordion",
-          "settings": {
-            "icon": "none",
-            "title": "Shipping & Returns",
-            "content": "<p>Free shipping on orders over $100. Easy 30-day returns for peace of mind.</p>",
+            "title": "Materials & Certifications",
+            "content": "<p>Made from premium materials with OEKO-TEX certification. Hypoallergenic and temperature regulating.</p>",
             "show_below_gallery": false
           }
         },
         "complementary_products": {
           "type": "complementary_products",
           "settings": {
-            "title": "Complete The Set",
+            "title": "Complete Your Sleep Setup",
             "products_count": 4,
             "show_below_gallery": true
           }
@@ -77,6 +84,7 @@
         "vendor",
         "title",
         "price",
+        "bundle_info",
         "payment_terms",
         "separator",
         "description",
@@ -84,9 +92,9 @@
         "quantity_selector",
         "buy_buttons",
         "pickup_availability",
-        "accordion_size_guide",
+        "accordion_features",
+        "accordion_care",
         "accordion_materials",
-        "accordion_shipping",
         "complementary_products"
       ],
       "settings": {
@@ -103,55 +111,6 @@
         "max_image_zoom_level": 2
       }
     },
-    "product-benefits": {
-      "type": "multi-column",
-      "blocks": {
-        "benefit-1": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Temperature Regulating",
-            "heading_tag": "h4",
-            "content": "<p>Naturally breathable materials keep you comfortable all night long.</p>"
-          }
-        },
-        "benefit-2": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Hypoallergenic",
-            "heading_tag": "h4",
-            "content": "<p>Resistant to dust mites and allergens for healthier sleep.</p>"
-          }
-        },
-        "benefit-3": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Easy Care",
-            "heading_tag": "h4",
-            "content": "<p>Machine washable and designed to get softer with every wash.</p>"
-          }
-        },
-        "benefit-4": {
-          "type": "image_with_text",
-          "settings": {
-            "title": "Sustainable",
-            "heading_tag": "h4",
-            "content": "<p>Ethically sourced materials with eco-friendly production.</p>"
-          }
-        }
-      },
-      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
-      "settings": {
-        "color_scheme": "scheme-2",
-        "separate_section_with_border": true,
-        "columns_per_row": 4,
-        "stack_on_mobile": true,
-        "overlap_image": false,
-        "content_alignment": "center",
-        "text_alignment": "center",
-        "spacing": "lg",
-        "title": "Why Choose This Product"
-      }
-    },
     "related-products": {
       "type": "related-products",
       "settings": {
@@ -163,33 +122,33 @@
         "desktop_products_per_row": 4
       }
     },
-    "bundle-upsell": {
+    "cross-sell": {
       "type": "featured-collections",
       "blocks": {
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": "bundles",
-            "products_count": 3,
-            "title": "Save More with Bundles",
-            "link_url": "shopify://collections/bundles",
-            "link_text": "Shop All Bundles"
+            "collection": "add-ons",
+            "products_count": 4,
+            "title": "Perfect Add-Ons",
+            "link_url": "shopify://collections/add-ons",
+            "link_text": "Shop All Add-Ons"
           }
         }
       },
       "block_order": ["collection-1"],
       "settings": {
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-2",
         "separate_section_with_border": true,
         "hide_product_information": false,
         "stack_products": false,
-        "products_per_row_mobile": "1",
-        "products_per_row_desktop": 3,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
-        "subheading": "Complete Your Set & Save"
+        "subheading": "Complete Your Set"
       }
     }
   },
-  "order": ["main", "product-benefits", "related-products", "bundle-upsell"]
+  "order": ["main", "related-products", "cross-sell"]
 }

@@ -1,0 +1,91 @@
+{%- comment -%}
+  SIJO Header Mega Menu Configuration
+  
+  This snippet defines the mega menu structure for SIJO's main navigation.
+  Include this in header.liquid to configure mega menus for different menu items.
+{%- endcomment -%}
+
+{%- if section.blocks.size > 0 -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'mega_menu' -%}
+      {%- assign menu_item_downcase = block.settings.menu_item | strip | downcase -%}
+      
+      {%- case menu_item_downcase -%}
+        {%- when 'shop' or 'products' -%}
+          {%- comment -%}Main products mega menu{%- endcomment -%}
+          <div class="mega-menu__categories">
+            <div class="mega-menu__category">
+              <h4>Bedding</h4>
+              <ul>
+                <li><a href="/collections/sheets">Sheet Sets</a></li>
+                <li><a href="/collections/comforters">Comforters</a></li>
+                <li><a href="/collections/pillows">Pillows</a></li>
+                <li><a href="/collections/mattress-protectors">Mattress Protectors</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__category">
+              <h4>Materials</h4>
+              <ul>
+                <li><a href="/collections/eucalyptus">Eucalyptus</a></li>
+                <li><a href="/collections/linen">Linen</a></li>
+                <li><a href="/collections/cotton">Cotton</a></li>
+                <li><a href="/collections/bamboo">Bamboo</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__category">
+              <h4>Collections</h4>
+              <ul>
+                <li><a href="/collections/best-sellers">Best Sellers</a></li>
+                <li><a href="/collections/bundle">Bundles</a></li>
+                <li><a href="/collections/refresh">SIJO Refresh</a></li>
+                <li><a href="/collections/loungewear">Loungewear</a></li>
+              </ul>
+            </div>
+          </div>
+          
+        {%- when 'materials' -%}
+          {%- comment -%}Materials-focused mega menu{%- endcomment -%}
+          <div class="mega-menu__materials">
+            <div class="mega-menu__material">
+              <h4>Eucalyptus</h4>
+              <p>Cool, soft, and sustainable</p>
+              <a href="/collections/eucalyptus">Shop Eucalyptus →</a>
+            </div>
+            <div class="mega-menu__material">
+              <h4>Linen</h4>
+              <p>Breathable luxury bedding</p>
+              <a href="/collections/linen">Shop Linen →</a>
+            </div>
+            <div class="mega-menu__material">
+              <h4>Cotton</h4>
+              <p>Classic comfort reimagined</p>
+              <a href="/collections/cotton">Shop Cotton →</a>
+            </div>
+          </div>
+          
+        {%- when 'bundles' -%}
+          {%- comment -%}Bundle-focused mega menu{%- endcomment -%}
+          <div class="mega-menu__bundles">
+            <div class="mega-menu__bundle-type">
+              <h4>Complete Sets</h4>
+              <ul>
+                <li><a href="/collections/bundle-essentials">Essential Bundles</a></li>
+                <li><a href="/collections/bundle-luxury">Luxury Bundles</a></li>
+                <li><a href="/collections/bundle-complete">Complete Room Sets</a></li>
+              </ul>
+            </div>
+            <div class="mega-menu__bundle-benefits">
+              <h4>Bundle Benefits</h4>
+              <ul>
+                <li>✓ Automatic savings up to 15%</li>
+                <li>✓ Perfectly coordinated pieces</li>
+                <li>✓ Free shipping included</li>
+                <li>✓ Gift-ready packaging</li>
+              </ul>
+            </div>
+          </div>
+          
+      {%- endcase -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endif -%}

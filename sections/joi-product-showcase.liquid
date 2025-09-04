@@ -1,0 +1,462 @@
+{%- if section.blocks.size > 0 -%}
+  {%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+  <div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+    <div class="container">
+      <div class="section-stack">
+        {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.heading, content: section.settings.content, text_alignment: 'center' -%}
+
+        <div class="joi-product-showcase">
+          <div class="joi-product-showcase__grid">
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'product_highlight' -%}
+                  {%- liquid
+                    assign product = all_products[block.settings.product_handle] | default: block.settings.product
+                    assign custom_image = block.settings.custom_image
+                  -%}
+                  {%- assign use_custom_image = false -%}
+                  {%- if custom_image != blank -%}
+                    {%- assign use_custom_image = true -%}
+                  {%- endif -%}
+                  
+                  {%- if product != blank -%}
+                    <div class="joi-product-highlight" {{ block.shopify_attributes }}>
+                      <div class="joi-product-highlight__media">
+                        {%- if use_custom_image -%}
+                          <img src="{{ custom_image | image_url: width: 600 }}"
+                               alt="{{ custom_image.alt | default: product.title | escape }}"
+                               width="600" height="600" loading="lazy"
+                               class="joi-product-highlight__image">
+                        {%- elsif product.featured_media -%}
+                          <img src="{{ product.featured_media | image_url: width: 600 }}"
+                               alt="{{ product.featured_media.alt | default: product.title | escape }}"
+                               width="600" height="600" loading="lazy"
+                               class="joi-product-highlight__image">
+                        {%- endif -%}
+                        
+                        {%- if block.settings.show_badge and block.settings.badge_text != blank -%}
+                          <div class="joi-product-highlight__badge">
+                            {{ block.settings.badge_text }}
+                          </div>
+                        {%- endif -%}
+                      </div>
+
+                      <div class="joi-product-highlight__content">
+                        {%- if block.settings.custom_title != blank -%}
+                          <h3 class="joi-product-highlight__title">{{ block.settings.custom_title }}</h3>
+                        {%- else -%}
+                          <h3 class="joi-product-highlight__title">{{ product.title }}</h3>
+                        {%- endif -%}
+
+                        {%- if block.settings.description != blank -%}
+                          <div class="joi-product-highlight__description rte">
+                            {{ block.settings.description }}
+                          </div>
+                        {%- elsif product.description != blank -%}
+                          <div class="joi-product-highlight__description rte">
+                            {{ product.description | truncate: 150 }}
+                          </div>
+                        {%- endif -%}
+
+                        {%- if block.settings.show_features and block.settings.feature_1 != blank -%}
+                          <ul class="joi-product-highlight__features">
+                            {%- if block.settings.feature_1 != blank -%}
+                              <li class="joi-product-highlight__feature">
+                                <span class="joi-product-highlight__feature-icon">✓</span>
+                                {{ block.settings.feature_1 }}
+                              </li>
+                            {%- endif -%}
+                            {%- if block.settings.feature_2 != blank -%}
+                              <li class="joi-product-highlight__feature">
+                                <span class="joi-product-highlight__feature-icon">✓</span>
+                                {{ block.settings.feature_2 }}
+                              </li>
+                            {%- endif -%}
+                            {%- if block.settings.feature_3 != blank -%}
+                              <li class="joi-product-highlight__feature">
+                                <span class="joi-product-highlight__feature-icon">✓</span>
+                                {{ block.settings.feature_3 }}
+                              </li>
+                            {%- endif -%}
+                          </ul>
+                        {%- endif -%}
+
+                        <div class="joi-product-highlight__actions">
+                          <div class="joi-product-highlight__price">
+                            {%- if product.compare_at_price > product.price -%}
+                              <span class="joi-product-highlight__compare-price">{{ product.compare_at_price | money }}</span>
+                            {%- endif -%}
+                            <span class="joi-product-highlight__current-price">{{ product.price | money }}</span>
+                          </div>
+
+                          <a href="{{ product.url }}" class="button button--primary joi-product-highlight__button">
+                            {{ block.settings.button_text | default: 'Shop Now' }}
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  {%- endif -%}
+              {%- endcase -%}
+            {%- endfor -%}
+          </div>
+
+          {%- if section.settings.show_collection_link and section.settings.collection_link_text != blank -%}
+            <div class="joi-product-showcase__cta">
+              <a href="{{ section.settings.collection_link_url | default: '/collections/joi' }}" 
+                 class="button button--secondary joi-product-showcase__collection-button">
+                {{ section.settings.collection_link_text }}
+              </a>
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .joi-product-showcase__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .joi-product-showcase__grid {
+        grid-template-columns: repeat({{ section.blocks.size | at_most: 3 }}, 1fr);
+      }
+    }
+
+    .joi-product-highlight {
+      background: rgb(var(--color-background));
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .joi-product-highlight:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+    }
+
+    .joi-product-highlight__media {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+    }
+
+    .joi-product-highlight__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease;
+    }
+
+    .joi-product-highlight:hover .joi-product-highlight__image {
+      transform: scale(1.05);
+    }
+
+    .joi-product-highlight__badge {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: #ff6b6b;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .joi-product-highlight__content {
+      padding: 1.5rem;
+    }
+
+    .joi-product-highlight__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0 0 0.75rem 0;
+      color: rgb(var(--color-foreground));
+      line-height: 1.3;
+    }
+
+    .joi-product-highlight__description {
+      font-size: 0.875rem;
+      color: rgb(var(--color-foreground) / 0.7);
+      margin: 0 0 1rem 0;
+      line-height: 1.5;
+    }
+
+    .joi-product-highlight__features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .joi-product-highlight__feature {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+      font-size: 0.875rem;
+      color: rgb(var(--color-foreground));
+    }
+
+    .joi-product-highlight__feature-icon {
+      color: #16a34a;
+      font-weight: 700;
+      font-size: 0.75rem;
+    }
+
+    .joi-product-highlight__actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .joi-product-highlight__price {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .joi-product-highlight__compare-price {
+      font-size: 0.875rem;
+      color: rgb(var(--color-foreground) / 0.6);
+      text-decoration: line-through;
+      margin-bottom: 0.25rem;
+    }
+
+    .joi-product-highlight__current-price {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: rgb(var(--color-foreground));
+    }
+
+    .joi-product-highlight__button {
+      flex-shrink: 0;
+    }
+
+    .joi-product-showcase__cta {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .joi-product-showcase__collection-button {
+      background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+      color: white;
+      border: none;
+    }
+
+    .joi-product-showcase__collection-button:hover {
+      background: linear-gradient(135deg, #ff5252, #ff6b6b);
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+      .joi-product-showcase__grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .joi-product-highlight__actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+      }
+
+      .joi-product-highlight__price {
+        align-items: center;
+        text-align: center;
+      }
+
+      .joi-product-highlight__button {
+        width: 100%;
+      }
+    }
+  </style>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "JOI Product Showcase",
+  "class": "shopify-section--joi-showcase",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "t:global.text.subheading",
+      "default": "JOI by SIJO"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "t:global.text.heading",
+      "default": "Premium Bedding for Growing Kids"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "t:global.text.content",
+      "default": "<p>Soft, healthy materials and bedtime-friendly designs that grow with your child.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Collection Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_link",
+      "label": "Show Collection Link",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "collection_link_text",
+      "label": "Collection Link Text",
+      "default": "Shop All JOI Products"
+    },
+    {
+      "type": "url",
+      "id": "collection_link_url",
+      "label": "Collection Link URL",
+      "default": "/collections/joi"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_highlight",
+      "name": "Product Highlight",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Product"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "text",
+          "id": "product_handle",
+          "label": "Product Handle",
+          "info": "Alternative way to specify product"
+        },
+        {
+          "type": "image_picker",
+          "id": "custom_image",
+          "label": "Custom Image",
+          "info": "Override product featured image"
+        },
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "id": "custom_title",
+          "label": "Custom Title",
+          "info": "Override product title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description",
+          "info": "Override product description"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "header",
+          "content": "Badge"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_badge",
+          "label": "Show Badge",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "Badge Text",
+          "default": "New"
+        },
+        {
+          "type": "header",
+          "content": "Features"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_features",
+          "label": "Show Features",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "feature_1",
+          "label": "Feature 1",
+          "default": "Organic cotton blend"
+        },
+        {
+          "type": "text",
+          "id": "feature_2",
+          "label": "Feature 2",
+          "default": "Hypoallergenic & breathable"
+        },
+        {
+          "type": "text",
+          "id": "feature_3",
+          "label": "Feature 3",
+          "default": "Machine washable"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "JOI Product Showcase",
+      "blocks": [
+        {
+          "type": "product_highlight"
+        },
+        {
+          "type": "product_highlight"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

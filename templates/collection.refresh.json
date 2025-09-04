@@ -1,0 +1,223 @@
+{
+  "sections": {
+    "refresh-hero": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "SIJO Refresh" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Quality Pre-Loved Products",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Discover premium bedding at great prices. Every Refresh product is restored to like-new condition through our rigorous 15-point inspection process.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Shop Refresh Collection",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": true,
+        "reveal_on_scroll": true,
+        "remove_vertical_spacing": false,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 40
+      }
+    },
+    "refresh-benefits": {
+      "type": "multi-column",
+      "blocks": {
+        "benefit-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Up to 40% Off",
+            "heading_tag": "h4",
+            "content": "<p>Premium quality at fraction of retail price.</p>"
+          }
+        },
+        "benefit-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "15-Point Inspection",
+            "heading_tag": "h4",
+            "content": "<p>Rigorous quality control ensures excellence.</p>"
+          }
+        },
+        "benefit-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Like-New Condition",
+            "heading_tag": "h4",
+            "content": "<p>Professionally cleaned and restored.</p>"
+          }
+        },
+        "benefit-4": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Same Warranty",
+            "heading_tag": "h4",
+            "content": "<p>Full return policy and customer support.</p>"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Smart Shopping",
+        "title": "Why Choose Refresh?"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_filters": true,
+        "filter_layout": "drawer",
+        "enable_sorting": true,
+        "show_sort_by": true,
+        "show_filters_count": true,
+        "show_grid_mode_selector": true,
+        "products_size_desktop": "medium",
+        "products_per_row_mobile": "2",
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1
+      }
+    },
+    "refresh-process": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Our Refresh Process", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Every product in our Refresh collection goes through a comprehensive restoration process:</p><ul><li><strong>Initial Inspection:</strong> Detailed quality assessment</li><li><strong>Professional Cleaning:</strong> Deep sanitization and care</li><li><strong>Quality Control:</strong> 15-point checklist verification</li><li><strong>Final Approval:</strong> Meets our strict standards</li></ul><p>We only offer products that we'd be happy to use in our own homes.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Learn More About Refresh",
+            "url": "",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "image_position": "right",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "sustainability-message": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Environmental Impact" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Choose Refresh, Choose Sustainability",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>By choosing Refresh products, you're helping extend the life of quality items and reducing waste. Every purchase supports our commitment to sustainability while giving you access to premium bedding at exceptional value.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "new-vs-refresh": {
+      "type": "featured-collections",
+      "blocks": {
+        "refresh": {
+          "type": "collection",
+          "settings": {
+            "collection": "refresh",
+            "products_count": 3,
+            "title": "Refresh Products",
+            "link_url": "shopify://collections/refresh",
+            "link_text": "Shop Refresh"
+          }
+        },
+        "new": {
+          "type": "collection",
+          "settings": {
+            "collection": "new-products",
+            "products_count": 3,
+            "title": "New Products",
+            "link_url": "shopify://collections/all",
+            "link_text": "Shop New"
+          }
+        }
+      },
+      "block_order": ["refresh", "new"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "1",
+        "products_per_row_desktop": 3,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "Compare Options",
+        "title": "Refresh vs. New"
+      }
+    }
+  },
+  "order": [
+    "refresh-hero",
+    "refresh-benefits",
+    "main",
+    "refresh-process",
+    "sustainability-message",
+    "new-vs-refresh"
+  ]
+}

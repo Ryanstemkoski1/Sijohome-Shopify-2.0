@@ -1,0 +1,333 @@
+{
+  "sections": {
+    "care-header": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Product Care" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Care Instructions", "heading_tag": "h1" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Keep your SIJO bedding looking and feeling its best with our comprehensive care guide. Our eucalyptus-based products are designed for easy maintenance and lasting comfort.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "remove_vertical_spacing": false
+      }
+    },
+    "washing-basics": {
+      "type": "multi-column",
+      "blocks": {
+        "temperature": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Cold Water Wash",
+            "heading_tag": "h4",
+            "content": "<p>Always use cold water (30°C/86°F or below) to preserve fiber integrity and prevent shrinkage.</p>"
+          }
+        },
+        "detergent": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Gentle Detergent",
+            "heading_tag": "h4",
+            "content": "<p>Use mild, eco-friendly detergent. Avoid bleach, fabric softener, or harsh chemicals.</p>"
+          }
+        },
+        "cycle": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Gentle Cycle",
+            "heading_tag": "h4",
+            "content": "<p>Select gentle or delicate cycle to protect the natural fibers and maintain softness.</p>"
+          }
+        },
+        "load": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Proper Loading",
+            "heading_tag": "h4",
+            "content": "<p>Wash similar colors together and don't overload the machine for best results.</p>"
+          }
+        }
+      },
+      "block_order": ["temperature", "detergent", "cycle", "load"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Washing Essentials",
+        "title": "Basic Washing Guidelines"
+      }
+    },
+    "drying-guide": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Drying Your Bedding", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Tumble Dry Low:</strong> Use low heat setting to prevent shrinkage and maintain fabric integrity. High heat can damage eucalyptus fibers.</p><p><strong>Remove Promptly:</strong> Take items out as soon as they're dry to prevent wrinkles and over-drying.</p><p><strong>Air Drying Option:</strong> For best longevity, air dry when possible. Hang or lay flat in a well-ventilated area away from direct sunlight.</p><p><strong>Dryer Balls:</strong> Use wool dryer balls to reduce static and drying time naturally.</p><p><strong>Avoid:</strong> High heat, over-drying, and dryer sheets which can coat fibers and reduce absorbency.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Shop Dryer Balls",
+            "url": "/collections/accessories",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "image_position": "right",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "product-specific": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Product-Specific Care" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Care by Product Type", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<h3>Sheet Sets & Pillowcases</h3><ul><li>Wash before first use to enhance softness</li><li>Separate light and dark colors for first few washes</li><li>Turn pillowcases inside out to protect the surface</li><li>Iron on low heat if desired, while slightly damp</li></ul><h3>Comforters & Duvets</h3><ul><li>Use large capacity washer or visit laundromat</li><li>Add tennis balls or dryer balls to maintain loft</li><li>May require longer drying time - check thoroughly</li><li>Fluff regularly to redistribute filling</li></ul><h3>Loungewear</h3><ul><li>Turn garments inside out before washing</li><li>Wash similar weights together</li><li>Hang or lay flat to dry when possible</li><li>Steam or iron on low if needed</li></ul>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "left",
+        "remove_vertical_spacing": false
+      }
+    },
+    "stain-removal": {
+      "type": "multi-column",
+      "blocks": {
+        "food-stains": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Food & Drink Stains",
+            "heading_tag": "h4",
+            "content": "<p>Blot immediately, rinse with cold water, pre-treat with gentle stain remover before washing.</p>"
+          }
+        },
+        "body-stains": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Body Oil & Sweat",
+            "heading_tag": "h4",
+            "content": "<p>Pre-treat with enzyme detergent, wash in cold water with extra rinse cycle.</p>"
+          }
+        },
+        "makeup": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Makeup & Cosmetics",
+            "heading_tag": "h4",
+            "content": "<p>Use makeup remover or gentle dish soap, work from outside in, rinse thoroughly.</p>"
+          }
+        },
+        "general": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "General Stains",
+            "heading_tag": "h4",
+            "content": "<p>Act quickly, test cleaning method on hidden area first, avoid harsh scrubbing.</p>"
+          }
+        }
+      },
+      "block_order": ["food-stains", "body-stains", "makeup", "general"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Stain Treatment",
+        "title": "Removing Common Stains"
+      }
+    },
+    "storage-tips": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Storage & Maintenance", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p><strong>Proper Storage:</strong></p><ul><li>Store in cool, dry place with good air circulation</li><li>Use breathable cotton storage bags, avoid plastic</li><li>Add cedar blocks or lavender sachets for freshness</li><li>Rotate bedding sets to ensure even use</li></ul><p><strong>Seasonal Care:</strong></p><ul><li>Wash before storing for extended periods</li><li>Check stored items periodically for any issues</li><li>Refresh stored bedding with a quick tumble in dryer</li><li>Wash again before returning to regular use</li></ul><p><strong>Daily Maintenance:</strong></p><ul><li>Make bed daily to allow moisture to evaporate</li><li>Flip pillows and rotate regularly for even wear</li><li>Air out bedding weekly by pulling back covers</li><li>Wash pillows every 3-6 months</li></ul>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "outline",
+            "text": "Shop Storage Solutions",
+            "url": "/collections/accessories",
+            "background": "",
+            "text_color": ""
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "image_position": "left",
+        "content_width": "sm",
+        "remove_vertical_spacing": false
+      }
+    },
+    "dos-donts": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Care Guidelines" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Do's and Don'ts", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<div style=\"display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;\"><div><h3 style=\"color: #28a745;\">✓ DO</h3><ul><li>Wash before first use</li><li>Use cold water always</li><li>Choose gentle cycles</li><li>Remove promptly from dryer</li><li>Follow care label instructions</li><li>Pre-treat stains immediately</li><li>Use eco-friendly detergents</li><li>Air dry when possible</li></ul></div><div><h3 style=\"color: #dc3545;\">✗ DON'T</h3><ul><li>Use hot water or high heat</li><li>Add fabric softener or bleach</li><li>Overload washing machine</li><li>Iron on high heat</li><li>Dry clean (unless specified)</li><li>Store in plastic bags</li><li>Ignore stains or spills</li><li>Over-dry in machine</li></ul></div></div>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "warranty-care": {
+      "type": "rich-text",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": { "text": "Warranty Protection" }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Maintaining Your Warranty",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Following proper care instructions helps maintain your product warranty and ensures you get the most from your SIJO bedding investment.</p><p><strong>Warranty Coverage:</strong></p><ul><li>Manufacturing defects are covered under our warranty</li><li>Proper care maintains warranty validity</li><li>Keep care instructions and purchase receipts</li><li>Contact us immediately if you notice any defects</li></ul><p><strong>What Voids Warranty:</strong></p><ul><li>Damage from improper care or cleaning</li><li>Use of harsh chemicals or bleach</li><li>Excessive heat damage</li><li>Normal wear and tear over time</li></ul>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "md",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "care-cta": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": { "text": "Questions About Care?", "heading_tag": "h2" }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Our customer care team is here to help with any specific care questions or concerns about your SIJO products.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "style": "solid",
+            "text": "Contact Support",
+            "url": "/pages/contact",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "content_width": "sm",
+        "text_alignment": "center",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "care-header",
+    "main",
+    "washing-basics",
+    "drying-guide",
+    "product-specific",
+    "stain-removal",
+    "storage-tips",
+    "dos-donts",
+    "warranty-care",
+    "care-cta"
+  ]
+}
