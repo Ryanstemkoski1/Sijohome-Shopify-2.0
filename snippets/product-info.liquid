@@ -18,9 +18,6 @@ Supported variables
 {%- endcomment -%}
 
 <safe-sticky class="product-info {% if center_basic_info %}product-info--center{% endif %}">
-  {%- comment -%}Include Sijohome bundle discount logic{%- endcomment -%}
-  {%- render 'bundle-discount', product: product -%}
-  
   <div class="product-info__block-list">
     {%- liquid
       assign inside_block_group_context = false

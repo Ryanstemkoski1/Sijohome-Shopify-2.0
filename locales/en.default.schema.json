@@ -586,6 +586,7 @@
       "page_info": "Cart drawer won't appear to your customers if you have set the cart type to Page in the global theme settings.",
       "free_shipping_bar_info": "Free shipping bar can be configured in global cart settings.",
       "show_cart_note": "Show cart note",
+      "allow_discount_application": "Allow discount application",
       "show_shipping_text": "Show shipping text",
       "show_view_cart_button": "Show view cart button",
       "show_checkout_button": "Show checkout button",
@@ -693,6 +694,9 @@
         }
       }
     },
+    "custom_section": {
+      "name": "Custom section"
+    },    
     "faq": {
       "name": "FAQ",
       "show_categories": "Show sidebar categories",
@@ -982,6 +986,7 @@
     "main_cart": {
       "name": "Cart",
       "show_cart_note": "Show cart note",
+      "allow_discount_application": "Allow discount application",
       "show_order_weight": "Show order weight",
       "show_shipping_text": "Show shipping/taxes text",
       "show_accelerated_buttons": "Show accelerated buttons",

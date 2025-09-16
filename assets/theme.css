@@ -2233,11 +2233,11 @@ model-media model-viewer, model-media .shopify-model-viewer-ui {
     transition: transform .2s ease-in-out;
   }
 
-  .product-card__quick-add-button:hover svg {
+  .product-card__quick-add-button:focus svg, .product-card__quick-add-button:hover svg {
     transform: rotateZ(90deg);
   }
 
-  .product-card:hover .product-card__quick-add-button {
+  .product-card:focus-within .product-card__quick-add-button, .product-card:hover .product-card__quick-add-button, .product-card__quick-add-button:focus {
     opacity: 1;
     transform: translateY(0);
   }
@@ -4093,6 +4093,12 @@ product-rerender {
   }
 }
 
+.cart-discount-field__loader {
+  position: absolute;
+  inset-block-start: calc(50% - .375rem);
+  inset-inline-end: 1rem;
+}
+
 .cart-drawer::part(body) {
   padding-block: 0;
 }
@@ -4246,6 +4252,7 @@ product-rerender {
   min-height: 3em;
   box-shadow: 0 1px rgb(var(--border-color)), 0 -1px rgb(var(--border-color));
   background-color: rgb(var(--background));
+  reading-flow: flex-visual;
   z-index: 2;
   transition: inset-block-start .15s ease-in-out;
   display: flex;
@@ -4260,6 +4267,7 @@ product-rerender {
 }
 
 .collection-toolbar__button-list {
+  reading-flow: flex-visual;
   flex-grow: 1;
   display: flex;
 }

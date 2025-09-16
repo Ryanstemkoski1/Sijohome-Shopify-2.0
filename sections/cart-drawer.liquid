@@ -8,8 +8,6 @@
       {%- render 'free-shipping-bar' -%}
     {%- endif -%}
 
-    {%- render 'cart-promotion' -%}
-
     <div class="cart-drawer__items">
       {%- for line_item in cart.items -%}
         {%- render 'line-item', line_item: line_item, show_quantity_selector: true -%}
@@ -72,63 +70,81 @@
       </div>
     {%- endif -%}
 
-    <form action="{{ routes.cart_url }}" method="POST" class="cart-drawer__footer" slot="footer">
-      <input type="hidden" name="attributes[products_mobile_grid_mode]" value="">
-      <input type="hidden" name="attributes[products_desktop_grid_mode]" value="">
+    <div slot="footer">
+      <form action="{{ routes.cart_url }}" class="cart-drawer__footer" method="POST">
+        <input type="hidden" name="attributes[products_mobile_grid_mode]" value="">
+        <input type="hidden" name="attributes[products_desktop_grid_mode]" value="">
 
-      {%- if section.settings.show_cart_note or section.settings.show_shipping_text -%}
-        <div class="v-stack gap-0.5 justify-items-start">
-          {%- if section.settings.show_cart_note -%}
-            {%- assign cart_note_dialog_id = 'cart-note-' | append: section.id -%}
-            <button class="link-faded-reverse" aria-controls="{{ cart_note_dialog_id }}">{{ 'cart.general.add_order_note' | t }}</button>
+        {%- if section.settings.show_cart_note or section.settings.show_shipping_text -%}
+          <div class="v-stack gap-0.5 justify-items-start">
+            {%- if section.settings.show_cart_note -%}
+              {%- assign cart_note_dialog_id = 'cart-note-' | append: section.id -%}
+              <button class="link-faded-reverse" aria-controls="{{ cart_note_dialog_id }}">{{ 'cart.general.add_order_note' | t }}</button>
 
-            <cart-note-dialog id="{{ cart_note_dialog_id }}" class="cart-drawer__order-note">
-              <div class="form">
-                <cart-note class="form-control">
-                  {%- assign order_note = 'cart.general.order_note' | t -%}
-                  {%- assign placeholder = 'cart.general.note_placeholder' | t -%}
-                  {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, placeholder: placeholder, show_label_as_block: true -%}
-                </cart-note>
+              <cart-note-dialog id="{{ cart_note_dialog_id }}" class="cart-drawer__order-note">
+                <div class="form">
+                  <cart-note class="form-control">
+                    {%- assign order_note = 'cart.general.order_note' | t -%}
+                    {%- assign placeholder = 'cart.general.note_placeholder' | t -%}
+                    {%- render 'input', name: 'note', multiline: 3, label: order_note, value: cart.note, placeholder: placeholder, show_label_as_block: true -%}
+                  </cart-note>
 
-                <dialog-close-button class="contents">
-                  <button type="button" class="button">{{ 'cart.general.save_note' | t }}</button>
-                </dialog-close-button>
-              </div>
-            </cart-note-dialog>
-          {%- endif -%}
-
-          {%- if section.settings.show_shipping_text -%}
-            <p class="text-subdued">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p>
-          {%- endif -%}
-        </div>
-      {%- endif -%}
-
-      {% for discount_application in cart.cart_level_discount_applications %}
-        <div class="h-stack justify-start gap-4">
-          <span class="discount-badge text-xs">{%- render 'icon' with 'discount', width: 12 -%} {{- discount_application.title -}}</span>
-          <span class="text-subdued">-{{ discount_application.total_allocated_amount | money }}</span>
-        </div>
-      {% endfor %}
-
-      <div class="button-group">
-        {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
-          {%- assign view_cart = 'cart.general.view_cart' | t -%}
-          {%- render 'button', href: routes.cart_url, content: view_cart, stretch: true -%}
-        {%- endif -%}
-
-        {%- if section.settings.show_checkout_button -%}
-          {%- capture checkout_button -%}
-            {{- 'cart.general.checkout' | t -}}
-
-            {%- if section.settings.show_price_in_checkout_button -%}
-              <span class="cart-drawer__button-price">{{- cart.total_price | money -}}</span>
+                  <dialog-close-button class="contents">
+                    <button type="button" class="button">{{ 'cart.general.save_note' | t }}</button>
+                  </dialog-close-button>
+                </div>
+              </cart-note-dialog>
             {%- endif -%}
-          {%- endcapture -%}
 
-          {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout', stretch: true -%}
+            {%- if section.settings.show_shipping_text -%}
+              <p class="text-subdued">{{ 'cart.general.taxes_and_shipping_at_checkout' | t }}</p>
+            {%- endif -%}
+          </div>
         {%- endif -%}
-      </div>
-    </form>
+
+        {%- if section.settings.allow_discount_application -%}
+          {%- render 'cart-discount' -%}
+        {%- endif -%}
+
+        {%- if cart.cart_level_discount_applications.size > 0 -%}
+          <div class="h-stack gap-3">
+            {%- for discount_application in cart.cart_level_discount_applications -%}
+              <div class="h-stack justify-start gap-4">
+                <span class="discount-badge text-xs">
+                  {%- render 'icon' with 'discount', width: 12 -%}
+                  {{ discount_application.title }} (-{{ discount_application.total_allocated_amount | money }})
+
+                  {%- if section.settings.allow_discount_application and discount_application.type != '' -%}
+                    <cart-discount-remove-button discount-code="{{ discount_application.title | escape }}" class="h-stack align-center">
+                      <button type="button">{%- render 'icon' with 'close', width: 8 -%}</button>
+                    </cart-discount-remove-button>
+                  {%- endif -%}
+                </span>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+
+        <div class="button-group">
+          {%- if section.settings.show_view_cart_button or section.settings.show_checkout_button == false -%}
+            {%- assign view_cart = 'cart.general.view_cart' | t -%}
+            {%- render 'button', href: routes.cart_url, content: view_cart, stretch: true -%}
+          {%- endif -%}
+
+          {%- if section.settings.show_checkout_button -%}
+            {%- capture checkout_button -%}
+              {{- 'cart.general.checkout' | t -}}
+
+              {%- if section.settings.show_price_in_checkout_button -%}
+                <span class="cart-drawer__button-price">{{- cart.total_price | money -}}</span>
+              {%- endif -%}
+            {%- endcapture -%}
+
+            {%- render 'button', type: 'submit', content: checkout_button, name: 'checkout', stretch: true -%}
+          {%- endif -%}
+        </div>
+      </form>
+    </div>
   {%- endif -%}
 </cart-drawer>
 
@@ -157,6 +173,12 @@
       "id": "show_cart_note",
       "label": "t:sections.cart_drawer.show_cart_note",
       "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "allow_discount_application",
+      "label": "t:sections.cart_drawer.allow_discount_application",
+      "default": false
     },
     {
       "type": "checkbox",

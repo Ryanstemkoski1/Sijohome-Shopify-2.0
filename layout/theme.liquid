@@ -55,34 +55,6 @@
     {{ content_for_header }}
 
     {{- 'theme.css' | asset_url | stylesheet_tag: preload: true -}}
-    {{- 'fonts-custom.css' | asset_url | stylesheet_tag -}}
-
-    {%- comment -%}SIJO tracking and analytics{%- endcomment -%}
-    {%- if settings.enable_google_analytics -%}
-      <!-- Google Tag Manager -->
-      <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-N6F58P4');</script>
-      <!-- End Google Tag Manager -->
-    {%- endif -%}
-  
-    <script type="text/javascript">
-      var _conv_page_type = "{{ request.page_type }}";
-      var _conv_category_id = "{{ collection.id }}";
-      var _conv_category_name = "{{ collection.title }}";
-      var _conv_product_sku = "{{ product.selected_or_first_available_variant.sku }}";
-      var _conv_product_name = '{{ product.title }}';
-      var _conv_product_price = "{{ product.price_min | money_without_currency }}";
-      var _conv_customer_id = "{{ customer.id }}";
-      var _conv_custom_v1 = "{{ product.tags.first }}";
-      var _conv_custom_v2 = "{{ collection.current_type }}";
-      var _conv_custom_v3 = "{{ cart.item_count }}";
-      var _conv_custom_v4 = "{{ cart.total_price | money_without_currency }}";
-    </script>
-    {% render 'convert' %}
-
   </head>
 
   {% liquid
@@ -98,14 +70,6 @@
   %}
 
   <body class="{{ features_class }} color-scheme color-scheme--{{ settings.default_color_scheme.id }}">
-    {%- comment -%}Google Tag Manager (noscript){%- endcomment -%}
-    {%- if settings.enable_google_analytics -%}
-      <!-- Google Tag Manager (noscript) -->
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N6F58P4"
-      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-      <!-- End Google Tag Manager (noscript) -->
-    {%- endif -%}
-
     {%- render 'shadow-dom-templates' -%}
 
     <loading-bar class="loading-bar" aria-hidden="true"></loading-bar>
@@ -135,9 +99,5 @@
         {%- sections 'footer-group' -%}
       {%- endif -%}
     </main>
-
-    {%- if settings.enable_beam_impact -%}
-      {%- render 'beam-cart-setup' -%}
-    {%- endif -%}
   </body>
 </html>

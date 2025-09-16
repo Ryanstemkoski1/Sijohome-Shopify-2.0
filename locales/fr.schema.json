@@ -586,6 +586,7 @@
       "page_info": "Le drawer panier n'apparaitra sur votre thème si vous avez specifié le mode Page pour le panier dans les réglages globaux.",
       "free_shipping_bar_info": "Le message de livraison grauite peut etre configuré dans les réglages globaux du panier.",
       "show_cart_note": "Afficher la note de panier",
+      "allow_discount_application": "Autoriser l'application de code promos",
       "show_shipping_text": "Afficher le texte de livraison/taxes",
       "show_view_cart_button": "Afficher le bouton pour accéder au panier",
       "show_checkout_button": "Afficher le bouton pour passer à la caisse",
@@ -692,6 +693,9 @@
           "name": "Code Liquid"
         }
       }
+    },
+    "custom_section": {
+      "name": "Section personnalisée"
     },
     "faq": {
       "name": "FAQ",
@@ -982,6 +986,7 @@
     "main_cart": {
       "name": "Panier",
       "show_cart_note": "Afficher la note de panier",
+      "allow_discount_application": "Autoriser l'application de code promos",
       "show_order_weight": "Afficher le poids de la commande",
       "show_shipping_text": "Afficher le texte de livraison/taxes",
       "show_accelerated_buttons": "Afficher les boutons de paiement accélérés",

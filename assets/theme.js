@@ -1314,6 +1314,108 @@ if (!window.customElements.get("cart-count")) {
   window.customElements.define("cart-count", CartCount);
 }
 
+// js/common/cart/cart-discount.js
+import { animate as animate4 } from "vendor";
+var AbstractCartDiscount = class extends HTMLElement {
+  async getDiscountCodes() {
+    return (await fetchCart)["discount_codes"].filter((discount) => discount.applicable).map((discount) => discount.code.toLowerCase());
+  }
+  async toggleDiscount(event) {
+    let target = event.currentTarget;
+    target.setAttribute("aria-busy", "true");
+    let discountCodes = await this.getDiscountCodes();
+    if (target.hasAttribute("discount-code")) {
+      discountCodes = discountCodes.filter((discount2) => discount2 !== target.getAttribute("discount-code").toLowerCase());
+    }
+    let discount = (discountCodes.length > 0 ? discountCodes.join(",") + "," : "") + (event.target.value || "");
+    const response = await fetch(`${Shopify.routes.root}cart/update.js`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ discount })
+    });
+    target.setAttribute("aria-busy", "false");
+    if (!response.ok) {
+      this.dispatchEvent(new CustomEvent("cart:discount:error", { bubbles: true }));
+      return;
+    }
+    const responseJson = await response.json();
+    if (responseJson.discount_codes.some((obj) => obj.applicable === false)) {
+      this.dispatchEvent(new CustomEvent("cart:discount:error", { bubbles: true }));
+      return;
+    } else {
+      this.dispatchEvent(new CustomEvent("cart:refresh", { bubbles: true }));
+    }
+    if (window.themeVariables.settings.pageType == "cart") {
+      window.location.reload();
+    }
+  }
+};
+var CartDiscountBanner = class extends HTMLElement {
+  connectedCallback() {
+    document.addEventListener("cart:discount:error", () => {
+      this.hidden = false;
+    });
+  }
+  disconnectedCallback() {
+    document.removeEventListener("cart:discount:error", () => {
+      this.hidden = false;
+    });
+  }
+};
+var CartDiscountField = class extends AbstractCartDiscount {
+  static get observedAttributes() {
+    return ["aria-busy"];
+  }
+  constructor() {
+    super();
+    this.addEventListener("change", this.toggleDiscount.bind(this));
+  }
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "aria-busy" && oldValue !== newValue) {
+      const eventName = newValue === "true" ? "cart:discount:loading:start" : "cart:discount:loading:end";
+      document.documentElement.dispatchEvent(new CustomEvent(eventName, { bubbles: true }));
+    }
+  }
+};
+var CartDiscountRemoveButton = class extends AbstractCartDiscount {
+  constructor() {
+    super();
+    this.addEventListener("click", this.toggleDiscount.bind(this));
+  }
+};
+var _animation, _CartDiscountFieldLoader_instances, onLoadingStart_fn2, onLoadingEnd_fn2;
+var CartDiscountFieldLoader = class extends HTMLElement {
+  constructor() {
+    super();
+    __privateAdd(this, _CartDiscountFieldLoader_instances);
+    __privateAdd(this, _animation);
+    document.addEventListener("cart:discount:loading:start", __privateMethod(this, _CartDiscountFieldLoader_instances, onLoadingStart_fn2).bind(this));
+    document.addEventListener("cart:discount:loading:end", __privateMethod(this, _CartDiscountFieldLoader_instances, onLoadingEnd_fn2).bind(this));
+  }
+};
+_animation = new WeakMap();
+_CartDiscountFieldLoader_instances = new WeakSet();
+onLoadingStart_fn2 = function() {
+  this.hidden = false;
+  __privateSet(this, _animation, animate4(this, { rotate: ["0deg", "360deg"] }, { duration: 1, easing: "linear", repeat: Infinity }));
+};
+onLoadingEnd_fn2 = async function() {
+  __privateGet(this, _animation).pause();
+  this.hidden = true;
+};
+if (!window.customElements.get("cart-discount-field")) {
+  window.customElements.define("cart-discount-field", CartDiscountField);
+}
+if (!window.customElements.get("cart-discount-remove-button")) {
+  window.customElements.define("cart-discount-remove-button", CartDiscountRemoveButton);
+}
+if (!window.customElements.get("cart-discount-banner")) {
+  window.customElements.define("cart-discount-banner", CartDiscountBanner);
+}
+if (!window.customElements.get("cart-discount-field-loader")) {
+  window.customElements.define("cart-discount-field-loader", CartDiscountFieldLoader);
+}
+
 // js/common/cart/cart-dot.js
 var _abortController3, _CartDot_instances, updateFromServer_fn2;
 var CartDot = class extends HTMLElement {
@@ -1624,7 +1726,7 @@ if (!window.customElements.get("facets-form")) {
 }
 
 // js/common/overlay/dialog-element.js
-import { animate as animate4, FocusTrap, Delegate as Delegate2 } from "vendor";
+import { animate as animate5, FocusTrap, Delegate as Delegate2 } from "vendor";
 var lockLayerCount = 0;
 var _isLocked, _delegate2, _abortController4, _focusTrap, _originalParentBeforeAppend, _DialogElement_instances, allowOutsideClick_fn, allowOutsideClickTouch_fn, allowOutsideClickMouse_fn, onToggleClicked_fn, updateSlotVisibility_fn;
 var DialogElement = class extends HTMLElement {
@@ -1685,11 +1787,11 @@ var DialogElement = class extends HTMLElement {
    * Open the dialog element (the animation can be disabled by passing false as an argument). This function should
    * normally not be directly overriden on children classes
    */
-  show(animate26 = true) {
+  show(animate27 = true) {
     if (this.open) {
       return Promise.resolve();
     }
-    this.setAttribute("open", animate26 ? "" : "immediate");
+    this.setAttribute("open", animate27 ? "" : "immediate");
     return waitForEvent(this, "dialog:after-show");
   }
   /**
@@ -1853,13 +1955,13 @@ var DialogElement = class extends HTMLElement {
    * Create the animation controls for the enter animation
    */
   createEnterAnimationControls() {
-    return animate4(this, {}, { duration: 0 });
+    return animate5(this, {}, { duration: 0 });
   }
   /**
    * Create the animation controls for the leave animation
    */
   createLeaveAnimationControls() {
-    return animate4(this, {}, { duration: 0 });
+    return animate5(this, {}, { duration: 0 });
   }
   /**
    * When "clickOutsideDeactivates" is true, this method is called on the final click destination. If this method
@@ -1962,7 +2064,7 @@ if (!window.customElements.get("dialog-close-button")) {
 import { timeline as timeline3 } from "vendor";
 
 // js/common/overlay/modal.js
-import { animate as animate5, timeline as timeline2 } from "vendor";
+import { animate as animate6, timeline as timeline2 } from "vendor";
 var Modal = class extends DialogElement {
   connectedCallback() {
     super.connectedCallback();
@@ -1979,7 +2081,7 @@ var Modal = class extends DialogElement {
   }
   createEnterAnimationControls() {
     if (matchesMediaQuery("sm")) {
-      return animate5(this, { opacity: [0, 1] }, { duration: 0.2 });
+      return animate6(this, { opacity: [0, 1] }, { duration: 0.2 });
     } else {
       return timeline2([
         [this.getShadowPartByName("overlay"), { opacity: [0, 1] }, { duration: 0.3, easing: [0.645, 0.045, 0.355, 1] }],
@@ -1989,7 +2091,7 @@ var Modal = class extends DialogElement {
   }
   createLeaveAnimationControls() {
     if (matchesMediaQuery("sm")) {
-      return animate5(this, { opacity: [1, 0] }, { duration: 0.2 });
+      return animate6(this, { opacity: [1, 0] }, { duration: 0.2 });
     } else {
       return timeline2([
         [this.getShadowPartByName("overlay"), { opacity: [1, 0] }, { duration: 0.3, easing: [0.645, 0.045, 0.355, 1] }],
@@ -2029,16 +2131,16 @@ if (!window.customElements.get("x-drawer")) {
 }
 
 // js/common/overlay/popin.js
-import { animate as animate6 } from "vendor";
+import { animate as animate7 } from "vendor";
 var PopIn = class extends DialogElement {
   get shouldTrapFocus() {
     return false;
   }
   createEnterAnimationControls() {
-    return animate6(this, { opacity: [0, 1], transform: ["translateY(25px)", "translateY(0)"] }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] });
+    return animate7(this, { opacity: [0, 1], transform: ["translateY(25px)", "translateY(0)"] }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] });
   }
   createLeaveAnimationControls() {
-    return animate6(this, { opacity: [1, 0], transform: ["translateY(0)", "translateY(25px)"] }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] });
+    return animate7(this, { opacity: [1, 0], transform: ["translateY(0)", "translateY(25px)"] }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] });
   }
 };
 if (!window.customElements.get("pop-in")) {
@@ -2046,7 +2148,7 @@ if (!window.customElements.get("pop-in")) {
 }
 
 // js/common/overlay/popover.js
-import { animate as animate7, timeline as timeline4 } from "vendor";
+import { animate as animate8, timeline as timeline4 } from "vendor";
 var Popover = class extends DialogElement {
   connectedCallback() {
     super.connectedCallback();
@@ -2072,7 +2174,7 @@ var Popover = class extends DialogElement {
   }
   createEnterAnimationControls() {
     if (matchesMediaQuery("md")) {
-      return animate7(this, { opacity: [0, 1] }, { duration: 0.2 });
+      return animate8(this, { opacity: [0, 1] }, { duration: 0.2 });
     } else {
       return timeline4([
         [this.getShadowPartByName("overlay"), { opacity: [0, 1] }, { duration: 0.3, easing: [0.645, 0.045, 0.355, 1] }],
@@ -2082,7 +2184,7 @@ var Popover = class extends DialogElement {
   }
   createLeaveAnimationControls() {
     if (matchesMediaQuery("md")) {
-      return animate7(this, { opacity: [1, 0] }, { duration: 0.2 });
+      return animate8(this, { opacity: [1, 0] }, { duration: 0.2 });
     } else {
       return timeline4([
         [this.getShadowPartByName("overlay"), { opacity: [1, 0] }, { duration: 0.3, easing: [0.645, 0.045, 0.355, 1] }],
@@ -2502,7 +2604,7 @@ if (!window.customElements.get("x-listbox")) {
 }
 
 // js/common/media/image-parallax.js
-import { scroll, animate as animate8 } from "vendor";
+import { scroll, animate as animate9 } from "vendor";
 var _ImageParallax_instances, setupParallax_fn;
 var ImageParallax = class extends HTMLElement {
   constructor() {
@@ -2519,7 +2621,7 @@ _ImageParallax_instances = new WeakSet();
 setupParallax_fn = function() {
   const [scale, translate] = [1.3, 0.15 * 100 / 1.3], isFirstSection = this.closest(".shopify-section").matches(":first-child");
   scroll(
-    animate8(this.querySelector("img"), { transform: [`scale(${scale}) translateY(-${translate}%)`, `scale(${scale}) translateY(${translate}%)`] }, { easing: "linear" }),
+    animate9(this.querySelector("img"), { transform: [`scale(${scale}) translateY(-${translate}%)`, `scale(${scale}) translateY(${translate}%)`] }, { easing: "linear" }),
     {
       target: this.querySelector("img"),
       offset: [isFirstSection ? "start start" : "start end", "end start"]
@@ -3114,7 +3216,7 @@ if (!window.customElements.get("open-lightbox-button")) {
 }
 
 // js/common/product/product-list.js
-import { inView as inView6, animate as animate9, stagger } from "vendor";
+import { inView as inView6, animate as animate10, stagger } from "vendor";
 var ProductList = class extends HTMLElement {
   connectedCallback() {
     if (matchesMediaQuery("motion-safe") && this.querySelectorAll('product-card[reveal-on-scroll="true"]').length > 0) {
@@ -3122,7 +3224,7 @@ var ProductList = class extends HTMLElement {
     }
   }
   reveal() {
-    animate9(this.querySelectorAll('product-card[reveal-on-scroll="true"]'), {
+    animate10(this.querySelectorAll('product-card[reveal-on-scroll="true"]'), {
       opacity: [0, 1],
       transform: ["translateY(20px)", "translateY(0)"]
     }, {
@@ -3669,10 +3771,10 @@ var CustomDetails = class extends HTMLElement {
   get contentElement() {
     return this.disclosureElement.lastElementChild;
   }
-  toggle(force = void 0, animate26 = true) {
+  toggle(force = void 0, animate27 = true) {
     const newValue = typeof force === "boolean" ? force : !(this.disclosureElement.getAttribute("aria-expanded") === "true");
     if (newValue) {
-      this.open({ instant: !animate26 });
+      this.open({ instant: !animate27 });
     } else {
       this.close();
     }
@@ -3864,7 +3966,7 @@ detectFocusOut_fn = function(event) {
 var MenuDisclosure = _MenuDisclosure;
 
 // js/common/navigation/tabs.js
-import { Delegate as Delegate6, animate as animate10, timeline as timeline6 } from "vendor";
+import { Delegate as Delegate6, animate as animate11, timeline as timeline6 } from "vendor";
 var _componentID, _buttons, _panels, _delegate5, _Tabs_instances, setupComponent_fn, onButtonClicked_fn, onSlotChange_fn, handleKeyboard_fn;
 var Tabs = class extends HTMLElement {
   constructor() {
@@ -3925,7 +4027,7 @@ var Tabs = class extends HTMLElement {
    */
   async transition(fromPanel, toPanel) {
     const beforeHeight = this.clientHeight;
-    await animate10(fromPanel, { transform: ["translateY(0px)", "translateY(10px)"], opacity: [1, 0] }, { duration: this.animationDuration }).finished;
+    await animate11(fromPanel, { transform: ["translateY(0px)", "translateY(10px)"], opacity: [1, 0] }, { duration: this.animationDuration }).finished;
     fromPanel.hidden = true;
     toPanel.hidden = false;
     await timeline6([
@@ -4070,12 +4172,12 @@ if (!window.customElements.get("predictive-search")) {
 }
 
 // js/sections/announcement-bar.js
-import { animate as animate11 } from "vendor";
+import { animate as animate12 } from "vendor";
 var AnnouncementBarCarousel = class extends EffectCarousel {
   createOnChangeAnimationControls(fromSlide, toSlide) {
     return {
-      leaveControls: () => animate11(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-10px)"] }, { duration: 0.25, easing: [0.55, 0.055, 0.675, 0.19] }),
-      enterControls: () => animate11(toSlide, { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0px)"] }, { duration: 0.4, easing: [0.215, 0.61, 0.355, 1] })
+      leaveControls: () => animate12(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-10px)"] }, { duration: 0.25, easing: [0.55, 0.055, 0.675, 0.19] }),
+      enterControls: () => animate12(toSlide, { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0px)"] }, { duration: 0.4, easing: [0.215, 0.61, 0.355, 1] })
     };
   }
 };
@@ -4084,7 +4186,7 @@ if (!window.customElements.get("announcement-bar-carousel")) {
 }
 
 // js/sections/before-after-image.js
-import { animate as animate12, inView as inView9 } from "vendor";
+import { animate as animate13, inView as inView9 } from "vendor";
 var _onPointerMoveListener, _touchStartTimestamp, _BeforeAfter_instances, onPointerDown_fn, onPointerMove_fn, onTouchStart_fn, onPointerUp_fn, onKeyboardNavigation_fn2, calculatePosition_fn, animateInitialPosition_fn;
 var BeforeAfter = class extends HTMLElement {
   constructor() {
@@ -4161,7 +4263,7 @@ calculatePosition_fn = function(event) {
   this.style.setProperty("--before-after-cursor-position", `${Math.min(Math.max(percentage, 0), 100)}%`);
 };
 animateInitialPosition_fn = function() {
-  animate12((progress) => {
+  animate13((progress) => {
     this.style.setProperty("--before-after-cursor-position", `calc(var(--before-after-initial-cursor-position) * ${progress})`);
   }, { duration: 0.6, easing: [0.85, 0, 0.15, 1] });
 };
@@ -4170,7 +4272,7 @@ if (!window.customElements.get("before-after")) {
 }
 
 // js/sections/blog-posts.js
-import { animate as animate13, stagger as stagger2, inView as inView10 } from "vendor";
+import { animate as animate14, stagger as stagger2, inView as inView10 } from "vendor";
 var _BlogPosts_instances, reveal_fn;
 var BlogPosts = class extends HTMLElement {
   constructor() {
@@ -4184,7 +4286,7 @@ var BlogPosts = class extends HTMLElement {
 _BlogPosts_instances = new WeakSet();
 reveal_fn = function() {
   this.style.opacity = "1";
-  animate13(
+  animate14(
     this.children,
     { opacity: [0, 1], transform: ["translateY(30px)", "translateY(0)"] },
     { duration: 0.25, delay: stagger2(0.1, { easing: "ease-out" }), easing: "ease" }
@@ -4195,7 +4297,7 @@ if (!window.customElements.get("blog-posts")) {
 }
 
 // js/sections/cart-drawer.js
-import { animate as animate14, timeline as timeline7 } from "vendor";
+import { animate as animate15, timeline as timeline7 } from "vendor";
 var _sectionId, _CartDrawer_instances, onBundleSection_fn, onCartChange_fn, onBeforeShow_fn, onPageShow_fn, refreshCart_fn, replaceContent_fn;
 var CartDrawer = class extends Drawer {
   constructor() {
@@ -4234,7 +4336,7 @@ onBeforeShow_fn = async function() {
   }
   drawerFooter.style.opacity = "0";
   await waitForEvent(this, "dialog:after-show");
-  animate14(drawerFooter, { opacity: [0, 1], transform: ["translateY(30px)", "translateY(0)"] }, { duration: 0.25, easing: [0.25, 0.46, 0.45, 0.94] });
+  animate15(drawerFooter, { opacity: [0, 1], transform: ["translateY(30px)", "translateY(0)"] }, { duration: 0.25, easing: [0.25, 0.46, 0.45, 0.94] });
 };
 onPageShow_fn = async function(event) {
   if (!event.persisted) {
@@ -4254,7 +4356,7 @@ replaceContent_fn = async function(html) {
     ]);
     await controls.finished;
     this.replaceChildren(...newCartDrawer.children);
-    animate14(this.getShadowPartByName("body"), { opacity: [0, 1], transform: ["translateY(30px)", "translateY(0)"] }, { duration: 0.25, easing: [0.25, 0.46, 0.45, 0.94] });
+    animate15(this.getShadowPartByName("body"), { opacity: [0, 1], transform: ["translateY(30px)", "translateY(0)"] }, { duration: 0.25, easing: [0.25, 0.46, 0.45, 0.94] });
   } else {
     this.replaceChildren(...newCartDrawer.children);
   }
@@ -4263,10 +4365,10 @@ replaceContent_fn = async function(html) {
 };
 var CartNoteDialog = class extends DialogElement {
   createEnterAnimationControls() {
-    return animate14(this, { transform: ["translateY(100%)", "translateY(0)"] }, { duration: 0.2, easing: "ease-in" });
+    return animate15(this, { transform: ["translateY(100%)", "translateY(0)"] }, { duration: 0.2, easing: "ease-in" });
   }
   createLeaveAnimationControls() {
-    return animate14(this, { transform: ["translateY(0)", "translateY(100%)"] }, { duration: 0.2, easing: "ease-in" });
+    return animate15(this, { transform: ["translateY(0)", "translateY(100%)"] }, { duration: 0.2, easing: "ease-in" });
   }
 };
 if (!window.customElements.get("cart-drawer")) {
@@ -4349,7 +4451,7 @@ if (!window.customElements.get("collection-layout-switch")) {
 }
 
 // js/sections/countdown-timer.js
-import { animate as animate15, inView as inView12 } from "vendor";
+import { animate as animate16, inView as inView12 } from "vendor";
 var _flips, _expirationDate, _interval, _isVisible, _CountdownTimer_instances, recalculateFlips_fn;
 var CountdownTimer = class extends HTMLElement {
   constructor() {
@@ -4443,9 +4545,9 @@ var CountdownTimerFlipDigit = class extends HTMLElement {
     if (oldValue === null || oldValue === newValue || !this.hasAttribute("animate")) {
       return this.textContent = newValue;
     }
-    await animate15(this.shadowRoot.firstElementChild, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-8px)"] }, { duration: 0.3, easing: [0.64, 0, 0.78, 0] }).finished;
+    await animate16(this.shadowRoot.firstElementChild, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-8px)"] }, { duration: 0.3, easing: [0.64, 0, 0.78, 0] }).finished;
     this.textContent = newValue;
-    animate15(this.shadowRoot.firstElementChild, { opacity: [0, 1], transform: ["translateY(8px)", "translateY(0px)"] }, { duration: 0.3, easing: [0.22, 1, 0.36, 1] });
+    animate16(this.shadowRoot.firstElementChild, { opacity: [0, 1], transform: ["translateY(8px)", "translateY(0px)"] }, { duration: 0.3, easing: [0.22, 1, 0.36, 1] });
   }
 };
 if (!window.customElements.get("countdown-timer")) {
@@ -4459,7 +4561,7 @@ if (!window.customElements.get("countdown-timer-flip-digit")) {
 }
 
 // js/sections/customer.js
-import { animate as animate16 } from "vendor";
+import { animate as animate17 } from "vendor";
 var _AccountLogin_instances, loginForm_get, recoverForm_get, switchForm_fn;
 var AccountLogin = class extends HTMLElement {
   constructor() {
@@ -4481,10 +4583,10 @@ recoverForm_get = function() {
 };
 switchForm_fn = async function() {
   const fromForm = window.location.hash === "#recover" ? __privateGet(this, _AccountLogin_instances, loginForm_get) : __privateGet(this, _AccountLogin_instances, recoverForm_get), toForm = window.location.hash === "#recover" ? __privateGet(this, _AccountLogin_instances, recoverForm_get) : __privateGet(this, _AccountLogin_instances, loginForm_get);
-  await animate16(fromForm, { transform: ["translateY(0)", "translateY(30px)"], opacity: [1, 0] }, { duration: 0.6, easing: "ease" }).finished;
+  await animate17(fromForm, { transform: ["translateY(0)", "translateY(30px)"], opacity: [1, 0] }, { duration: 0.6, easing: "ease" }).finished;
   fromForm.hidden = true;
   toForm.hidden = false;
-  await animate16(toForm, { transform: ["translateY(30px)", "translateY(0)"], opacity: [0, 1] }, { duration: 0.6, easing: "ease" });
+  await animate17(toForm, { transform: ["translateY(30px)", "translateY(0)"], opacity: [0, 1] }, { duration: 0.6, easing: "ease" });
 };
 if (!window.customElements.get("account-login")) {
   window.customElements.define("account-login", AccountLogin);
@@ -4529,12 +4631,12 @@ if (!window.customElements.get("faq-toc")) {
 }
 
 // js/sections/featured-collections.js
-import { animate as animate17 } from "vendor";
+import { animate as animate18 } from "vendor";
 var FeaturedCollectionsCarousel = class extends EffectCarousel {
   createOnChangeAnimationControls(fromSlide, toSlide) {
     return {
-      leaveControls: () => animate17(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(15px)"] }, { duration: 0.3, easing: "ease-in" }),
-      enterControls: () => animate17(toSlide, { opacity: [0, 1], transform: ["translateY(15px)", "translateY(0)"] }, { duration: 0.2, delay: 0.2, easing: "ease-out" })
+      leaveControls: () => animate18(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(15px)"] }, { duration: 0.3, easing: "ease-in" }),
+      enterControls: () => animate18(toSlide, { opacity: [0, 1], transform: ["translateY(15px)", "translateY(0)"] }, { duration: 0.2, delay: 0.2, easing: "ease-out" })
     };
   }
 };
@@ -4543,7 +4645,7 @@ if (!window.customElements.get("featured-collections-carousel")) {
 }
 
 // js/sections/header.js
-import { animate as animate18, timeline as timeline9, stagger as stagger3, Delegate as Delegate8 } from "vendor";
+import { animate as animate19, timeline as timeline9, stagger as stagger3, Delegate as Delegate8 } from "vendor";
 var _headerTrackerIntersectionObserver, _abortController10, _scrollYTrackingPosition, _isVisible2, _Header_instances, onHeaderTrackerIntersection_fn, detectMousePosition_fn, detectScrollDirection_fn, setVisibility_fn;
 var Header = class extends HTMLElement {
   constructor() {
@@ -4707,11 +4809,11 @@ openCollapsiblePanel_fn = function(event) {
   __privateGet(this, _buttonElements).forEach((button) => button.setAttribute("aria-expanded", button === event.currentTarget ? "true" : "false"));
   __privateGet(this, _collapsiblePanel)?.setAttribute("aria-activedescendant", event.currentTarget.getAttribute("aria-controls"));
   if (matchesMediaQuery("md-max")) {
-    animate18(this.querySelector(".header-sidebar__main-panel"), { opacity: [1, 0], transform: ["translateX(0)", "translateX(-10px)"] }, { duration: 0.25 });
+    animate19(this.querySelector(".header-sidebar__main-panel"), { opacity: [1, 0], transform: ["translateX(0)", "translateX(-10px)"] }, { duration: 0.25 });
   }
 };
 onSidebarBeforeShow_fn = function() {
-  animate18(this.querySelector(".header-sidebar__main-panel"), { opacity: 0, transform: "translateX(0)" }, { duration: 0 });
+  animate19(this.querySelector(".header-sidebar__main-panel"), { opacity: 0, transform: "translateX(0)" }, { duration: 0 });
 };
 onSidebarAfterShow_fn = function() {
   this.revealItems();
@@ -4794,7 +4896,7 @@ switchPanel_fn = async function(fromPanel, toPanel) {
     await this.show();
   }
   if (fromPanel) {
-    await animate18(fromPanel, { opacity: [1, 0] }, { duration: 0.15 }).finished;
+    await animate19(fromPanel, { opacity: [1, 0] }, { duration: 0.15 }).finished;
     fromPanel.hidden = true;
   }
   toPanel.hidden = false;
@@ -4825,7 +4927,7 @@ if (!window.customElements.get("header-sidebar-collapsible-panel")) {
 }
 
 // js/sections/image-with-text.js
-import { animate as animate19, inView as inView13 } from "vendor";
+import { animate as animate20, inView as inView13 } from "vendor";
 var _ImageWithText_instances, onBecameVisible_fn;
 var ImageWithText = class extends HTMLElement {
   constructor() {
@@ -4842,7 +4944,7 @@ _ImageWithText_instances = new WeakSet();
 onBecameVisible_fn = async function(target) {
   await imageLoaded(target);
   const fromValue = (window.direction === "rtl" ? -1 : 1) * (matchesMediaQuery("md-max") ? 0.6 : 1) * (this.classList.contains("image-with-text--reverse") ? 25 : -25);
-  animate19(
+  animate20(
     target,
     { opacity: 1, transform: [`translateX(${fromValue}px)`, "translateX(0)"] },
     { easing: [0.215, 0.61, 0.355, 1] },
@@ -4890,7 +4992,7 @@ if (!window.customElements.get("image-with-text-overlay")) {
 }
 
 // js/sections/images-with-text-scroll.js
-import { timeline as timeline11, animate as animate20, inView as inView15, scroll as scroll2, ScrollOffset } from "vendor";
+import { timeline as timeline11, animate as animate21, inView as inView15, scroll as scroll2, ScrollOffset } from "vendor";
 var _itemElements, _imageElements, _textElements, _visibleImageElement, _ImagesWithTextScroll_instances, setupScrollObservers_fn, onBreakpointChanged_fn;
 var ImagesWithTextScroll = class extends EffectCarousel {
   constructor() {
@@ -4957,7 +5059,7 @@ _ImagesWithTextScroll_instances = new WeakSet();
  */
 setupScrollObservers_fn = function() {
   __privateGet(this, _textElements).forEach((textElement) => {
-    scroll2(animate20(textElement, { opacity: [0, 0.25, 1, 0.25, 0] }), { target: textElement, offset: ScrollOffset.Any });
+    scroll2(animate21(textElement, { opacity: [0, 0.25, 1, 0.25, 0] }), { target: textElement, offset: ScrollOffset.Any });
   });
   scroll2((info) => {
     const index = Math.min(Math.floor(info.y.progress / (1 / __privateGet(this, _itemElements).length)), __privateGet(this, _itemElements).length - 1), toImage = __privateGet(this, _itemElements)[index].querySelector(".images-with-text-scroll__image");
@@ -5005,7 +5107,7 @@ if (!window.customElements.get("article-toolbar")) {
 }
 
 // js/sections/media-grid.js
-import { animate as animate21, inView as inView16 } from "vendor";
+import { animate as animate22, inView as inView16 } from "vendor";
 var _MediaGrid_instances, onReveal_fn;
 var MediaGrid = class extends HTMLElement {
   constructor() {
@@ -5021,7 +5123,7 @@ var MediaGrid = class extends HTMLElement {
 _MediaGrid_instances = new WeakSet();
 onReveal_fn = async function(entry) {
   await imageLoaded(entry.target.querySelector(":scope > img"));
-  animate21(entry.target, { opacity: [0, 1] }, { duration: 0.35, easing: "ease" });
+  animate22(entry.target, { opacity: [0, 1] }, { duration: 0.35, easing: "ease" });
 };
 if (!window.customElements.get("media-grid")) {
   window.customElements.define("media-grid", MediaGrid);
@@ -5391,7 +5493,7 @@ if (!window.customElements.get("recently-viewed-products")) {
 }
 
 // js/sections/shop-the-look.js
-import { animate as animate22, timeline as timeline13 } from "vendor";
+import { animate as animate23, timeline as timeline13 } from "vendor";
 var _controlledPopover, _selectedHotSpot, _ShopTheLookMobileCarousel_instances, setInitialPosition_fn, onSpotSelected_fn, onUpdateHotSpotPosition_fn, onLookChanged_fn, changeLookFocalPoint_fn, restorePosition_fn;
 var ShopTheLookMobileCarousel = class extends ScrollCarousel {
   constructor() {
@@ -5443,15 +5545,15 @@ onLookChanged_fn = function() {
 changeLookFocalPoint_fn = function() {
   const scale = window.innerWidth / this.selectedCell.clientWidth, remainingSpace = window.innerHeight - __privateGet(this, _controlledPopover).shadowRoot.querySelector('[part="base"]').clientHeight, imageHeightAfterScale = Math.round(this.selectedCell.querySelector(".shop-the-look__image-wrapper").clientHeight * scale), outsideViewportImageHeight = Math.max(imageHeightAfterScale - remainingSpace, 0), insideViewportImageHeight = imageHeightAfterScale - outsideViewportImageHeight, hotSpotFocalPoint = Math.round((__privateGet(this, _selectedHotSpot).offsetTop + __privateGet(this, _selectedHotSpot).clientHeight / 2) * scale), offsetToMove = Math.round(hotSpotFocalPoint - insideViewportImageHeight / 2), minTranslateY = Math.round(-(this.parentElement.getBoundingClientRect().top - (imageHeightAfterScale - this.selectedCell.offsetHeight) / 2)), maxTranslateY = Math.round(minTranslateY - outsideViewportImageHeight), translateY = Math.min(Math.max(minTranslateY - offsetToMove, maxTranslateY), minTranslateY);
   if (!this.isExpanded) {
-    animate22(this, { transform: ["translateY(0) scale(1)", `translateY(${translateY}px) scale(${scale})`] }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] });
+    animate23(this, { transform: ["translateY(0) scale(1)", `translateY(${translateY}px) scale(${scale})`] }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] });
     document.documentElement.style.setProperty("--hide-header-group", "1");
   } else {
-    animate22(this, { transform: `translateY(${translateY}px) scale(${scale})` }, { duration: 0.4, easing: "ease-in-out" });
+    animate23(this, { transform: `translateY(${translateY}px) scale(${scale})` }, { duration: 0.4, easing: "ease-in-out" });
   }
   this.classList.add("is-expanded");
 };
 restorePosition_fn = function() {
-  animate22(this, { transform: "translateY(0) scale(1)" }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] }).finished.then(() => {
+  animate23(this, { transform: "translateY(0) scale(1)" }, { duration: 0.4, easing: [0.645, 0.045, 0.355, 1] }).finished.then(() => {
     this.style.transform = null;
   });
   this.classList.remove("is-expanded");
@@ -5474,7 +5576,7 @@ updateButtonLink_fn = function(event) {
 };
 var ShopTheLookDesktopCarousel = class extends EffectCarousel {
   createOnBecameVisibleAnimationControls(toSlide) {
-    return animate22(toSlide.querySelectorAll(".shop-the-look__item-content"), { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0)"] }, { duration: 0.5 });
+    return animate23(toSlide.querySelectorAll(".shop-the-look__item-content"), { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0)"] }, { duration: 0.5 });
   }
   createOnChangeAnimationControls(fromSlide, toSlide) {
     return timeline13([
@@ -5691,12 +5793,12 @@ if (!window.customElements.get("slideshow-carousel")) {
 }
 
 // js/sections/testimonials.js
-import { animate as animate23 } from "vendor";
+import { animate as animate24 } from "vendor";
 var TestimonialCarousel = class extends EffectCarousel {
   createOnChangeAnimationControls(fromSlide, toSlide, { direction }) {
     return {
-      leaveControls: () => animate23(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-15px)"] }, { duration: 0.4, easing: [0.55, 0.055, 0.675, 0.19] }),
-      enterControls: () => animate23(toSlide, { opacity: [0, 1], transform: ["translateY(15px)", "translateY(0)"] }, { duration: 0.4, delay: 0, easing: [0.25, 0.46, 0.45, 0.94] })
+      leaveControls: () => animate24(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-15px)"] }, { duration: 0.4, easing: [0.55, 0.055, 0.675, 0.19] }),
+      enterControls: () => animate24(toSlide, { opacity: [0, 1], transform: ["translateY(15px)", "translateY(0)"] }, { duration: 0.4, delay: 0, easing: [0.25, 0.46, 0.45, 0.94] })
     };
   }
 };
@@ -5705,12 +5807,12 @@ if (!window.customElements.get("testimonial-carousel")) {
 }
 
 // js/sections/text-with-icons.js
-import { animate as animate24 } from "vendor";
+import { animate as animate25 } from "vendor";
 var TextWithIconsCarousel = class extends EffectCarousel {
   createOnChangeAnimationControls(fromSlide, toSlide) {
     return {
-      leaveControls: () => animate24(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-10px)"] }, { duration: 0.3, easing: "ease-in" }),
-      enterControls: () => animate24(toSlide, { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0px)"] }, { duration: 0.3, delay: 0.2, easing: "ease-out" })
+      leaveControls: () => animate25(fromSlide, { opacity: [1, 0], transform: ["translateY(0)", "translateY(-10px)"] }, { duration: 0.3, easing: "ease-in" }),
+      enterControls: () => animate25(toSlide, { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0px)"] }, { duration: 0.3, delay: 0.2, easing: "ease-out" })
     };
   }
 };
@@ -5719,10 +5821,10 @@ if (!window.customElements.get("text-with-icons-carousel")) {
 }
 
 // js/sections/timeline.js
-import { animate as animate25, timeline as timeline15 } from "vendor";
+import { animate as animate26, timeline as timeline15 } from "vendor";
 var TimelineCarousel = class extends EffectCarousel {
   createOnBecameVisibleAnimationControls(toSlide) {
-    return animate25(toSlide.querySelectorAll(".timeline__item-content"), { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0)"] }, { duration: 0.5 });
+    return animate26(toSlide.querySelectorAll(".timeline__item-content"), { opacity: [0, 1], transform: ["translateY(10px)", "translateY(0)"] }, { duration: 0.5 });
   }
   createOnChangeAnimationControls(fromSlide, toSlide) {
     return timeline15([
@@ -5775,6 +5877,10 @@ export {
   CarouselNextButton,
   CarouselPrevButton,
   CartCount,
+  CartDiscountBanner,
+  CartDiscountField,
+  CartDiscountFieldLoader,
+  CartDiscountRemoveButton,
   CartDot,
   CartDrawer,
   CartNote,
