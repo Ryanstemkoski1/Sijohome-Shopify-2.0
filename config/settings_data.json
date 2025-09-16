@@ -1,7 +1,7 @@
 {
   "current": {
     "section_vertical_spacing": "md",
-    "product_rating_color": "#1c1c1c",
+    "product_rating_color": "#000000",
     "product_on_sale_accent": "#3d6300",
     "product_sold_out_badge_background": "#efefef",
     "product_custom_badge_background": "#1a3014",
@@ -12,7 +12,7 @@
     "heading_letter_spacing": 0,
     "text_font": "helvetica_n4",
     "text_font_size_desktop": 16,
-    "button_letter_spacing": 18,
+    "button_letter_spacing": 0,
     "color_schemes": {
       "scheme-1": {
         "settings": {

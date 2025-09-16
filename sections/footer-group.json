@@ -1,1 +1,62 @@
-{"type":"footer","name":"Footer group","sections":{"text-with-icons":{"type":"text-with-icons","blocks":{"icon-1":{"type":"item","settings":{"title":"Free delivery worldwide"}},"icon-2":{"type":"item","settings":{"title":"Satisfied or refunded"}},"icon-3":{"type":"item","settings":{"title":"Top-notch support"}},"icon-4":{"type":"item","settings":{"title":"Secure payments"}}},"block_order":["icon-1","icon-2","icon-3","icon-4"],"settings":{}},"footer":{"type":"footer","blocks":{"newsletter":{"type":"newsletter","settings":{}},"links":{"type":"links","settings":{"menu":"footer","show_menu_title":true}},"text":{"type":"text","settings":{"title":"About","content":"<p>Use this text area to tell your customers about your brand and vision. You can change it in the theme editor.<\/p>"}}},"block_order":["newsletter","links","text"],"settings":{}}},"order":["text-with-icons","footer"]}
+{
+  "type": "footer",
+  "name": "Footer group",
+  "sections": {
+    "text-with-icons": {
+      "type": "text-with-icons",
+      "blocks": {
+        "icon-1": {
+          "type": "item",
+          "settings": { "title": "Free US shipping on orders over $100" }
+        },
+        "icon-2": {
+          "type": "item",
+          "settings": { "title": "60-day returns and exchanges" }
+        },
+        "icon-3": {
+          "type": "item",
+          "settings": { "title": "Award-winning customer service" }
+        },
+        "icon-4": { "type": "item", "settings": { "title": "Secure payments" } }
+      },
+      "block_order": ["icon-1", "icon-2", "icon-3", "icon-4"],
+      "settings": { "color_scheme": "scheme-2" }
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "newsletter": {
+          "type": "newsletter",
+          "settings": {
+            "title": "Anything but snooze-worthy, we promise.",
+            "content": ""
+          }
+        },
+        "shop-links": {
+          "type": "links",
+          "settings": { "menu": "shop", "show_menu_title": true }
+        },
+        "about-links": {
+          "type": "links",
+          "settings": { "menu": "who-we-are", "show_menu_title": true }
+        },
+        "resource-links": {
+          "type": "links",
+          "settings": { "menu": "resources", "show_menu_title": true }
+        }
+      },
+      "block_order": [
+        "newsletter",
+        "shop-links",
+        "about-links",
+        "resource-links"
+      ],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "show_payment_methods": false,
+        "show_social_media": true
+      }
+    }
+  },
+  "order": ["text-with-icons", "footer"]
+}
