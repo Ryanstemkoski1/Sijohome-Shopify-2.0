@@ -140,7 +140,7 @@
           "type": "item",
           "settings": {
             "title": "Temperature Regulating",
-            "content": "Natural cooling properties keep you comfortable all night long",
+            "content": "<p>Natural cooling properties keep you comfortable all night long</p>",
             "icon": "picto-temperature"
           }
         },
@@ -148,7 +148,7 @@
           "type": "item",
           "settings": {
             "title": "Hypoallergenic",
-            "content": "Safe for sensitive skin and allergy sufferers",
+            "content": "<p>Safe for sensitive skin and allergy sufferers</p>",
             "icon": "picto-leaf"
           }
         },
@@ -156,7 +156,7 @@
           "type": "item",
           "settings": {
             "title": "Ultra Soft",
-            "content": "Silky smooth texture that gets softer with every wash",
+            "content": "<p>Silky smooth texture that gets softer with every wash</p>",
             "icon": "picto-clothing"
           }
         },
@@ -164,7 +164,7 @@
           "type": "item",
           "settings": {
             "title": "Sustainable",
-            "content": "Eco-friendly materials with minimal environmental impact",
+            "content": "<p>Eco-friendly materials with minimal environmental impact</p>",
             "icon": "picto-recycling"
           }
         }

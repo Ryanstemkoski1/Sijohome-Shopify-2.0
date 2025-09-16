@@ -6,18 +6,17 @@
       "type": "announcement-bar",
       "blocks": {
         "announcement-1": {
-          "type": "announcement",
+          "type": "message",
           "settings": {
-            "text": "Get 15% off on your next order",
-            "link": "shopify://collections/best-sellers"
+            "text": "Get 15% off on your next order"
           }
         },
         "announcement-2": {
-          "type": "announcement",
+          "type": "message",
           "settings": { "text": "Free US shipping on orders over $100" }
         },
         "announcement-3": {
-          "type": "announcement",
+          "type": "message",
           "settings": { "text": "60-day returns and exchanges on us" }
         }
       },
@@ -40,7 +39,7 @@
         "hide_on_scroll": false,
         "show_separation_border": true,
         "reduce_padding": false,
-        "logo_max_width": 310,
+        "logo_max_width": 300,
         "logo_mobile_max_width": 120,
         "menu": "main-menu",
         "menu_open_trigger": "hover",

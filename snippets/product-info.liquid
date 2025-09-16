@@ -553,6 +553,10 @@ Supported variables
         </div>
       {%- endif -%}
     {%- endfor -%}
+
+    {%- if inside_block_group_context -%}
+      </div>
+    {%- endif -%}
   </div>
 
   {%- comment -%}

@@ -21,16 +21,14 @@
 
             {%- when 'fields' -%}
               <div {{ block.shopify_attributes }}>
-                {%- capture _form_recover_capture -%}
-                  {%- form 'recover_customer_password' -%}
-                    {%- capture form_recover_status -%}
-                      {%- if form.posted_successfully? -%}
-                        {%- assign success_message = 'customer.recover_password.success_message' | t -%}
-                        {%- render 'banner', status: 'success', content: success_message -%}
-                      {%- endif -%}
-                    {%- endcapture -%}
-                  {%- endform -%}
-                {%- endcapture -%}
+                {%- form 'recover_customer_password' -%}
+                  {%- capture form_recover_status -%}
+                    {%- if form.posted_successfully? -%}
+                      {%- assign success_message = 'customer.recover_password.success_message' | t -%}
+                      {%- render 'banner', status: 'success', content: success_message -%}
+                    {%- endif -%}
+                  {%- endcapture -%}
+                {%- endform -%}
 
                 {%- form 'customer_login', class: 'form' -%}
                   <input type="hidden" name="checkout_url" value="{{ block.settings.return_to | default: routes.account_url }}">

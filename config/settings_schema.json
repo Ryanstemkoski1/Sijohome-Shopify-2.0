@@ -242,7 +242,7 @@
         "id": "heading_font",
         "label": "t:theme_settings.typography.heading_font",
         "info": "t:theme_settings.typography.font_info",
-        "default": "system-ui"
+        "default": "times_new_roman_n4"
       },
       {
         "type": "select",
@@ -293,7 +293,7 @@
         "id": "text_font",
         "label": "t:theme_settings.typography.body_font",
         "info": "t:theme_settings.typography.font_info",
-        "default": "system-ui"
+        "default": "assistant_n4"
       },
       {
         "type": "range",

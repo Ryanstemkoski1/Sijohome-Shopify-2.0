@@ -15,7 +15,7 @@
           "type": "item",
           "settings": {
             "title": "Free Shipping",
-            "content": "On orders over $75",
+            "content": "<p>On orders over $75</p>",
             "icon": "picto-truck"
           }
         },
@@ -23,7 +23,7 @@
           "type": "item",
           "settings": {
             "title": "30-Night Trial",
-            "content": "Try risk-free for 30 nights",
+            "content": "<p>Try risk-free for 30 nights</p>",
             "icon": "picto-moon"
           }
         },
@@ -31,7 +31,7 @@
           "type": "item",
           "settings": {
             "title": "Easy Returns",
-            "content": "Hassle-free returns within 30 days",
+            "content": "<p>Hassle-free returns within 30 days</p>",
             "icon": "picto-return"
           }
         },
@@ -39,7 +39,7 @@
           "type": "item",
           "settings": {
             "title": "Secure Checkout",
-            "content": "Your information is safe and secure",
+            "content": "<p>Your information is safe and secure</p>",
             "icon": "picto-shield"
           }
         }

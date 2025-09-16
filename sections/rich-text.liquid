@@ -81,6 +81,10 @@
               {%- endif -%}
           {%- endcase -%}
         {%- endfor -%}
+
+        {%- if is_inside_button_group_context -%}
+          </div>
+        {%- endif -%}
       </div>
     </div>
   </div>

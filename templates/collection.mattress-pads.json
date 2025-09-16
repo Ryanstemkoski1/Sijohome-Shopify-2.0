@@ -109,7 +109,7 @@
           "type": "item",
           "settings": {
             "title": "Mattress Protection",
-            "content": "Extends the life of your mattress by protecting against spills, stains, and allergens",
+            "content": "<p>Extends the life of your mattress by protecting against spills, stains, and allergens</p>",
             "icon": "picto-shield"
           }
         },
@@ -117,7 +117,7 @@
           "type": "item",
           "settings": {
             "title": "Temperature Control",
-            "content": "Cooling technology helps regulate body temperature for comfortable sleep",
+            "content": "<p>Cooling technology helps regulate body temperature for comfortable sleep</p>",
             "icon": "picto-temperature"
           }
         },
@@ -125,7 +125,7 @@
           "type": "item",
           "settings": {
             "title": "Easy Care",
-            "content": "Machine washable and dryer safe for convenient maintenance",
+            "content": "<p>Machine washable and dryer safe for convenient maintenance</p>",
             "icon": "picto-washing"
           }
         },
@@ -133,7 +133,7 @@
           "type": "item",
           "settings": {
             "title": "Perfect Fit",
-            "content": "Deep pocket design fits mattresses up to 18 inches thick with secure elastic band",
+            "content": "<p>Deep pocket design fits mattresses up to 18 inches thick with secure elastic band</p>",
             "icon": "picto-bed"
           }
         }

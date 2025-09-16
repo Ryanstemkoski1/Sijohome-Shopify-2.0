@@ -79,7 +79,7 @@
           "type": "item",
           "settings": {
             "title": "Temperature Regulating",
-            "content": "Naturally cooling eucalyptus fibers keep you comfortable all day long",
+            "content": "<p>Naturally cooling eucalyptus fibers keep you comfortable all day long</p>",
             "icon": "picto-temperature"
           }
         },
@@ -87,7 +87,7 @@
           "type": "item",
           "settings": {
             "title": "Silky Soft",
-            "content": "Luxuriously smooth fabric that feels amazing against your skin",
+            "content": "<p>Luxuriously smooth fabric that feels amazing against your skin</p>",
             "icon": "picto-clothing"
           }
         },
@@ -95,7 +95,7 @@
           "type": "item",
           "settings": {
             "title": "Sustainable",
-            "content": "Made from responsibly sourced eucalyptus with minimal environmental impact",
+            "content": "<p>Made from responsibly sourced eucalyptus with minimal environmental impact</p>",
             "icon": "picto-leaf"
           }
         },
@@ -103,7 +103,7 @@
           "type": "item",
           "settings": {
             "title": "Easy Care",
-            "content": "Machine washable and gets softer with every wash",
+            "content": "<p>Machine washable and gets softer with every wash</p>",
             "icon": "picto-washing"
           }
         }

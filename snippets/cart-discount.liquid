@@ -9,7 +9,7 @@
 <div class="cart-discount w-full v-stack gap-4">
   <cart-discount-field class="cart-discount-field relative">
     {%- assign label = 'cart.discount.label' | t -%}
-    {%- assign id = section.id | append: '-cart-discount-field' -%}
+    {%- assign id = section_id | default: 'cart' | append: '-cart-discount-field' -%}
     {%- render 'input', label: label, name: 'discount', id: id -%}
 
     <cart-discount-field-loader class="cart-discount-field__loader" hidden>

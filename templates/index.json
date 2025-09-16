@@ -347,32 +347,6 @@
         "overlay_opacity": 30
       }
     },
-    "multiple-media-with-text": {
-      "type": "multiple-media-with-text",
-      "blocks": {
-        "image-1": { "type": "image", "settings": { "rotation": 0 } },
-        "image-2": { "type": "image", "settings": { "rotation": 0 } }
-      },
-      "block_order": ["image-1", "image-2"],
-      "settings": {
-        "color_scheme": "scheme-1",
-        "reveal_on_scroll": true,
-        "separate_section_with_border": true,
-        "media_position_desktop": "after_text",
-        "media_position_mobile": "before_text",
-        "media_layout": "overlap",
-        "media_alignment": "end",
-        "media_alignment_offset": 80,
-        "media_mobile_alignment_offset": 40,
-        "text_alignment": "center",
-        "subheading": "collaboration",
-        "title": "Us x them",
-        "content": "<p>Born from the meeting of a minimalist creative and a timeless design studio, this collection combines refined aesthetics with thoughtful craftsmanship. Their shared vision results in pieces that are both elegant and understated.</p>",
-        "button_1_text": "discover",
-        "button_1_style": "solid",
-        "button_2_style": "solid"
-      }
-    },
     "before-after": {
       "type": "before-after",
       "blocks": {
@@ -532,8 +506,8 @@
           "settings": { "text": "Sustainable Materials" }
         },
         "heading-1": {
-          "type": "heading",
-          "settings": { "text": "Sleep is everything.", "heading_tag": "h2" }
+          "type": "richtext",
+          "settings": { "content": "<h2>Sleep is everything.</h2>" }
         },
         "richtext-1": {
           "type": "richtext",

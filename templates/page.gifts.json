@@ -122,7 +122,7 @@
           "type": "item",
           "settings": {
             "title": "Beautiful Packaging",
-            "content": "Every gift comes in elegant, eco-friendly packaging ready for gifting",
+            "content": "<p>Every gift comes in elegant, eco-friendly packaging ready for gifting</p>",
             "icon": "picto-gift"
           }
         },
@@ -130,7 +130,7 @@
           "type": "item",
           "settings": {
             "title": "Personal Messages",
-            "content": "Add a custom note to make your gift extra special and personal",
+            "content": "<p>Add a custom note to make your gift extra special and personal</p>",
             "icon": "picto-message"
           }
         },
@@ -138,7 +138,7 @@
           "type": "item",
           "settings": {
             "title": "Easy Returns",
-            "content": "Recipients can easily exchange sizes or products for the perfect fit",
+            "content": "<p>Recipients can easily exchange sizes or products for the perfect fit</p>",
             "icon": "picto-return"
           }
         },
@@ -146,7 +146,7 @@
           "type": "item",
           "settings": {
             "title": "Express Shipping",
-            "content": "Fast delivery options available for last-minute gift needs",
+            "content": "<p>Fast delivery options available for last-minute gift needs</p>",
             "icon": "picto-truck"
           }
         }

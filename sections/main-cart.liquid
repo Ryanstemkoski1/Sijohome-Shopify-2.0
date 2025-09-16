@@ -90,7 +90,7 @@
 
               <div class="cart-recap">
                 {%- if section.settings.allow_discount_application -%}
-                  {%- render 'cart-discount' -%}
+                  {%- render 'cart-discount', section_id: section.id -%}
                 {%- endif -%}
 
                 {%- if cart.cart_level_discount_applications.size > 0 -%}

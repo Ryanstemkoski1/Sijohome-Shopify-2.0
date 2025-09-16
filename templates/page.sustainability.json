@@ -124,7 +124,7 @@
           "type": "item",
           "settings": {
             "title": "OEKO-TEX Standard 100",
-            "content": "Certified free from harmful chemicals and safe for human health",
+            "content": "<p>Certified free from harmful chemicals and safe for human health</p>",
             "icon": "picto-leaf"
           }
         },
@@ -132,7 +132,7 @@
           "type": "item",
           "settings": {
             "title": "FSC Certified",
-            "content": "Sourced from responsibly managed forests",
+            "content": "<p>Sourced from responsibly managed forests</p>",
             "icon": "picto-tree"
           }
         },
@@ -140,7 +140,7 @@
           "type": "item",
           "settings": {
             "title": "Cradle to Cradle",
-            "content": "Designed for continuous material health and recyclability",
+            "content": "<p>Designed for continuous material health and recyclability</p>",
             "icon": "picto-recycling"
           }
         },
@@ -148,7 +148,7 @@
           "type": "item",
           "settings": {
             "title": "Carbon Neutral",
-            "content": "We offset our carbon footprint through verified programs",
+            "content": "<p>We offset our carbon footprint through verified programs</p>",
             "icon": "picto-globe"
           }
         }
