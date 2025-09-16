@@ -1,0 +1,188 @@
+{%- comment -%}
+----------------------------------------------------------------------------------------------------------------------
+SIJO FEATURED IN SECTION
+----------------------------------------------------------------------------------------------------------------------
+This section displays press mentions and media features for SIJO brand
+{%- endcomment -%}
+
+{%- assign color_scheme_hash = section.settings.color_scheme.settings.background_gradient | default: section.settings.color_scheme.settings.background | md5 -%}
+
+<div class="section-spacing color-scheme color-scheme--{{ section.settings.color_scheme.id }} color-scheme--bg-{{ color_scheme_hash }} {% if section.settings.separate_section_with_border %}bordered-section{% endif %}">
+  <div class="container container--{{ section.settings.content_width }}">
+    <div class="section-stack">
+      {%- render 'section-header', subheading: section.settings.subheading, heading: section.settings.title, content: section.settings.content, text_alignment: 'center' -%}
+      
+      <div class="press-logos">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'press_logo' -%}
+              <div class="press-logos__item" {{ block.shopify_attributes }}>
+                {%- if block.settings.logo != blank -%}
+                  {%- if block.settings.url != blank -%}
+                    <a href="{{ block.settings.url }}" target="_blank" rel="noopener">
+                  {%- endif -%}
+                  
+                  {%- capture image_sizes -%}{{ block.settings.logo_max_width }}px{%- endcapture -%}
+                  {%- capture image_widths -%}{{ block.settings.logo_max_width }}, {{ block.settings.logo_max_width | times: 2 | at_most: block.settings.logo.width }}{%- endcapture -%}
+                  {%- capture image_style -%}--image-max-width: {{ block.settings.logo_max_width }}px{%- endcapture -%}
+                  
+                  {{- block.settings.logo | image_url: width: block.settings.logo.width | image_tag: sizes: image_sizes, widths: image_widths, style: image_style, class: 'constrained-image press-logo' -}}
+                  
+                  {%- if block.settings.url != blank -%}
+                    </a>
+                  {%- endif -%}
+                {%- else -%}
+                  {{- 'image' | placeholder_svg_tag: 'press-logo placeholder' -}}
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .press-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 2rem 3rem;
+    align-items: center;
+    justify-items: center;
+  }
+  
+  .press-logos__item {
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    filter: grayscale(100%);
+  }
+  
+  .press-logos__item:hover {
+    opacity: 1;
+    filter: grayscale(0%);
+  }
+  
+  .press-logo {
+    max-height: 60px;
+    width: auto;
+  }
+  
+  @media screen and (min-width: 700px) {
+    .press-logos {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2.5rem 4rem;
+    }
+    
+    .press-logo {
+      max-height: 80px;
+    }
+  }
+  
+  @media screen and (min-width: 1000px) {
+    .press-logos {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3rem;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "SIJO Featured In",
+  "class": "shopify-section--sijo-featured-in",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header", "custom.overlay"]
+  },
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:global.colors.scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "checkbox",
+      "id": "separate_section_with_border",
+      "label": "t:global.section.separate_section_with_border",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "content_width",
+      "label": "t:global.sizes.content_width",
+      "options": [
+        { "value": "xs", "label": "t:global.sizes.x_small" },
+        { "value": "sm", "label": "t:global.sizes.small" },
+        { "value": "md", "label": "t:global.sizes.medium" },
+        { "value": "lg", "label": "t:global.sizes.large" },
+        { "value": "xl", "label": "t:global.sizes.x_large" }
+      ],
+      "default": "lg"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "t:global.text.subheading"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:global.text.heading",
+      "default": "As Featured In"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "t:global.text.content"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "press_logo",
+      "name": "Press Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "logo",
+          "label": "Logo image"
+        },
+        {
+          "type": "range",
+          "id": "logo_max_width",
+          "label": "Logo max width",
+          "min": 50,
+          "max": 300,
+          "step": 5,
+          "unit": "px",
+          "default": 140
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "SIJO Featured In",
+      "blocks": [
+        {
+          "type": "press_logo"
+        },
+        {
+          "type": "press_logo"
+        },
+        {
+          "type": "press_logo"
+        },
+        {
+          "type": "press_logo"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -572,6 +572,42 @@
         "font_size_factor": 1.1
       }
     },
+    "sijo-featured-in": {
+      "type": "sijo-featured-in",
+      "blocks": {
+        "press-1": {
+          "type": "press_logo",
+          "settings": {
+            "logo_max_width": 140
+          }
+        },
+        "press-2": {
+          "type": "press_logo",
+          "settings": {
+            "logo_max_width": 140
+          }
+        },
+        "press-3": {
+          "type": "press_logo",
+          "settings": {
+            "logo_max_width": 140
+          }
+        },
+        "press-4": {
+          "type": "press_logo",
+          "settings": {
+            "logo_max_width": 140
+          }
+        }
+      },
+      "block_order": ["press-1", "press-2", "press-3", "press-4"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "content_width": "lg",
+        "title": "As Featured In"
+      }
+    },
     "timeline": {
       "type": "timeline",
       "blocks": {
@@ -749,6 +785,7 @@
     "blog-posts",
     "featured-product",
     "image-with-text-block",
+    "sijo-featured-in",
     "testimonials",
     "timeline",
     "image-with-text-overlay-2",

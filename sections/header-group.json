@@ -8,19 +8,38 @@
         "announcement-1": {
           "type": "message",
           "settings": {
-            "text": "Get 15% off on your next order"
+            "text": "Your special offer: get 15% off",
+            "url": "shopify://collections/best-sellers"
           }
         },
         "announcement-2": {
           "type": "message",
-          "settings": { "text": "Free US shipping on orders over $100" }
+          "settings": {
+            "text": "Free Shipping on orders $100+",
+            "url": ""
+          }
         },
         "announcement-3": {
           "type": "message",
-          "settings": { "text": "60-day returns and exchanges on us" }
+          "settings": {
+            "text": "100-Night Sleep Trial | Free Returns",
+            "url": ""
+          }
+        },
+        "announcement-4": {
+          "type": "message",
+          "settings": {
+            "text": "NEW! Introducing the FlexCool Memory Foam Pillow",
+            "url": "shopify://products/flexcool-memory-foam-pillow"
+          }
         }
       },
-      "block_order": ["announcement-1", "announcement-2", "announcement-3"],
+      "block_order": [
+        "announcement-1",
+        "announcement-2",
+        "announcement-3",
+        "announcement-4"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "enable_country_selector": false,
@@ -33,15 +52,100 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_comforters": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Comforters + Blankets",
+            "images_position": "right",
+            "image_1": "shopify://shop_images/Mega_Menu_-_CLIMA_Comforter_1.jpg",
+            "image_1_heading": "TempTune Comforter",
+            "image_1_text": "Best temperature-regulating",
+            "image_1_link": "shopify://products/clima-duvet-insert",
+            "image_2": "shopify://shop_images/Mega_Menu_-_Eucalyptus_Comforter_1.jpg",
+            "image_2_heading": "AiryWeight Comforter",
+            "image_2_text": "Best cooling, lightweight",
+            "image_2_link": "shopify://products/eucalyptus-comforter"
+          }
+        },
+        "mega_menu_pillows": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Pillows",
+            "images_position": "right",
+            "image_1": "shopify://shop_images/Mega_Menu_-_CLIMA_Pillow_1.jpg",
+            "image_1_heading": "CloudSupport Latex Pillow",
+            "image_1_text": "Ultra Soft, Responsive Support",
+            "image_1_link": "shopify://products/clima-pillow",
+            "image_2": "shopify://shop_images/FlexCool_Pillow.jpg",
+            "image_2_heading": "FlexCool Memory Foam Pillow",
+            "image_2_text": "Lasting Cool, Temp-Regulating",
+            "image_2_link": "shopify://products/flexcool-memory-foam-pillow"
+          }
+        },
+        "mega_menu_sheets": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Sheets",
+            "images_position": "right",
+            "image_1": "shopify://shop_images/0010_EUCA-Sheets03.jpg",
+            "image_1_heading": "AiryWeight Eucalyptus Sheet Set",
+            "image_1_text": "Best cooling, airy",
+            "image_1_link": "shopify://products/eucalyptus-sheets",
+            "image_2": "shopify://shop_images/0007_CLIMA-Sheets01.jpg",
+            "image_2_heading": "CrispCool Cotton Sheet Set",
+            "image_2_text": "Luxury Organic Percale",
+            "image_2_link": "shopify://products/crispcool-cotton-sheet-set"
+          }
+        },
+        "mega_menu_mattress_pads": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Mattress Pads",
+            "images_position": "right",
+            "image_1": "shopify://shop_images/0003_MattressPad02.jpg",
+            "image_1_heading": "TempTune Mattress Pad",
+            "image_1_text": "Best temperature-regulating",
+            "image_1_link": "shopify://products/clima-mattress-pad",
+            "image_2": "shopify://shop_images/0007_MattressPad04.jpg",
+            "image_2_heading": "AiryWeight Mattress Protector",
+            "image_2_text": "Best hypoallergenic, waterproof",
+            "image_2_link": "shopify://products/eucalyptus-mattress-protector"
+          }
+        },
+        "mega_menu_loungewear": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "Loungewear",
+            "images_position": "right",
+            "image_1": "shopify://shop_images/0000_LW02.jpg",
+            "image_1_heading": "SoftStretch Tee",
+            "image_1_text": "Cooling Eucalyptus",
+            "image_1_link": "shopify://products/eucalyptus-short-sleeve-tee",
+            "image_2": "shopify://shop_images/SHORTS_0002s_0000_JADE-Shorts_full.jpg",
+            "image_2_heading": "FineSlumber Nightshirt",
+            "image_2_text": "Cooling Eucalyptus",
+            "image_2_link": "shopify://products/fineslumber-long-sleeve-nightshirt"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_comforters",
+        "mega_menu_pillows",
+        "mega_menu_sheets",
+        "mega_menu_mattress_pads",
+        "mega_menu_loungewear"
+      ],
       "settings": {
         "color_scheme": "scheme-1",
         "enable_sticky": true,
         "hide_on_scroll": false,
-        "show_separation_border": true,
+        "show_separation_border": false,
         "reduce_padding": false,
+        "logo": "shopify://shop_images/LOGO.png",
         "logo_max_width": 300,
         "logo_mobile_max_width": 120,
-        "menu": "main-menu",
+        "menu": "new-menu",
         "menu_open_trigger": "hover",
         "menu_text_font": "heading",
         "enable_search": true,
@@ -51,11 +155,13 @@
         "sidebar_open_second_level_menus": false,
         "layout": "logo_left_navigation_inline",
         "show_icons": true,
-        "show_country_selector": false,
+        "show_country_selector": true,
         "show_country_name": false,
         "show_country_flag": false,
         "show_locale_selector": false,
-        "transparent_header_text_color": "#ffffff"
+        "transparent_header_text_color": "#ffffff",
+        "transparent_logo": "shopify://shop_images/White_Asset_1_4x_f4651bfa-4893-4ab1-81df-7a88eb111498.png",
+        "enable_transparent_header": true
       }
     }
   },
