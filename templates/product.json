@@ -3,39 +3,255 @@
     "main": {
       "type": "main-product",
       "blocks": {
-        "vendor": { "type": "vendor", "settings": {} },
-        "title": { "type": "title", "settings": {} },
-        "price": { "type": "price", "settings": {} },
-        "payment_terms": { "type": "payment_terms", "settings": {} },
-        "separator": { "type": "separator", "settings": {} },
-        "description": { "type": "description", "settings": {} },
-        "variant_picker": { "type": "variant_picker", "settings": {} },
-        "quantity_selector": { "type": "quantity_selector", "settings": {} },
-        "buy_buttons": { "type": "buy_buttons", "settings": {} },
-        "pickup_availability": {
-          "type": "pickup_availability",
+        "title": {
+          "type": "title",
           "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": true,
+            "rating_mode": "rating"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator-1": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "swatch_selector_style": "swatch",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "separator-2": {
+          "type": "separator",
+          "settings": {}
+        },
+        "care-instructions": {
+          "type": "accordion",
+          "settings": {
+            "title": "Care Instructions",
+            "content": "<p><strong>Machine washable:</strong> Use cold water on a gentle cycle</p><p><strong>Tumble dry low:</strong> Remove promptly and avoid over-drying</p><p><strong>No bleach:</strong> Avoid chlorine or fabric softeners</p><p><strong>Cool iron if needed:</strong> Use low heat setting</p>",
+            "page": ""
+          }
+        },
+        "shipping-returns": {
+          "type": "accordion",
+          "settings": {
+            "title": "Shipping & Returns",
+            "content": "<p><strong>Free shipping</strong> on orders over $75</p><p><strong>30-night trial:</strong> Try it risk-free for 30 nights</p><p><strong>Easy returns:</strong> Free returns within 30 days</p><p><strong>Fast delivery:</strong> Ships within 1-2 business days</p>",
+            "page": ""
+          }
+        },
+        "sustainability": {
+          "type": "accordion",
+          "settings": {
+            "title": "Sustainability",
+            "content": "<p><strong>Eco-friendly materials:</strong> Made from sustainably sourced eucalyptus</p><p><strong>OEKO-TEX certified:</strong> Safe for you and the environment</p><p><strong>Minimal water usage:</strong> 95% less water than traditional cotton</p><p><strong>Biodegradable:</strong> Naturally breaks down at end of life</p>",
+            "page": ""
+          }
+        },
+        "size-guide": {
+          "type": "button",
+          "settings": {
+            "text": "Size Guide",
+            "link": "#",
+            "style": "outline",
+            "stretch": false,
+            "modal_title": "Size Guide",
+            "modal_content": "<h3>Bedding Sizes</h3><p><strong>Twin:</strong> 39\" x 75\" (fits mattresses up to 15\" deep)</p><p><strong>Full:</strong> 54\" x 75\" (fits mattresses up to 15\" deep)</p><p><strong>Queen:</strong> 60\" x 80\" (fits mattresses up to 15\" deep)</p><p><strong>King:</strong> 76\" x 80\" (fits mattresses up to 15\" deep)</p><p><strong>Cal King:</strong> 72\" x 84\" (fits mattresses up to 15\" deep)</p><h3>Pillow Sizes</h3><p><strong>Standard:</strong> 20\" x 26\"</p><p><strong>King:</strong> 20\" x 36\"</p>"
+          }
         },
         "complementary_products": {
           "type": "complementary_products",
-          "settings": {}
+          "settings": {
+            "title": "Complete Your Set",
+            "products_count": 3,
+            "show_below_gallery": false,
+            "stack_products": false,
+            "show_quick_buy": true
+          }
         }
       },
       "block_order": [
-        "vendor",
         "title",
+        "rating",
         "price",
         "payment_terms",
-        "separator",
+        "separator-1",
         "description",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
+        "separator-2",
+        "care-instructions",
+        "shipping-returns",
+        "sustainability",
+        "size-guide",
         "complementary_products"
       ],
-      "settings": {}
+      "settings": {
+        "color_scheme": "scheme-1",
+        "container_size": "lg",
+        "product_info_size": 40,
+        "show_sticky_add_to_cart": true,
+        "center_basic_info": false,
+        "desktop_media_layout": "grid_2x_highlighted",
+        "mobile_controls": "dots",
+        "enable_media_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 2.5
+      }
     },
-    "related-products": { "type": "related-products", "settings": {} }
+    "product-benefits": {
+      "type": "text-with-icons",
+      "blocks": {
+        "benefit-1": {
+          "type": "item",
+          "settings": {
+            "title": "Temperature Regulating",
+            "content": "Natural cooling properties keep you comfortable all night long",
+            "icon": "picto-temperature"
+          }
+        },
+        "benefit-2": {
+          "type": "item",
+          "settings": {
+            "title": "Hypoallergenic",
+            "content": "Safe for sensitive skin and allergy sufferers",
+            "icon": "picto-leaf"
+          }
+        },
+        "benefit-3": {
+          "type": "item",
+          "settings": {
+            "title": "Ultra Soft",
+            "content": "Silky smooth texture that gets softer with every wash",
+            "icon": "picto-clothing"
+          }
+        },
+        "benefit-4": {
+          "type": "item",
+          "settings": {
+            "title": "Sustainable",
+            "content": "Eco-friendly materials with minimal environmental impact",
+            "icon": "picto-recycling"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_width": 48,
+        "text_alignment": "center",
+        "title": "Why You'll Love This Product"
+      }
+    },
+    "product-reviews": {
+      "type": "testimonials",
+      "blocks": {
+        "review-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"The softest sheets I've ever owned. They keep me cool all night and the quality is incredible.\"</p>",
+            "author": "Sarah M.",
+            "title": "Verified Customer"
+          }
+        },
+        "review-2": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"I'm a hot sleeper and these have been a game changer. Finally getting a full night's rest!\"</p>",
+            "author": "Michael R.",
+            "title": "Verified Customer"
+          }
+        },
+        "review-3": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"Worth every penny. The cooling effect is real and they feel luxurious.\"</p>",
+            "author": "Jennifer L.",
+            "title": "Verified Customer"
+          }
+        }
+      },
+      "block_order": ["review-1", "review-2", "review-3"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "show_rating": true,
+        "title": "What Our Customers Say",
+        "subheading": "Reviews"
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "You might also like",
+        "title": "Related Products"
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed-products",
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_count": 8,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "title": "Recently Viewed"
+      }
+    }
   },
-  "order": ["main", "related-products"]
+  "order": [
+    "main",
+    "product-benefits",
+    "product-reviews",
+    "related-products",
+    "recently-viewed"
+  ]
 }

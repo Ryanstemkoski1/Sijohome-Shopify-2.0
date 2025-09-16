@@ -1,0 +1,165 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "md",
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "apply_overlay": true,
+        "show_navigation_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "loungewear-hero": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Lounge in Luxury",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Ultra-soft, breathable loungewear made from the same premium eucalyptus fabric as our best-selling sheets. Perfect for relaxing at home or sleeping in comfort.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop All Loungewear",
+            "url": "shopify://collections/loungewear",
+            "style": "fill"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 16,
+        "products_per_row_mobile": "2",
+        "products_size_desktop": "large",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "horizontal_sidebar",
+        "show_filter_group_name": true,
+        "show_color_swatch": true,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1.0,
+        "vertical_spacing_factor": 1.2,
+        "enable_sticky_facets": false
+      }
+    },
+    "loungewear-benefits": {
+      "type": "text-with-icons",
+      "blocks": {
+        "benefit-1": {
+          "type": "item",
+          "settings": {
+            "title": "Temperature Regulating",
+            "content": "Naturally cooling eucalyptus fibers keep you comfortable all day long",
+            "icon": "picto-temperature"
+          }
+        },
+        "benefit-2": {
+          "type": "item",
+          "settings": {
+            "title": "Silky Soft",
+            "content": "Luxuriously smooth fabric that feels amazing against your skin",
+            "icon": "picto-clothing"
+          }
+        },
+        "benefit-3": {
+          "type": "item",
+          "settings": {
+            "title": "Sustainable",
+            "content": "Made from responsibly sourced eucalyptus with minimal environmental impact",
+            "icon": "picto-leaf"
+          }
+        },
+        "benefit-4": {
+          "type": "item",
+          "settings": {
+            "title": "Easy Care",
+            "content": "Machine washable and gets softer with every wash",
+            "icon": "picto-washing"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_width": 48,
+        "text_alignment": "center",
+        "title": "Why You'll Love Our Loungewear"
+      }
+    },
+    "featured-sets": {
+      "type": "multi-column",
+      "blocks": {
+        "pajama-set": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Complete Pajama Sets",
+            "heading_tag": "h3",
+            "content": "<p>Matching tops and bottoms in our signature eucalyptus fabric for the ultimate sleep experience.</p>",
+            "link_text": "Shop Sets"
+          }
+        },
+        "individual-pieces": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Mix & Match Pieces",
+            "heading_tag": "h3",
+            "content": "<p>Build your perfect loungewear wardrobe with individual tops, bottoms, and robes.</p>",
+            "link_text": "Shop Individual"
+          }
+        }
+      },
+      "block_order": ["pajama-set", "individual-pieces"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 2,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Collections",
+        "title": "Shop by Style"
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "loungewear-hero",
+    "main",
+    "loungewear-benefits",
+    "featured-sets"
+  ]
+}

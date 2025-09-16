@@ -1,0 +1,166 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "apply_overlay": true,
+        "show_navigation_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "best-sellers-hero": {
+      "type": "rich-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Award Winning Best Sellers",
+            "heading_tag": "h1"
+          }
+        },
+        "text-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Discover why millions trust SIJO for their best sleep. Our award-winning collection features temperature-regulating bedding made from sustainable materials.</p>"
+          }
+        }
+      },
+      "block_order": ["heading-1", "text-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "content_width": "md",
+        "text_position": "center",
+        "remove_vertical_spacing": false
+      }
+    },
+    "featured-products": {
+      "type": "multi-column",
+      "blocks": {
+        "eucalyptus-sheets": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "AiryWeight Eucalyptus Sheets",
+            "heading_tag": "h3",
+            "content": "<p>Ultra-soft, cooling sheets made from sustainable eucalyptus. Perfect for hot sleepers.</p>",
+            "link_text": "Shop Now",
+            "link_url": "shopify://products/eucalyptus-sheets"
+          }
+        },
+        "eucalyptus-comforter": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "AiryWeight Comforter",
+            "heading_tag": "h3",
+            "content": "<p>Lightweight yet cozy comforter that keeps you cool and comfortable all night.</p>",
+            "link_text": "Shop Now",
+            "link_url": "shopify://products/eucalyptus-comforter"
+          }
+        },
+        "clima-pillow": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "CloudSupport Latex Pillow",
+            "heading_tag": "h3",
+            "content": "<p>Ultra-soft, responsive support for optimal spinal alignment and comfort.</p>",
+            "link_text": "Shop Now",
+            "link_url": "shopify://products/clima-pillow"
+          }
+        }
+      },
+      "block_order": [
+        "eucalyptus-sheets",
+        "eucalyptus-comforter",
+        "clima-pillow"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "md",
+        "subheading": "Featured Products",
+        "title": "Customer Favorites"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 24,
+        "products_per_row_mobile": "2",
+        "products_size_desktop": "medium",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "horizontal",
+        "show_filter_group_name": true,
+        "show_color_swatch": true,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": false,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1.2,
+        "enable_sticky_facets": true
+      }
+    },
+    "sijo-features": {
+      "type": "text-with-icons",
+      "blocks": {
+        "feature-1": {
+          "type": "item",
+          "settings": {
+            "title": "Temperature Regulating",
+            "content": "<p>Natural and innovative materials engineered for cooling comfort.</p>"
+          }
+        },
+        "feature-2": {
+          "type": "item",
+          "settings": {
+            "title": "Moisture Wicking",
+            "content": "<p>Breathable weaves enhance cooling for better, deeper sleep.</p>"
+          }
+        },
+        "feature-3": {
+          "type": "item",
+          "settings": {
+            "title": "Asthma & Allergy Friendly",
+            "content": "<p>All textiles are hypoallergenic and safe for sensitive groups.</p>"
+          }
+        },
+        "feature-4": {
+          "type": "item",
+          "settings": {
+            "title": "Sustainable",
+            "content": "<p>From natural fibers to recycled materials, sustainability is key.</p>"
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "stack_on_mobile": false,
+        "text_alignment": "center",
+        "icon_position": "top"
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "best-sellers-hero",
+    "featured-products",
+    "main",
+    "sijo-features"
+  ]
+}

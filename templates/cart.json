@@ -1,4 +1,105 @@
 {
-  "sections": { "main": { "type": "main-cart", "settings": {} } },
-  "order": ["main"]
+  "sections": {
+    "main": {
+      "type": "main-cart",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "show_cart_note": true,
+        "show_shipping_estimator": true
+      }
+    },
+    "cart-benefits": {
+      "type": "text-with-icons",
+      "blocks": {
+        "benefit-1": {
+          "type": "item",
+          "settings": {
+            "title": "Free Shipping",
+            "content": "On orders over $75",
+            "icon": "picto-truck"
+          }
+        },
+        "benefit-2": {
+          "type": "item",
+          "settings": {
+            "title": "30-Night Trial",
+            "content": "Try risk-free for 30 nights",
+            "icon": "picto-moon"
+          }
+        },
+        "benefit-3": {
+          "type": "item",
+          "settings": {
+            "title": "Easy Returns",
+            "content": "Hassle-free returns within 30 days",
+            "icon": "picto-return"
+          }
+        },
+        "benefit-4": {
+          "type": "item",
+          "settings": {
+            "title": "Secure Checkout",
+            "content": "Your information is safe and secure",
+            "icon": "picto-shield"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_width": 32,
+        "text_alignment": "center",
+        "title": "Shopping with Confidence"
+      }
+    },
+    "cart-upsell": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_count": 4,
+            "title": "Complete Your Sleep Setup"
+          }
+        }
+      },
+      "block_order": ["collection-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "Recommendations",
+        "title": "You Might Also Like"
+      }
+    },
+    "testimonial": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"SIJO sheets have transformed my sleep. The cooling effect is incredible and the quality is outstanding.\"</p>",
+            "author": "Amanda K.",
+            "title": "Verified Customer"
+          }
+        }
+      },
+      "block_order": ["testimonial-1"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "show_rating": true,
+        "title": "Join Thousands of Happy Customers"
+      }
+    }
+  },
+  "order": ["main", "cart-benefits", "cart-upsell", "testimonial"]
 }

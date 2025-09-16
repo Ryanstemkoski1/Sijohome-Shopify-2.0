@@ -1,0 +1,134 @@
+{
+  "sections": {
+    "comforter-hero": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "Comforters & Duvets"
+          }
+        },
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "That good heavy, without the heat.",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Comforters, made to be... comfortable.</p>"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "md",
+        "allow_transparent_header": true,
+        "reveal_on_scroll": false,
+        "remove_vertical_spacing": false,
+        "content_width": "md",
+        "mobile_text_position": "place-self-center text-center",
+        "desktop_text_position": "sm:place-self-center sm:text-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "comforter-products": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "AiryWeight™ Comforter",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Somehow both airy and weighted, our <em>Airy</em><strong>Weight</strong>™ Comforter keeps you warm and cozy without getting hot and sweaty.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Learn More",
+            "link": "shopify://products/eucalyptus-comforter",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "start",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    },
+    "clima-comforter": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "TempTune™ Comforter",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>The body-temp controlled <em>Temp</em><strong>Tune</strong>™ Comforter is our most advanced, all-season, any weather, better sleep stuff of dreams.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Learn More",
+            "link": "shopify://products/clima-duvet-insert",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image_position": "end",
+        "text_alignment": "start",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 16,
+        "products_per_row_mobile": "1",
+        "products_size_desktop": "large",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "sidebar",
+        "show_filter_group_name": true,
+        "show_color_swatch": true,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1.2,
+        "vertical_spacing_factor": 1.4,
+        "enable_sticky_facets": true
+      }
+    }
+  },
+  "order": ["comforter-hero", "comforter-products", "clima-comforter", "main"]
+}

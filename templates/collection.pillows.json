@@ -1,0 +1,145 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "md",
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "apply_overlay": true,
+        "show_navigation_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "pillow-features": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Find Your Perfect Pillow",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Whether you prefer supportive latex, cooling memory foam, or plush down alternative, we have the perfect pillow for your sleep style. All designed for optimal comfort and spinal alignment.</p>"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    },
+    "featured-pillows": {
+      "type": "multi-column",
+      "blocks": {
+        "clima-pillow": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "CloudSupport Latex Pillow",
+            "heading_tag": "h3",
+            "content": "<p>Ultra soft, responsive support with natural latex for optimal spinal alignment.</p>",
+            "link_text": "Shop Latex Pillow",
+            "link_url": "shopify://products/clima-pillow"
+          }
+        },
+        "memory-foam": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "FlexCool Memory Foam Pillow",
+            "heading_tag": "h3",
+            "content": "<p>Lasting cool, temperature-regulating memory foam for personalized support.</p>",
+            "link_text": "Shop Memory Foam",
+            "link_url": "shopify://products/flexcool-memory-foam-pillow"
+          }
+        }
+      },
+      "block_order": ["clima-pillow", "memory-foam"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 2,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Featured Pillows",
+        "title": "Choose Your Comfort"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 12,
+        "products_per_row_mobile": "1",
+        "products_size_desktop": "large",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "sidebar",
+        "show_filter_group_name": true,
+        "show_color_swatch": false,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1.2,
+        "vertical_spacing_factor": 1.4,
+        "enable_sticky_facets": true
+      }
+    },
+    "pillow-guide": {
+      "type": "tabs",
+      "blocks": {
+        "tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Side Sleepers",
+            "content": "<p>Need firmer support to maintain proper neck alignment. Our latex and memory foam options provide the right balance of support and comfort.</p>"
+          }
+        },
+        "tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "Back Sleepers",
+            "content": "<p>Require medium support to keep the natural curve of the spine. Our medium-firm options work best for back sleeping positions.</p>"
+          }
+        },
+        "tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "Stomach Sleepers",
+            "content": "<p>Need softer, thinner pillows to prevent neck strain. Our low-profile options provide gentle support without lifting the head too much.</p>"
+          }
+        }
+      },
+      "block_order": ["tab-1", "tab-2", "tab-3"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "title": "Find Your Sleep Position Match"
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "pillow-features",
+    "featured-pillows",
+    "main",
+    "pillow-guide"
+  ]
+}

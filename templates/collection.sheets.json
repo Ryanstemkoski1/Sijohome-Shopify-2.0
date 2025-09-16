@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "lg",
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "apply_overlay": true,
+        "show_navigation_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 25
+      }
+    },
+    "sheets-featured": {
+      "type": "multi-column",
+      "blocks": {
+        "eucalyptus-sheets": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "AiryWeight Eucalyptus Sheet Set",
+            "heading_tag": "h3",
+            "content": "<p>Best cooling, airy sheets made from sustainable eucalyptus fibers. Perfect for hot sleepers.</p>",
+            "link_text": "Shop Eucalyptus",
+            "link_url": "shopify://products/eucalyptus-sheets"
+          }
+        },
+        "cotton-sheets": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "CrispCool Cotton Sheet Set",
+            "heading_tag": "h3",
+            "content": "<p>Luxury organic percale sheets with crisp, hotel-like feel and superior breathability.</p>",
+            "link_text": "Shop Cotton",
+            "link_url": "shopify://products/crispcool-cotton-sheet-set"
+          }
+        }
+      },
+      "block_order": ["eucalyptus-sheets", "cotton-sheets"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 2,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Featured Collections",
+        "title": "Find Your Perfect Sheets"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 20,
+        "products_per_row_mobile": "2",
+        "products_size_desktop": "medium",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "horizontal",
+        "show_filter_group_name": true,
+        "show_color_swatch": true,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": false,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1.2,
+        "enable_sticky_facets": true
+      }
+    },
+    "sheets-benefits": {
+      "type": "text-with-icons",
+      "blocks": {
+        "cooling": {
+          "type": "item",
+          "settings": {
+            "title": "Cooling & Breathable",
+            "content": "<p>Advanced weaves and natural fibers regulate temperature for cooler sleep.</p>"
+          }
+        },
+        "soft": {
+          "type": "item",
+          "settings": {
+            "title": "Luxuriously Soft",
+            "content": "<p>Silky smooth textures that get softer with every wash.</p>"
+          }
+        },
+        "sustainable": {
+          "type": "item",
+          "settings": {
+            "title": "Sustainably Made",
+            "content": "<p>Eco-friendly materials and responsible manufacturing processes.</p>"
+          }
+        },
+        "durable": {
+          "type": "item",
+          "settings": {
+            "title": "Long-Lasting Quality",
+            "content": "<p>Premium construction built to maintain comfort for years.</p>"
+          }
+        }
+      },
+      "block_order": ["cooling", "soft", "sustainable", "durable"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "stack_on_mobile": false,
+        "text_alignment": "center",
+        "icon_position": "top"
+      }
+    }
+  },
+  "order": ["collection-banner", "sheets-featured", "main", "sheets-benefits"]
+}

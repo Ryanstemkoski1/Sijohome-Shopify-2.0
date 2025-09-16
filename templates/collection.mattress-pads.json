@@ -1,0 +1,159 @@
+{
+  "sections": {
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "md",
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "apply_overlay": true,
+        "show_navigation_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 30
+      }
+    },
+    "mattress-hero": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Transform Your Mattress",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Add an extra layer of comfort and protection to your mattress with our premium mattress pads and protectors. Temperature-regulating and hypoallergenic for better sleep.</p>"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    },
+    "product-comparison": {
+      "type": "multi-column",
+      "blocks": {
+        "cooling-pad": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Cooling Mattress Pad",
+            "heading_tag": "h3",
+            "content": "<p>Temperature-regulating pad that keeps you cool all night long. Perfect for hot sleepers and warmer climates.</p><ul><li>Cooling gel-infused memory foam</li><li>Breathable bamboo cover</li><li>Deep pocket fitted design</li></ul>",
+            "link_text": "Shop Cooling Pad",
+            "link_url": "shopify://products/cooling-mattress-pad"
+          }
+        },
+        "protector": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Waterproof Protector",
+            "heading_tag": "h3",
+            "content": "<p>Ultimate protection without compromising comfort. Breathable waterproof barrier keeps your mattress clean and fresh.</p><ul><li>100% waterproof protection</li><li>Hypoallergenic bamboo terry</li><li>Noiseless and breathable</li></ul>",
+            "link_text": "Shop Protector",
+            "link_url": "shopify://products/waterproof-mattress-protector"
+          }
+        }
+      },
+      "block_order": ["cooling-pad", "protector"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 2,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "lg",
+        "subheading": "Featured Products",
+        "title": "Find Your Perfect Fit"
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 8,
+        "products_per_row_mobile": "1",
+        "products_size_desktop": "large",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "sidebar",
+        "show_filter_group_name": true,
+        "show_color_swatch": false,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": true,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1.2,
+        "vertical_spacing_factor": 1.4,
+        "enable_sticky_facets": true
+      }
+    },
+    "benefits-section": {
+      "type": "text-with-icons",
+      "blocks": {
+        "benefit-1": {
+          "type": "item",
+          "settings": {
+            "title": "Mattress Protection",
+            "content": "Extends the life of your mattress by protecting against spills, stains, and allergens",
+            "icon": "picto-shield"
+          }
+        },
+        "benefit-2": {
+          "type": "item",
+          "settings": {
+            "title": "Temperature Control",
+            "content": "Cooling technology helps regulate body temperature for comfortable sleep",
+            "icon": "picto-temperature"
+          }
+        },
+        "benefit-3": {
+          "type": "item",
+          "settings": {
+            "title": "Easy Care",
+            "content": "Machine washable and dryer safe for convenient maintenance",
+            "icon": "picto-washing"
+          }
+        },
+        "benefit-4": {
+          "type": "item",
+          "settings": {
+            "title": "Perfect Fit",
+            "content": "Deep pocket design fits mattresses up to 18 inches thick with secure elastic band",
+            "icon": "picto-bed"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_width": 48,
+        "text_alignment": "center",
+        "title": "Why Choose SIJO Mattress Pads"
+      }
+    }
+  },
+  "order": [
+    "collection-banner",
+    "mattress-hero",
+    "product-comparison",
+    "main",
+    "benefits-section"
+  ]
+}

@@ -1,0 +1,236 @@
+{
+  "sections": {
+    "gift-hero": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "The Gift of Better Sleep",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Give the gift that keeps on giving - luxurious, sustainable bedding that transforms every night into a restorative experience.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop Gift Sets",
+            "url": "shopify://collections/gift-sets",
+            "style": "fill"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "center",
+        "content_width": "lg",
+        "remove_vertical_spacing": false
+      }
+    },
+    "gift-bundles": {
+      "type": "multi-column",
+      "blocks": {
+        "bundle-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "The Complete Sleep Set",
+            "heading_tag": "h3",
+            "content": "<p>Everything needed for the perfect night's sleep: sheet set, pillowcases, and cooling pillows.</p><p><strong>Includes:</strong><br>• Sheet Set (Queen)<br>• 2 Pillowcases<br>• 2 Cooling Pillows<br>• Gift Box & Message Card</p>",
+            "link_text": "Shop Complete Set",
+            "link_url": "shopify://products/complete-sleep-set"
+          }
+        },
+        "bundle-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "The Starter Bundle",
+            "heading_tag": "h3",
+            "content": "<p>Perfect introduction to SIJO's cooling comfort for first-time customers.</p><p><strong>Includes:</strong><br>• Sheet Set (Queen)<br>• 2 Pillowcases<br>• Care Instructions<br>• Beautiful Gift Packaging</p>",
+            "link_text": "Shop Starter Bundle",
+            "link_url": "shopify://products/starter-bundle"
+          }
+        },
+        "bundle-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "The Luxury Experience",
+            "heading_tag": "h3",
+            "content": "<p>Our premium collection for the ultimate sleep sanctuary.</p><p><strong>Includes:</strong><br>• Eucalyptus Sheet Set<br>• Matching Duvet Cover<br>• 4 Pillowcases<br>• 2 Premium Pillows<br>• Luxury Gift Presentation</p>",
+            "link_text": "Shop Luxury Set",
+            "link_url": "shopify://products/luxury-experience"
+          }
+        }
+      },
+      "block_order": ["bundle-1", "bundle-2", "bundle-3"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "start",
+        "text_alignment": "start",
+        "spacing": "lg",
+        "subheading": "Curated Collections",
+        "title": "Perfect Gift Bundles"
+      }
+    },
+    "gift-occasions": {
+      "type": "tabs",
+      "blocks": {
+        "tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Wedding Gifts",
+            "content": "<h3>Celebrate New Beginnings</h3><p>Help newlyweds start their journey together with the comfort they deserve. Our wedding gift sets come beautifully packaged and can be personalized with custom messages.</p><p><strong>Popular Wedding Choices:</strong></p><ul><li>Complete Sleep Set for couples</li><li>Luxury bedding collections</li><li>Mix-and-match sheet sets</li><li>Custom embroidery available</li></ul>"
+          }
+        },
+        "tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "Housewarming",
+            "content": "<h3>Welcome Home in Comfort</h3><p>Help friends and family settle into their new space with the gift of exceptional sleep. Perfect for new homeowners, apartment dwellers, or anyone starting fresh.</p><p><strong>Housewarming Favorites:</strong></p><ul><li>Starter Bundle for new bedrooms</li><li>Guest room essentials</li><li>Multi-size sheet sets</li><li>Care package with accessories</li></ul>"
+          }
+        },
+        "tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "Holiday Gifts",
+            "content": "<h3>The Gift That Gives Back</h3><p>Show you care with luxurious bedding that improves sleep quality year-round. Perfect for birthdays, holidays, or just because.</p><p><strong>Holiday Highlights:</strong></p><ul><li>Seasonal gift wrapping</li><li>Limited edition colors</li><li>Gift cards available</li><li>Express shipping options</li></ul>"
+          }
+        }
+      },
+      "block_order": ["tab-1", "tab-2", "tab-3"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "title": "Perfect for Every Occasion"
+      }
+    },
+    "gift-benefits": {
+      "type": "text-with-icons",
+      "blocks": {
+        "benefit-1": {
+          "type": "item",
+          "settings": {
+            "title": "Beautiful Packaging",
+            "content": "Every gift comes in elegant, eco-friendly packaging ready for gifting",
+            "icon": "picto-gift"
+          }
+        },
+        "benefit-2": {
+          "type": "item",
+          "settings": {
+            "title": "Personal Messages",
+            "content": "Add a custom note to make your gift extra special and personal",
+            "icon": "picto-message"
+          }
+        },
+        "benefit-3": {
+          "type": "item",
+          "settings": {
+            "title": "Easy Returns",
+            "content": "Recipients can easily exchange sizes or products for the perfect fit",
+            "icon": "picto-return"
+          }
+        },
+        "benefit-4": {
+          "type": "item",
+          "settings": {
+            "title": "Express Shipping",
+            "content": "Fast delivery options available for last-minute gift needs",
+            "icon": "picto-truck"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3", "benefit-4"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_width": 48,
+        "text_alignment": "center",
+        "title": "Why SIJO Makes the Perfect Gift"
+      }
+    },
+    "gift-testimonial": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"I gave my sister SIJO sheets for her birthday and she calls me every week to thank me! She says it's the best gift she's ever received.\"</p>",
+            "author": "Maria Rodriguez",
+            "title": "Happy Gift Giver"
+          }
+        }
+      },
+      "block_order": ["testimonial-1"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "show_rating": true,
+        "title": "Gifts That Create Lasting Memories"
+      }
+    },
+    "gift-cta": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Ready to Give the Perfect Gift?",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Browse our curated gift collections or create a custom bundle. Every SIJO gift comes with our 30-night trial guarantee.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop All Gifts",
+            "url": "shopify://collections/gifts",
+            "style": "fill"
+          }
+        },
+        "button-2": {
+          "type": "button",
+          "settings": {
+            "text": "Gift Cards",
+            "url": "shopify://products/gift-card",
+            "style": "outline"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1", "button-2"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": true,
+        "image_position": "end",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "gift-hero",
+    "gift-bundles",
+    "gift-occasions",
+    "gift-benefits",
+    "gift-testimonial",
+    "gift-cta"
+  ]
+}

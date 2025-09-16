@@ -1,0 +1,204 @@
+{
+  "sections": {
+    "hero-banner": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Summer Sale",
+            "heading_tag": "h1"
+          }
+        },
+        "subheading-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "Cool Down with SIJO"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Beat the heat with our temperature-regulating bedding. Save up to 30% on cooling sheets, pillows, and more.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop Summer Sale",
+            "url": "shopify://collections/summer-sale",
+            "style": "fill"
+          }
+        }
+      },
+      "block_order": ["subheading-1", "heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    },
+    "featured-deals": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "products_count": 8,
+            "title": "Hot Deals, Cool Sleep"
+          }
+        }
+      },
+      "block_order": ["collection-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "hide_product_information": false,
+        "stack_products": false,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1,
+        "subheading": "Limited Time",
+        "title": "Summer Sale Collection"
+      }
+    },
+    "countdown-timer": {
+      "type": "countdown",
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "text_alignment": "center",
+        "timer_alignment": "center",
+        "subheading": "Hurry! Sale Ends Soon",
+        "title": "Don't Miss Out",
+        "content": "<p>Limited time offer. Sale ends when timer reaches zero.</p>",
+        "expiration_date": "2024-08-31",
+        "expiration_time": "23:59",
+        "expiration_behavior": "hide_section",
+        "show_timer_labels": true
+      }
+    },
+    "cooling-benefits": {
+      "type": "multi-column",
+      "blocks": {
+        "benefit-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "5x Cooler Than Cotton",
+            "heading_tag": "h3",
+            "content": "<p>Our eucalyptus sheets are scientifically proven to keep you cooler throughout the night.</p>",
+            "link_text": "Learn More"
+          }
+        },
+        "benefit-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Moisture Wicking",
+            "heading_tag": "h3",
+            "content": "<p>Advanced fiber technology pulls moisture away from your body for dry, comfortable sleep.</p>",
+            "link_text": "Shop Now"
+          }
+        },
+        "benefit-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Breathable Weave",
+            "heading_tag": "h3",
+            "content": "<p>Our proprietary weave promotes airflow and prevents heat from getting trapped.</p>",
+            "link_text": "Discover"
+          }
+        }
+      },
+      "block_order": ["benefit-1", "benefit-2", "benefit-3"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "columns_per_row": 3,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "lg",
+        "subheading": "Why Choose SIJO",
+        "title": "Beat the Heat with Science"
+      }
+    },
+    "customer-testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"These sheets saved my summer! I used to wake up sweating every night, but now I sleep cool and comfortable.\"</p>",
+            "author": "Lisa M.",
+            "title": "Verified Customer"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"The cooling effect is real! My husband and I are both hot sleepers, and these sheets work for both of us.\"</p>",
+            "author": "Rachel S.",
+            "title": "Verified Customer"
+          }
+        }
+      },
+      "block_order": ["testimonial-1", "testimonial-2"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "show_rating": true,
+        "title": "Real Results from Real Customers",
+        "subheading": "Testimonials"
+      }
+    },
+    "final-cta": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Ready for Your Best Sleep?",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Join thousands of customers who've transformed their sleep with SIJO. 30-night trial, free shipping, and easy returns.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop Sale Now",
+            "url": "shopify://collections/summer-sale",
+            "style": "fill"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "image_position": "end",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "hero-banner",
+    "featured-deals",
+    "countdown-timer",
+    "cooling-benefits",
+    "customer-testimonials",
+    "final-cta"
+  ]
+}

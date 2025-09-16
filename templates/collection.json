@@ -1,7 +1,107 @@
 {
   "sections": {
-    "collection-banner": { "type": "collection-banner", "settings": {} },
-    "main": { "type": "main-collection", "settings": {} }
+    "collection-banner": {
+      "type": "collection-banner",
+      "settings": {
+        "color_scheme": "scheme-4",
+        "image_size": "md",
+        "allow_transparent_header": true,
+        "enable_parallax": false,
+        "apply_overlay": true,
+        "show_navigation_breadcrumb": true,
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "overlay_color": "#000000",
+        "overlay_opacity": 20
+      }
+    },
+    "main": {
+      "type": "main-collection",
+      "settings": {
+        "color_scheme": "scheme-1",
+        "products_per_page": 24,
+        "products_per_row_mobile": "2",
+        "products_size_desktop": "medium",
+        "show_grid_mode_selector": true,
+        "show_sort_by": true,
+        "show_filters": true,
+        "filter_layout": "horizontal",
+        "show_filter_group_name": true,
+        "show_color_swatch": true,
+        "show_empty_filter_values": false,
+        "show_filter_values_count": true,
+        "open_first_filter_group": false,
+        "quick_links_menu": "",
+        "horizontal_spacing_factor": 1,
+        "vertical_spacing_factor": 1.2,
+        "enable_sticky_facets": true
+      }
+    },
+    "sijo-collection-features": {
+      "type": "text-with-icons",
+      "blocks": {
+        "feature-1": {
+          "type": "item",
+          "settings": {
+            "title": "Temperature Regulating",
+            "content": "<p>Made from natural and innovative materials engineered for cooling comfort.</p>"
+          }
+        },
+        "feature-2": {
+          "type": "item",
+          "settings": {
+            "title": "Moisture Wicking",
+            "content": "<p>Breathable weaves enhance cooling effects for better, deeper sleep.</p>"
+          }
+        },
+        "feature-3": {
+          "type": "item",
+          "settings": {
+            "title": "Hypoallergenic",
+            "content": "<p>All textiles are safe for sensitive groups and allergy-friendly.</p>"
+          }
+        },
+        "feature-4": {
+          "type": "item",
+          "settings": {
+            "title": "Sustainable",
+            "content": "<p>From natural fibers to recycled materials, sustainability is key.</p>"
+          }
+        }
+      },
+      "block_order": ["feature-1", "feature-2", "feature-3", "feature-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "stack_on_mobile": false,
+        "text_alignment": "center",
+        "icon_position": "top"
+      }
+    },
+    "collection-testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>The quality and comfort of these products exceeded my expectations. Perfect for hot sleepers!</p>",
+            "author": "Verified Customer"
+          }
+        }
+      },
+      "block_order": ["testimonial-1"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "auto_rotate_between_testimonials": false,
+        "cycle_speed": 5,
+        "font_size_factor": 1
+      }
+    }
   },
-  "order": ["collection-banner", "main"]
+  "order": [
+    "collection-banner",
+    "main",
+    "sijo-collection-features",
+    "collection-testimonials"
+  ]
 }

@@ -1,0 +1,230 @@
+{
+  "sections": {
+    "sustainability-hero": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Sleep Better, Planet Better",
+            "heading_tag": "h1"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Discover how SIJO is revolutionizing sleep with sustainable, earth-friendly bedding that doesn't compromise on comfort or quality.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop Sustainable Bedding",
+            "url": "shopify://collections/all",
+            "style": "fill"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": false,
+        "image_position": "start",
+        "text_alignment": "center",
+        "content_width": "lg",
+        "remove_vertical_spacing": false
+      }
+    },
+    "sustainability-stats": {
+      "type": "multi-column",
+      "blocks": {
+        "stat-1": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "95% Less Water",
+            "heading_tag": "h3",
+            "content": "<p>Eucalyptus requires 95% less water to grow than traditional cotton, making it incredibly water-efficient.</p>"
+          }
+        },
+        "stat-2": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "100% Biodegradable",
+            "heading_tag": "h3",
+            "content": "<p>Our eucalyptus fibers naturally biodegrade at the end of their life cycle, returning safely to the earth.</p>"
+          }
+        },
+        "stat-3": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "OEKO-TEX Certified",
+            "heading_tag": "h3",
+            "content": "<p>All our products are certified safe from harmful chemicals, protecting both you and the environment.</p>"
+          }
+        },
+        "stat-4": {
+          "type": "image_with_text",
+          "settings": {
+            "title": "Responsibly Sourced",
+            "heading_tag": "h3",
+            "content": "<p>We source our eucalyptus from sustainably managed forests that don't contribute to deforestation.</p>"
+          }
+        }
+      },
+      "block_order": ["stat-1", "stat-2", "stat-3", "stat-4"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "columns_per_row": 4,
+        "stack_on_mobile": true,
+        "overlap_image": false,
+        "content_alignment": "center",
+        "text_alignment": "center",
+        "spacing": "md",
+        "subheading": "By the Numbers",
+        "title": "Our Environmental Impact"
+      }
+    },
+    "process-breakdown": {
+      "type": "tabs",
+      "blocks": {
+        "tab-1": {
+          "type": "tab",
+          "settings": {
+            "title": "Sustainable Sourcing",
+            "content": "<h3>Responsible Forest Management</h3><p>Our eucalyptus comes from FSC-certified forests that are carefully managed to ensure biodiversity and prevent deforestation. These forests actually help sequester carbon from the atmosphere.</p><p><strong>Key Benefits:</strong></p><ul><li>No old-growth forests harvested</li><li>Wildlife habitats protected</li><li>Local communities supported</li><li>Carbon footprint reduced</li></ul>"
+          }
+        },
+        "tab-2": {
+          "type": "tab",
+          "settings": {
+            "title": "Eco-Friendly Production",
+            "content": "<h3>Closed-Loop Manufacturing</h3><p>Our production process uses a closed-loop system that recycles 99% of the solvents used, minimizing waste and environmental impact.</p><p><strong>Process Highlights:</strong></p><ul><li>99% solvent recovery and reuse</li><li>Minimal water usage</li><li>No toxic chemicals released</li><li>Energy-efficient facilities</li></ul>"
+          }
+        },
+        "tab-3": {
+          "type": "tab",
+          "settings": {
+            "title": "Packaging & Shipping",
+            "content": "<h3>Sustainable Packaging</h3><p>We use recyclable and biodegradable packaging materials, and optimize our shipping to reduce carbon emissions.</p><p><strong>Our Commitments:</strong></p><ul><li>Plastic-free packaging options</li><li>Recyclable materials only</li><li>Carbon-neutral shipping</li><li>Minimal packaging waste</li></ul>"
+          }
+        }
+      },
+      "block_order": ["tab-1", "tab-2", "tab-3"],
+      "settings": {
+        "color_scheme": "scheme-3",
+        "separate_section_with_border": true,
+        "title": "From Forest to Bedroom: Our Sustainable Journey"
+      }
+    },
+    "certifications": {
+      "type": "text-with-icons",
+      "blocks": {
+        "cert-1": {
+          "type": "item",
+          "settings": {
+            "title": "OEKO-TEX Standard 100",
+            "content": "Certified free from harmful chemicals and safe for human health",
+            "icon": "picto-leaf"
+          }
+        },
+        "cert-2": {
+          "type": "item",
+          "settings": {
+            "title": "FSC Certified",
+            "content": "Sourced from responsibly managed forests",
+            "icon": "picto-tree"
+          }
+        },
+        "cert-3": {
+          "type": "item",
+          "settings": {
+            "title": "Cradle to Cradle",
+            "content": "Designed for continuous material health and recyclability",
+            "icon": "picto-recycling"
+          }
+        },
+        "cert-4": {
+          "type": "item",
+          "settings": {
+            "title": "Carbon Neutral",
+            "content": "We offset our carbon footprint through verified programs",
+            "icon": "picto-globe"
+          }
+        }
+      },
+      "block_order": ["cert-1", "cert-2", "cert-3", "cert-4"],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "separate_section_with_border": true,
+        "stack_on_mobile": false,
+        "icon_width": 48,
+        "text_alignment": "center",
+        "title": "Our Certifications & Commitments"
+      }
+    },
+    "impact-testimonial": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "content": "<p>\"I love that I can sleep comfortably knowing my bedding choices are helping the planet. SIJO makes it easy to be sustainable without sacrificing quality.\"</p>",
+            "author": "Dr. Emily Chen",
+            "title": "Environmental Scientist"
+          }
+        }
+      },
+      "block_order": ["testimonial-1"],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "separate_section_with_border": true,
+        "show_rating": false,
+        "title": "Making a Difference Together"
+      }
+    },
+    "sustainability-cta": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Join the Sustainable Sleep Movement",
+            "heading_tag": "h2"
+          }
+        },
+        "richtext-1": {
+          "type": "richtext",
+          "settings": {
+            "content": "<p>Make a positive impact with every night's sleep. Choose SIJO for bedding that's good for you and good for the planet.</p>"
+          }
+        },
+        "button-1": {
+          "type": "button",
+          "settings": {
+            "text": "Shop Eco-Friendly Bedding",
+            "url": "shopify://collections/all",
+            "style": "fill"
+          }
+        }
+      },
+      "block_order": ["heading-1", "richtext-1", "button-1"],
+      "settings": {
+        "color_scheme": "scheme-4",
+        "separate_section_with_border": true,
+        "image_position": "end",
+        "text_alignment": "center",
+        "content_width": "md",
+        "remove_vertical_spacing": false
+      }
+    }
+  },
+  "order": [
+    "sustainability-hero",
+    "sustainability-stats",
+    "process-breakdown",
+    "certifications",
+    "impact-testimonial",
+    "sustainability-cta"
+  ]
+}
