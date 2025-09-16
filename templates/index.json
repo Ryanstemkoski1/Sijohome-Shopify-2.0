@@ -70,19 +70,22 @@
       "blocks": {
         "subheading-1": {
           "type": "subheading",
-          "settings": { "text": "New product" }
+          "settings": { "text": "New Arrival" }
         },
         "heading-1": {
           "type": "heading",
-          "settings": { "text": "Our backpack", "heading_tag": "h2" }
+          "settings": {
+            "text": "AiryWeight Eucalyptus Sheets",
+            "heading_tag": "h2"
+          }
         },
         "button-1": {
           "type": "button",
           "settings": {
             "style": "solid",
-            "text": "Shop",
-            "background": "#ffffff",
-            "text_color": "#1c1c1c"
+            "text": "Shop Now",
+            "background": "#e2ea3d",
+            "text_color": "#000000"
           }
         }
       },
@@ -97,7 +100,7 @@
         "mobile_text_position": "place-self-center text-center",
         "desktop_text_position": "sm:place-self-end-start sm:text-start",
         "overlay_color": "#000000",
-        "overlay_opacity": 20
+        "overlay_opacity": 30
       }
     },
     "rich-text": {
@@ -106,12 +109,21 @@
         "heading-1": {
           "type": "heading",
           "settings": {
-            "text": "Our aim: offer elegant, timeless & functional products",
+            "text": "Premium bedding for the best sleep of your life",
             "heading_tag": "h1"
           }
         },
-        "link-1": { "type": "link", "settings": { "text": "Our story" } },
-        "link-2": { "type": "link", "settings": { "text": "Commitments" } }
+        "link-1": {
+          "type": "link",
+          "settings": { "text": "Our story", "url": "shopify://pages/about" }
+        },
+        "link-2": {
+          "type": "link",
+          "settings": {
+            "text": "Sustainability",
+            "url": "shopify://pages/sustainability"
+          }
+        }
       },
       "block_order": ["heading-1", "link-1", "link-2"],
       "settings": {
@@ -131,12 +143,13 @@
             "color_scheme": "scheme-4",
             "column_count": "8",
             "row_count": 2,
-            "title": "Women",
-            "heading_tag": "h1",
+            "title": "Sheet Sets",
+            "heading_tag": "h2",
             "link_style": "link",
+            "link": "shopify://collections/sheets",
             "text_position": "place-self-center text-center",
             "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "overlay_opacity": 30
           }
         },
         "image-2": {
@@ -145,12 +158,13 @@
             "color_scheme": "scheme-4",
             "column_count": "4",
             "row_count": 1,
-            "title": "Men",
+            "title": "Comforters",
             "heading_tag": "h3",
             "link_style": "link",
+            "link": "shopify://collections/comforters",
             "text_position": "place-self-center text-center",
             "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "overlay_opacity": 30
           }
         },
         "image-3": {
@@ -159,12 +173,13 @@
             "color_scheme": "scheme-4",
             "column_count": "4",
             "row_count": 1,
-            "title": "Accessories",
-            "heading_tag": "h4",
+            "title": "Pillows",
+            "heading_tag": "h3",
             "link_style": "link",
+            "link": "shopify://collections/pillows",
             "text_position": "place-self-center text-center",
             "overlay_color": "#000000",
-            "overlay_opacity": 0
+            "overlay_opacity": 30
           }
         }
       },
@@ -181,7 +196,10 @@
     "scrolling-content-1": {
       "type": "scrolling-content",
       "blocks": {
-        "text-1": { "type": "text", "settings": { "text": "New: our bag" } }
+        "text-1": {
+          "type": "text",
+          "settings": { "text": "Award-winning cooling bedding" }
+        }
       },
       "block_order": ["text-1"],
       "settings": {
@@ -204,7 +222,7 @@
       "blocks": {
         "text-1": {
           "type": "text",
-          "settings": { "text": "Show new arrivals" }
+          "settings": { "text": "Sleep better with sustainable bedding" }
         }
       },
       "block_order": ["text-1"],
@@ -229,8 +247,9 @@
         "collection-1": {
           "type": "collection",
           "settings": {
-            "products_count": 5,
-            "title": "Ideal for a weekend outing"
+            "collection": "comforters",
+            "products_count": 4,
+            "title": "Temperature-Regulating Comforters"
           }
         }
       },
@@ -244,7 +263,7 @@
         "products_per_row_desktop": 4,
         "horizontal_spacing_factor": 1,
         "vertical_spacing_factor": 1,
-        "subheading": "Be classy"
+        "subheading": "Year-Round Comfort"
       }
     },
     "video": {
@@ -301,9 +320,9 @@
       "settings": {
         "color_scheme": "scheme-1",
         "separate_section_with_border": true,
-        "subheading": "Shop",
-        "title": "Our looks",
-        "popover_title": "Shop the look"
+        "subheading": "Complete Sets",
+        "title": "Shop the Sleep Sanctuary",
+        "popover_title": "Complete your bedroom"
       }
     },
     "countdown": {
@@ -380,8 +399,8 @@
       "settings": {
         "color_scheme": "scheme-1",
         "separate_section_with_border": false,
-        "subheading": "Our bag",
-        "title": "Choose your colour",
+        "subheading": "Temperature Comparison",
+        "title": "Feel the Cooling Difference",
         "cursor_direction": "horizontal",
         "cursor_initial_position": 50,
         "cursor_background": "#ffffff",
@@ -395,8 +414,8 @@
           "type": "image_with_text",
           "settings": {
             "subheading": "#1",
-            "title": "The Design",
-            "content": "<p>Each piece is designed with your needs at heart. All products are imagined and developed in our studio, where ideas often stem from the thoughtful feedback we receive throughout the year.</p>",
+            "title": "The Science",
+            "content": "<p>Our eucalyptus fibers are naturally temperature-regulating, moisture-wicking, and hypoallergenic. Each product is engineered for optimal sleep comfort using sustainable materials and innovative manufacturing processes.</p>",
             "link_text": "Learn more",
             "link_style": "link"
           }
@@ -405,8 +424,8 @@
           "type": "image_with_text",
           "settings": {
             "subheading": "#2",
-            "title": "Our commitments",
-            "content": "<p>From the very beginning, responsibility has been a core value — both towards you and the environment. From design to distribution, each step is approached with care to create pieces that are timeless, high quality, and fairly priced.</p>",
+            "title": "Our Sustainability",
+            "content": "<p>From sustainably sourced eucalyptus to closed-loop production, every step prioritizes environmental responsibility. We're committed to creating premium bedding that's good for you and good for the planet.</p>",
             "link_text": "Learn more",
             "link_style": "link"
           }
@@ -434,10 +453,10 @@
         "show_date": false,
         "show_excerpt": false,
         "show_read_more": true,
-        "subheading": "News",
-        "title": "From the blog",
-        "button_link": "shopify://blogs/news",
-        "button_text": "Discover all our stories"
+        "subheading": "Sleep Tips",
+        "title": "From the SIJO blog",
+        "button_link": "shopify://blogs/sleep-tips",
+        "button_text": "Read all sleep tips"
       }
     },
     "featured-product": {
@@ -501,8 +520,8 @@
         "enable_video_looping": true,
         "enable_image_zoom": false,
         "max_image_zoom_level": 3,
-        "subheading": "Our selection",
-        "title": "Product of the week"
+        "subheading": "Featured Product",
+        "title": "Customer Favorite"
       }
     },
     "image-with-text-block": {
@@ -585,10 +604,10 @@
         "item-1": {
           "type": "item",
           "settings": {
-            "label": "2013",
+            "label": "2018",
             "subheading": "",
-            "title": "A story of shared vision",
-            "content": "<p>This project began with two creative minds, united by both passion and purpose. From day one, the goal was clear: to build something meaningful together. What started as a simple idea turned into a first product launch—and the beginning of a lasting journey.</p>",
+            "title": "SIJO Founded",
+            "content": "<p>Started with a simple mission: create the world's most comfortable bedding using sustainable materials. Our founders discovered eucalyptus fibers and knew they had found something special.</p>",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
@@ -596,10 +615,10 @@
         "item-2": {
           "type": "item",
           "settings": {
-            "label": "2014",
+            "label": "2019",
             "subheading": "",
-            "title": "No middlemen",
-            "content": "<p>By working directly with you, we eliminate unnecessary markups and focus on what matters: offering thoughtfully designed, high-quality pieces at a fair price. A modern approach to fashion, rooted in transparency.</p>",
+            "title": "Award-Winning Launch",
+            "content": "<p>Our AiryWeight Eucalyptus Sheet Set won multiple awards for innovation and sustainability. Customers loved the cooling comfort and eco-friendly materials.</p>",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
@@ -607,10 +626,10 @@
         "item-3": {
           "type": "item",
           "settings": {
-            "label": "2015",
+            "label": "2021",
             "subheading": "",
-            "title": "Crafted in Italy",
-            "content": "<p>Production takes place in a family-run workshop near Naples, known for its artisanal expertise. The collaboration is close and ongoing, with daily conversations shaping both the process and the products. More than just a manufacturer—true partners in craft.</p>",
+            "title": "Product Line Expansion",
+            "content": "<p>Expanded beyond sheets to comforters, pillows, and loungewear, all featuring our signature cooling technology and sustainable materials.</p>",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
@@ -618,9 +637,9 @@
         "item-4": {
           "type": "item",
           "settings": {
-            "label": "2017",
-            "title": "Discover our products",
-            "content": "<p>Located in the heart of the city, our showroom is open throughout the week and offers the ideal place to explore the full range in person.</p>",
+            "label": "2024",
+            "title": "Sleep Revolution",
+            "content": "<p>Now helping thousands sleep better every night with our award-winning bedding collection, all backed by our 30-night trial guarantee.</p>",
             "link_style": "link",
             "mobile_text_color": "#ffffff"
           }
@@ -638,12 +657,12 @@
       "blocks": {
         "heading-1": {
           "type": "heading",
-          "settings": { "text": "Our values", "heading_tag": "h3" }
+          "settings": { "text": "Sleep is everything", "heading_tag": "h3" }
         },
         "richtext-1": {
           "type": "richtext",
           "settings": {
-            "content": "<p>We aspire to be a brand of the 21st century: 100% online and without any intermediary.<br/>From you to us directly.</p>"
+            "content": "<p>Better sleep means better days. That's why we're committed to creating the most comfortable, sustainable bedding on the planet.<br/>From our family to yours.</p>"
           }
         }
       },
@@ -742,9 +761,24 @@
   "order": [
     "slideshow",
     "featured-collections-1",
+    "image-with-text-overlay-1",
+    "rich-text",
+    "media-grid",
+    "scrolling-content-1",
+    "scrolling-content-2",
+    "featured-collections-2",
     "video",
-    "multi-column",
+    "shop-the-look",
+    "countdown",
+    "before-after",
+    "images-with-text-scroll",
+    "blog-posts",
+    "featured-product",
     "image-with-text-block",
-    "testimonials"
+    "testimonials",
+    "timeline",
+    "image-with-text-overlay-2",
+    "multi-column",
+    "newsletter"
   ]
 }
